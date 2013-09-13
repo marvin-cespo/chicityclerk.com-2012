@@ -1,0 +1,2123 @@
+/*
+Theme Name: ChiCityClerk.com
+Theme URI: http://chicityclerk.com/
+Description: Office of the City Clerk, City of Chicago
+Author: Lawrence Davis - Marvin Cespedes
+Author URI: http://chicityclerk.com/
+Version: 1.0
+*/
+/*! normalize.css v2.1.1 | MIT License | git.io/normalize */
+
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+
+/**
+ * Correct `block` display not defined in IE 8/9.
+ */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+    display: block;
+}
+
+/**
+ * Correct `inline-block` display not defined in IE 8/9.
+ */
+
+audio,
+canvas,
+video {
+    display: inline-block;
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+
+[hidden] {
+    display: none;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+/**
+ * 1. Prevent system color scheme's background color being used in Firefox, IE,
+ *    and Opera.
+ * 2. Prevent system color scheme's text color being used in Firefox, IE, and
+ *    Opera.
+ * 3. Set default font family to sans-serif.
+ * 4. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+
+html {
+    background: #fff; /* 1 */
+    color: #000; /* 2 */
+    font-family: sans-serif; /* 3 */
+    -ms-text-size-adjust: 100%; /* 4 */
+    -webkit-text-size-adjust: 100%; /* 4 */
+}
+
+/**
+ * Remove default margin.
+ */
+
+body {
+    margin: 0;
+}
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+
+a:focus {
+    outline: thin dotted;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+
+a:active,
+a:hover {
+    outline: 0;
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari 5, and Chrome.
+ */
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+/**
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+
+b,
+strong {
+    font-weight: bold;
+}
+
+/**
+ * Address styling not present in Safari 5 and Chrome.
+ */
+
+dfn {
+    font-style: italic;
+}
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+
+hr {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+
+mark {
+    background: #ff0;
+    color: #000;
+}
+
+/**
+ * Correct font family set oddly in Safari 5 and Chrome.
+ */
+
+code,
+kbd,
+pre,
+samp {
+    font-family: monospace, serif;
+    font-size: 1em;
+}
+
+/**
+ * Improve readability of pre-formatted text in all browsers.
+ */
+
+pre {
+    white-space: pre-wrap;
+}
+
+/**
+ * Set consistent quote types.
+ */
+
+q {
+    quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+
+small {
+    font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+
+/**
+ * Remove border when inside `a` element in IE 8/9.
+ */
+
+img {
+    border: 0;
+}
+
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+
+/**
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+
+figure {
+    margin: 0;
+}
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+
+legend {
+    border: 0; /* 1 */
+    padding: 0; /* 2 */
+}
+
+/**
+ * 1. Correct font family not being inherited in all browsers.
+ * 2. Correct font size not being inherited in all browsers.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ */
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit; /* 1 */
+    font-size: 100%; /* 2 */
+    margin: 0; /* 3 */
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+
+button,
+input {
+    line-height: normal;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+
+button,
+select {
+    text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+
+button,
+html input[type="button"], /* 1 */
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button; /* 2 */
+    cursor: pointer; /* 3 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+
+button[disabled],
+html input[disabled] {
+    cursor: default;
+}
+
+/**
+ * 1. Address box sizing set to `content-box` in IE 8/9.
+ * 2. Remove excess padding in IE 8/9.
+ */
+
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box; /* 1 */
+    padding: 0; /* 2 */
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+
+input[type="search"] {
+    -webkit-appearance: textfield; /* 1 */
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box; /* 2 */
+    box-sizing: content-box;
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+/**
+ * 1. Remove default vertical scrollbar in IE 8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+
+textarea {
+    overflow: auto; /* 1 */
+    vertical-align: top; /* 2 */
+}
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+
+/**
+ * Remove most spacing between table cells.
+ */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/* end normalize */
+
+
+
+
+
+* {
+	margin: 0;
+}
+
+html, body {
+	height: 100%;
+	background-color: #3B5C9F;
+}
+
+#wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -40px;
+}
+
+#footer, #push {
+	height: 40px;
+}
+
+#footer {
+	color: #FFF;
+	background: #000;
+}
+
+#footer p {
+	text-align: center;
+	padding-top: 10px;
+}
+
+#searcher{
+	padding: 6px;
+}
+
+
+.clear {
+	clear: both;
+}
+
+.alignright {
+	float: right;
+	margin: 10px;
+}
+
+.aligncenter {
+	display: block;
+	margin: 10px auto;
+}
+
+#branding {
+	text-align: center;
+	margin: 15px 0;
+}
+
+#content {
+	background: #ECF0F2;
+}
+
+#right-column a {
+	color: #355495;
+	text-decoration: underline;
+}
+
+#right-column a.btn {
+	color: #FFF;
+}
+
+/* search box */
+.lighter .lefty{
+	float: left;
+	padding-left: 15px;
+}
+
+.lighter .righty{
+	float: right;
+	padding-right: 5px;
+}
+
+.lighter #search-inputs{
+}
+.lighter #s {
+}
+
+.lighter #s{
+	color:#333;
+}
+
+.lighter #searchsubmit, #searchsubmit:hover {
+	position:relative;
+	left:-6px;
+	border:1px solid #adc5cf;
+	background: #e4f1f9; /* Old browsers */
+	background: -moz-linear-gradient(top, #e4f1f9 0%, #d5e7f3 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e4f1f9), color-stop(100%,#d5e7f3)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #e4f1f9 0%,#d5e7f3 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #e4f1f9 0%,#d5e7f3 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #e4f1f9 0%,#d5e7f3 100%); /* IE10+ */
+	background: linear-gradient(top, #e4f1f9 0%,#d5e7f3 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4f1f9', endColorstr='#d5e7f3',GradientType=0 ); /* IE6-9 */
+	color:#7da2aa;
+	cursor: pointer;
+	height: 30px;
+	margin: 0 0px 8px -2px;
+}
+.lighter,{
+	width:95%;
+	height:50px;
+	padding:40px 25px;
+}
+.lighter{
+	background: url('./images/lighter_grey.jpg');
+}
+.lighter #s{
+	border:1px solid #d0d0d0;
+	background-color:#fcfcfc;
+}
+
+/* !Global Navigation Styles */
+
+.navbar-inner {
+	border-bottom: 0;
+}
+
+ul.nav li.menu-item a {
+	padding: 10px 20px;
+}
+
+.navbar-inverse ul.nav li a {
+	color: #FFF;
+}
+
+ul.nav li.current-menu-item a, ul.nav li.current-page-ancestor a {
+	background: #3B5C9F;
+	color: #FFF;
+}
+
+ul.nav li.menu-item a:hover {
+	background-color: #3B5C9F;
+	color: #FFF;
+}
+
+ul.nav li.menu-item-twitter a {
+	display: block;
+	background: url('/wp-content/themes/occwp/images/icons/twitter-24.png') no-repeat center;
+	text-indent: -999999px;
+	width: 10px;
+	height: 20px;
+}
+
+ul.nav li.menu-item-facebook a {
+	display: block;
+	background: url('/wp-content/themes/occwp/images/icons/facebook-24.png') no-repeat center;
+	text-indent: -999999px;
+	width: 10px;
+	height: 20px;
+}
+
+/* !Homepage Styles */
+
+.home #content {
+	background: #ECF0F2;
+	padding: 10px 0;
+}
+
+#container {
+	margin-bottom: 15px;
+}
+
+.span3home{
+	width: 255px;
+}
+
+.span9home{
+	width: 785px;
+}
+
+.homeborder{
+	margin: 5px;
+	padding: 5px;
+	border: 2px solid #355495;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+}
+
+.span9home h2{
+	font-size: 22px;
+	line-height: 1.2;
+	margin-top: 0;
+	font-family: 'Georgia', Times, serif;
+	text-transform: uppercase;
+	border-bottom: 1px solid #355495;
+}
+
+/* !Homepage Slideshow Styles */
+
+.home #right-column #slideshow {
+	height: 270px;
+	margin-bottom: 15px;
+	padding: 11px;
+	background: #ECF0F2;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+}
+
+#slides {
+	width: 770px;
+	height: 250px;
+	text-align: left;
+	background: #ECF0F2;
+}
+
+#slide-1 a, #slide-2 a, #slide-3 a, #slide-4 a, #slide-5 a {
+	display: block;
+	width: 768px;
+	height: 248px;
+	text-decoration: none;
+	border: 1px solid #355495;
+}
+
+#slide-1 a:hover, #slide-2 a:hover, #slide-3 a:hover, #slide-4 a:hover, #slide-5 a:hover {
+	text-decoration: none;
+} 
+
+#slide-1 {
+	background: url('/wp-content/themes/occwp/images/slideshow/2013-city-sticker-home-banner.jpg') no-repeat center left;
+}
+
+#slide-1 span.panel-1-head {
+	display: inline-block;
+	width: 440px;
+	font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+	font-weight: 800;
+	font-size: 37px;
+	text-transform: uppercase;
+	line-height: 1;
+	margin: 13px 0 0 305px;
+}
+
+#slide-1 a{
+	color: #fff;
+}
+#slide-1 span.panel-1-body {
+	display: block;
+	margin: 16px 0 0 307px;
+	width: 410px;
+	float: left;
+	color: #FFF;
+	font-family: 'Georgia', Times, serif;
+	font-size: 18px;
+	line-height: 1.3;
+	padding-bottom: 10px
+	font-weight: normal;
+}
+
+#slide-2 {
+	background: url('/wp-content/themes/occwp/images/slideshow/horse-buggy-home-banner.jpg') no-repeat center left;
+}
+
+#slide-2 span.panel-2-head {
+	display: inline-block;
+	width: 350px;
+	font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+	font-weight: 800;
+	font-size: 28px;
+	text-transform: uppercase;
+	line-height: 1;
+	margin: 13px 0 0 410px;
+}
+
+#slide-2 a{
+	color: #fff;
+}
+#slide-2 span.panel-2-body {
+	display: block;
+	margin: 16px 0 0 412px;
+	width: 330px;
+	float: left;
+	color: #FFF;
+	font-family: 'Georgia', Times, serif;
+	font-size: 18px;
+	line-height: 1.3;
+}
+
+#slide-3 {
+	background: url('/wp-content/themes/occwp/images/slideshow/locations-home-banner.jpg') no-repeat center center;
+}
+
+#slide-3 span.panel-3-head {
+	display: inline-block;
+	width: 330px;
+	font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+	font-weight: 800;
+	font-size: 37px;
+	text-transform: uppercase;
+	line-height: 1;
+	margin: 13px 0 0 410px;
+}
+
+#slide-3 a{
+	color: #fff;
+}
+#slide-3 span.panel-3-body {
+	display: block;
+	margin: 16px 0 0 410px;
+	width: 330px;
+	float: left;
+	color: #FFF;
+	font-family: 'Georgia', Times, serif;
+	font-size: 18px;
+	line-height: 1.3;
+	padding-bottom: 10px
+}
+	
+
+#slide-4 {
+	background: url('/wp-content/themes/occwp/images/slideshow/slide-4-bg.jpg') no-repeat right center;
+}
+
+#slide-4 span.panel-4-head {
+	width: 403px;
+	display: block;
+	padding: 10px;
+	background: #000;
+	color: #FFF;
+	font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+	font-weight: 800;
+	font-size: 19px;
+	text-align: center;
+	text-transform: uppercase;
+	border-bottom: 1px solid #000;
+}
+
+#slide-4 span.panel-4-points {
+	width: 400px;
+	display: block;
+	margin: 20px 0 0 10px;
+	padding: 0 0 10px 0;
+	font-family: 'Georgia', Times, serif;
+	font-size: 18px;
+}
+
+#slide-4 span.panel-4-point {
+	display: block;
+	margin: 0 0 25px 0;
+	padding: 0 0 0 25px;
+	background: url('/wp-content/themes/occwp/images/slideshow/list-star.png') no-repeat left top;
+}
+
+#slide-4 a:hover span.panel-4-head, #slide-5 a:hover span.panel-5-head {
+	color: #FF0000;
+}
+
+#slide-4 a:hover span.panel-4-point, #slide-5 a:hover span.panel-5-point {
+	color: #355495;
+}
+
+#slide-5 {
+	background: url('/wp-content/themes/occwp/images/slideshow/slide-5-bg.jpg') no-repeat right center;
+}
+
+#slide-5 span.panel-5-head {
+	width: 449px;
+	display: block;
+	padding: 10px;
+	background: #000;
+	color: #FFF;
+	font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+	font-weight: 800;
+	font-size: 21px;
+	text-align: center;
+	text-transform: uppercase;
+	border-bottom: 1px solid #000;
+}
+
+#slide-5 span.panel-5-points {
+	width: 448px;
+	display: block;
+	margin: 20px 0 0 10px;
+	padding: 0 0 10px 0;
+	font-family: 'Georgia', Times, serif;
+	font-size: 18px;
+}
+
+#slide-5 span.panel-5-point {
+	display: block;
+	margin: 0 0 25px 0;
+	padding: 0 0 0 25px;
+	background: url('/wp-content/themes/occwp/images/slideshow/list-star.png') no-repeat left top;
+}
+
+
+/* !Homepage Action Bar */
+
+.home #right-column #actions {
+	margin-bottom: 15px;
+	padding: 10px;
+}
+
+.home #right-column #actions a.action {
+	width: 22%;
+	padding: 1%;
+	float: left;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	border: 1px solid #ECF0F2;
+}
+
+.home #right-column #actions a.register {
+	width: 24%;
+}
+
+.home #right-column #actions a.action:hover {
+	background: #FFF;
+	border: 1px solid #000;
+	text-decoration: none;
+}
+
+.home #right-column #actions a.purchase:hover {
+	border-color: #BD2F29;
+}
+
+.home #right-column #actions a.register:hover {
+	border-color: #59B259;
+}
+
+.home #right-column #actions a.research:hover {
+	border-color: #019AD2;
+}
+
+.home #right-column #actions a.watch:hover {
+	border-color: #355495;
+}
+
+.home #right-column #actions a.action h4 {
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: 800;
+	font-size: 24px;
+	text-transform: uppercase;
+	margin: 0 0 5px 0;
+}
+
+.home #right-column #actions a{
+	text-decoration: none;
+}
+
+.home #right-column #actions a.purchase h4 {
+	color: #BD2F29;
+}
+
+.home #right-column #actions a.register h4 {
+	color: #59B259;
+}
+
+.home #right-column #actions a.research h4 {
+	color: #355495;
+}
+
+.home #right-column #actions a.watch h4 {
+	color: #019AD2;
+}
+
+.home #right-column #actions a.action span {
+	color: #000;
+}
+
+
+/* !Homepage Announcements */
+
+.home #left-column #announcements, .home #left-column #quick-links {
+	padding: 10px;
+	margin-bottom: 15px;
+	background: #ECF0F2;
+}
+
+.home #left-column #announcements h2 {
+	font-size: 20px;
+	line-height: 1.2;
+	margin-top: 0;
+	font-family: 'Georgia', Times, serif;
+	text-transform: uppercase;
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+}
+
+.home #left-column #announcements .announcement {
+	padding: 0 0 5px 0;
+	border-bottom: 1px dotted #BBB;
+}
+
+.home #left-column #announcements .announcement a.read-more {
+	display: none;
+}
+
+.home #left-column #announcements .announcement h5 a {
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.home #left-column #announcements #announcement-1 h5 a {
+	color: #BD2F29;
+}
+
+.home #left-column #announcements #announcement-2 h5 a {
+	color: #59B259;
+}
+
+.home #left-column #announcements #announcement-3 h5 a {
+	color: #355495;
+}
+
+.home #left-column #announcements #announcement-4 h5 a {
+	color: #019AD2;
+}
+
+.home #left-column #announcements #announcement-council h5 a {
+	color: #019AD2;
+}
+
+.home #left-column #announcements #announcement-2013budget h5 a, .home #left-column #announcements #announcement-2013budget p a {
+	color: #59B259;
+}
+
+
+/* !Homepage Quick Links */
+
+.home #left-column #quick-links ul {
+	list-style-type: none;
+	margin: 0;
+}
+
+.home #left-column #quick-links ul li h2 {
+	font-size: 20px;
+	line-height: 1.2;
+	margin-top: 0;
+	font-family: 'Georgia', Times, serif;
+	text-transform: uppercase;
+	padding-bottom: 5px;
+	margin-bottom: 10px;
+}
+
+.home #left-column #quick-links ul li ul li {
+	border-bottom: 1px dotted #BBB;
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+}
+
+.home #left-column #quick-links ul li ul li a {
+	color: #355495;
+	text-transform: uppercase;
+}
+
+.home #left-column #quick-links ul li ul li a:hover {
+	color: #000;
+	text-decoration: underline;
+}
+
+
+/* !Homepage Newsfeed Styles */
+
+.home #right-column #newsfeed {
+	padding: 10px;
+	background: #ECF0F2;
+}
+
+.home #right-column #newsfeed .feed-thumb {
+	float: left;
+	margin: 0 10px 0 0;
+}
+
+.home #right-column #newsfeed a{
+	text-decoration: none;
+}
+
+.downloadbox {
+	float: right;
+	margin: -10px 0 10px 10px;
+	background: #ECF0F2;
+	border: 1px solid #355495;
+	-webkit-border-radius: 0 0 6px 6px;
+	-moz-border-radius: 0 0 6px 6px;
+	border-radius: 0 0 6px 6px;
+}
+	.downloadbox h4 {
+		display: block;
+		margin: 0;
+		padding: 5px;
+		background: #355495;
+		color: #FFF;
+		font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		text-transform: uppercase;
+	}
+	.downloadbox ul {
+		list-style-type: none;
+		margin: 0;
+		margin-top: 5px;
+		padding: 5px;
+	}
+		.downloadbox ul li {
+			font-size: 12px;
+			margin-bottom: 10px;
+				text-decoration: none;
+		}
+
+/* !Page Styles */
+
+/* !Local Navigation Styles */
+
+.page #left-column {
+	float: left;
+}
+
+.interior-navigation ul {
+	list-style-type: none;
+	margin: 0 0 0 10px;
+}
+
+.interior-navigation li {
+	line-height: 20px;
+}
+
+.interior-navigation a {
+	display: block;
+	padding: 10px 5px;
+	color: #ECF0F2;
+	font-size: 15px;
+	font-weight: bold;
+	border-bottom: 1px dotted #ECF0F2;
+}
+
+.interior-navigation a:hover {
+	text-decoration: none;
+}
+
+.interior-navigation li.current-menu-item a, .interior-navigation li a:hover {
+	color: #355495;
+	background: #ECF0F2;
+	border-bottom: 1px solid #355495;
+}
+
+.interior-navigation li.current-menu-parent a {
+	background: #FFF;
+	color: #355495;
+	border-bottom: 1px solid #355495;
+}
+
+.interior-navigation li ul.sub-menu {
+	display: none;
+}
+
+.interior-navigation li.current-menu-item ul.sub-menu, .interior-navigation li.current-menu-parent ul.sub-menu {
+	display: block;
+	margin-left: 10px;
+	margin-bottom: 0;
+	border-bottom: 1px solid #355495;
+}
+
+.interior-navigation li.current-menu-item ul.sub-menu li a, .interior-navigation li.current-menu-parent ul.sub-menu li a {
+	background: #FFF;
+	padding: 7px 0 7px 10px;
+	border-right: 1px solid #DDD;
+	border-bottom: 1px solid #DDD;
+	font-weight: normal;
+	font-size: 12px;
+	color: #355495;
+}
+
+.interior-navigation li.current-menu-item ul.sub-menu li a:hover, .interior-navigation li.current-menu-parent ul.sub-menu li a:hover {
+	background: #ECF0F2;
+	border-right: #ECF0F2;
+}
+
+.interior-navigation li.current-menu-parent ul.sub-menu li.current-menu-item a {
+	background: #ECF0F2;
+	border-right: 1px solid #ECF0F2;
+}
+
+.interior-navigation li.current-menu-parent a:hover {
+	background: #ECF0F2;
+}
+
+
+.interior-navigation li.menu-item-hidden {
+	display: none;
+}
+/* !Page Tab Styles */
+	
+#right-column ul.occ-tabs {
+	display: table;
+	width: 100%;
+	list-style-type: none;
+	margin: 0;
+	
+}
+
+#right-column ul.occ-tabs li {
+	float: left;
+}
+
+#right-column ul.occ-tabs li a {
+	display: inline-block;
+	padding: 10px;
+	margin-right: 2px;
+	background: #355495;
+	color: #FFF;
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: 800;
+	font-size: 15px;
+	text-transform: uppercase;
+	text-decoration: none;
+	border: 1px solid #355495;
+	border-bottom: 0;
+	-webkit-border-radius: 6px 6px 0 0;
+	-moz-border-radius: 6px 6px 0 0;
+	border-radius: 6px 6px 0 0;
+}
+
+#right-column ul.occ-tabs li a.current, #right-column ul.occ-tabs li a:hover {
+	background: #ECF0F2;
+	color: #355495;
+}
+
+#right-column #occ-tab-content {
+	padding: 15px;
+	margin-top: -1px;
+	border: 1px solid #355495;
+	-webkit-border-radius: 0 6px 6px 0;
+	-moz-border-radius: 0 6px 6px 0;
+	border-radius: 0 6px 6px 0;
+}
+
+/* !Page Content Styles */
+
+.page img a, .single img a {
+	border: 0;
+}
+
+.page #right-column.span9, .single #right-column.span9 {
+	margin-left: 0;
+	width: 810px;
+	float: left;
+	background: #ECF0F2;
+}
+
+.page #right-column .interior-content, .single #right-column .interior-content {
+	padding: 10px 15px;
+}
+
+.page #right-column .interior-content h2.entry-title, .page #right-column .interior-content h2.tab-title, .single #right-column .interior-content h2.entry-title {
+	margin-top: 0;
+	color: #355495;
+	font-weight: bold;
+	font-style: italic;
+	font-family: 'Georgia', 'Times New Roman', Times, serif;
+	font-size: 24px;
+	line-height: 32px;
+	border-bottom: 1px solid #355495;
+}
+
+.single #right-column h3.entry-title {
+	line-height: 1.2;
+}
+
+.single #right-column .attachment-post-thumbnail {
+	display: none;
+}
+
+.single #right-column .download-pdf {
+	text-align: right;
+}
+
+.page #right-column .interior-content h3 {
+	font-size: 20px;
+	line-height: 28px;
+}
+
+/* ! Styles for City Stickers & Parking Hemisphere */
+
+/* Global Table Styles */
+
+.table {
+	border: 1px solid #000;
+}
+
+.table th, .table td {
+	border-top: 1px solid #000;
+}
+
+.table-bordered th, .table-bordered td {
+	border-left: 1px solid #000;
+}
+
+.table-bordered tr td:first-child, .table-bordered tr th:first-child {
+	border-left: 0;
+}
+
+/* Global List Styles */
+
+#right-column ul li, #right-column ol li {
+	margin-bottom: 10px;
+}
+
+#right-column ul.occ-tabs li {
+	margin-bottom: 0;
+}
+
+/* ! CSP Landing Page */
+
+.page-id-619 h2.os-strong {
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: 800;
+	text-transform: uppercase;
+	color: #355495;
+}
+
+.page-id-619 #need-passes, .page-id-619 #need-sticker {
+	padding: 5px;
+	border: 2px solid #355495;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+}
+
+.page-id-619 #need-passes {
+	margin-bottom: 15px;
+}
+
+.page-id-619 .entry-title {
+	display: none;
+}
+
+.page-id-619 .entry-content h2.arvo {
+	text-align: center;
+	font-family: 'Arvo', Georgia, Times, serif;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.page-id-619 #readmore-daily, .post-11 #readmore-annual {
+	display: none;
+}
+
+.page-id-619 .entry-content h2.section-title {
+	font-family: 'Georgia', Times, serif;
+	font-style: italic;
+	font-weight: bold;
+	font-size: 20px;
+	color: #355495;
+	text-decoration: underline;
+}
+
+.page-id-619 a#daily-buy-online, .page-id-619 a#annual-buy-online {
+	display: block;
+	height: 95px;
+	background: url('/wp-content/themes/occwp/images/buy-online-bar.jpg') no-repeat  top;
+	padding: 0 0 0 300px;
+	font-family: 'Georgia', Times, serif;
+	font-weight: bold;
+	font-style: italic;
+	font-size: 17px;
+	color: #FFF;
+}
+
+.page-id-619 a#annual-buy-online span.annual-small, .page-id-619 a#annual-buy-locator span.annual-small {
+	font-size: 12px;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: normal;
+	font-style: normal;
+	line-height: 1;
+}
+
+.page-id-619 a#daily-buy-office {
+	display: block;
+	height: 95px;
+	background: url('/wp-content/themes/occwp/images/buy-in-person-bar.jpg') no-repeat  top;
+	padding: 0 0 0 300px;
+	font-family: 'Georgia', Times, serif;
+	font-weight: bold;
+	font-style: italic;
+	font-size: 17px;
+	color: #FFF;
+}
+
+.page-id-619 a#annual-buy-locator {
+	display: block;
+	height: 95px;
+	background: url('/wp-content/themes/occwp/images/store-locator-bar.jpg') no-repeat  top;
+	padding: 5px 80px 0 300px;
+	font-family: 'Georgia', Times, serif;
+	font-weight: bold;
+	font-style: italic;
+	font-size: 16px;
+	color: #FFF;
+}
+
+/* !TRANSFERS AND REPLACEMENTS PAGE */
+
+.page-id-62 #right-column hr {
+	border-color: #000;
+	border-top: 0;
+}
+
+.page-id-62 #right-column h3.csp-tr {
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: 800;
+	font-size: 24px;
+	text-transform: uppercase;
+	color: #BD2F29;
+}
+
+/* !LEGISLATION AND RECORDS LANDING PAGE */
+
+.page-id-620 #lr-lic-ad {
+	display: block;
+	background: url('/wp-content/themes/occwp/images/lic-landing-bg.jpg') no-repeat left top;
+	margin: 0 0 0 10px;
+	color: black;
+	font-family: 'Georgia', Times, serif;
+	font-size: 18px;
+	line-height: 2;
+	height: 200px;
+}
+
+.page-id-620 #lr-lic-ad h4 {
+	display: block;
+	margin: 0 0 0 10px;
+	padding: 15px 0 0 0;
+	color: black;
+	font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+	font-size: 24px;
+	font-weight: 800;
+	text-transform: uppercase;
+}
+
+.page-id-620 #lr-lic-ad h4 a:hover {
+	text-decoration: none;
+}
+
+.page-id-620 #lr-lic-ad ul {
+	list-style-type: none;
+	margin: 20px 0 0 10px;
+}
+
+.page-id-620 #lr-lic-ad ul li a {
+	display: block;
+}
+
+.page-id-620 a.btn-lic, .page-id-620 a.btn-cnc, .page-id-89 a.btn-cnc {
+	font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+	font-size: 20px;
+	font-weight: 800;
+	text-transform: uppercase;
+	color: #FFF;
+	margin: 10px 0 15px 0;
+}
+
+.page-id-620 a.btn-lic {
+	margin-top: 3px;
+}
+
+.page-id-620 #right-column a.btn-lic:hover, .page-id-620 #right-column a.btn-cnc:hover, .page-id-89 #right-column a.btn-cnc:hover {
+	color: #FF0000;
+}
+
+a.cnc-link {
+	display: block;
+	margin: 0 auto;
+	width: 99%;
+	padding: 5px;
+	background: url('/wp-content/themes/occwp/images/cnc-ad-index.png') no-repeat center top;
+	text-align: center;
+}
+
+a.cnc-link:hover {
+	text-decoration: none;
+}
+
+a.cnc-link:hover span.cnc-title {
+	color: #000;
+}
+
+a.cnc-link span.cnc-top, a.cnc-link span.cnc-bottom {
+	display: block;
+	font-family: 'Georgia', Times, serif;
+	font-style: italic;
+	font-size: 16px;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	color: #333;
+}
+
+a.cnc-link span.cnc-title {
+	display: block;
+	margin-top: 15px;
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: 800;
+	font-size: 34px;
+	text-transform: uppercase;
+	color: #BD2F29;
+}
+
+a.cnc-link span.cnc-bottom {
+	margin-top: 12px;
+}
+
+a.cnc-link:hover #cnc-button {
+	color: #FF0000;
+}
+
+#cnc-button {
+	margin-bottom: 0;
+}
+
+a.cnc-link {
+	padding-bottom: 0;
+}
+
+a.cnc-link #cnc-button {
+	margin-bottom: 0;
+}
+
+/* !ABOUT CHICAGO GOVERNMENT PAGE */
+
+.page-id-83 #right-column .chigov-rt {
+	float: right;
+	margin: 10px;
+	text-align: center;
+}
+
+/* !ABOUT CITY COUNCIL MEETINGS PAGE */
+
+.page-id-89 a.btn-agenda {
+	float: right;
+	margin: 0 0 10px 10px;
+}
+
+.page-id-89 #right-column .centerthis {
+	text-align: center;
+}
+
+.page-id-89 #right-column a.index-readmore-order, a.index-readmore-order-close {
+	font-family: 'Georgia', Times, serif;
+	font-style: italic;
+}
+
+/* !JOURNALS AND REPORTS LANDING PAGE */
+
+.page-id-228 #right-column ul {
+	list-style-type: none;
+}
+
+.page-id-228 #right-column h3.lr-jr {
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: 800;
+	font-size: 20px;
+	text-transform: uppercase;
+	color: #355495;
+}
+
+/* !DOG REGISTRATION LANDING PAGE */
+.page-id-16 #right-column h2.entry-title {
+	display: none;
+}
+
+.page-id-16 h2.arvo, .page-id-16 h3.arvo {
+	font-family: 'Arvo', Georgia, Times, serif;
+	font-weight: 400;
+	font-size: 36px;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.page-id-16 #right-column h3.arvo {
+	text-transform: normal;
+	font-size: 24px;
+	color: #355495;
+}
+
+.page-id-16 h2.arvo.blue {
+	color: #355495;
+}
+
+.page-id-16 h2.arvo.red {
+	color: #BD2F29;
+}
+
+/* !DOG OF DISTINCTION PAGE */
+
+.page-id-271 #right-column #wilma {
+	background: #000;
+	color: #FFF;
+	display: block;
+	padding: 10px;
+	font-family: 'Georgia', Times, serif;
+}
+
+.page-id-271 #right-column #wilma .left {
+	float: left;
+	width: 150px;
+}
+
+.page-id-271 #right-column #wilma .right {
+	float: left;
+}
+
+.page-id-271 #right-column #wilma h2.dod-box {
+	margin-top: 0;
+	color: #FF0000;
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: 800;
+	font-size: 32px;
+	text-transform: uppercase;
+	line-height: 1.2;
+}
+
+.page-id-271 #right-column #wilma p em {
+	font-size: 18px;
+}
+
+.page-id-271 #right-column a.btn-dod {
+	float: right;
+	margin: 10px;
+}
+
+/* !PROGRAMS AND SERVICES LANDING PAGE */
+
+.page-id-23 #right-column .program-box {
+	float: left;
+	width: 375px;
+	height: 275px;
+	margin: 0 10px 10px 0;
+	border: 1px solid #CCC;
+}
+
+.page-id-23 #right-column .program-box a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: 800;
+	font-size: 22px;
+	color: #FFF;
+}
+
+.page-id-23 #right-column .program-box a:hover {
+	color: #FF0000;
+	text-decoration: none;
+}
+
+.page-id-23 #right-column .program-box a span {
+	position: relative;
+	top: 235px;
+}
+
+.page-id-23 #right-column #program-claims {
+	background: url('/wp-content/themes/occwp/images/claims.jpg') no-repeat center;
+}
+
+.page-id-23 #right-column #program-passport {
+	background: url('/wp-content/themes/occwp/images/passport.jpg') no-repeat center;
+}
+
+.page-id-23 #right-column #program-kids {
+	background: url('/wp-content/themes/occwp/images/kids-id.jpg') no-repeat center;
+}
+
+.page-id-23 #right-column #program-med {
+	background: url('/wp-content/themes/occwp/images/med-id.jpg') no-repeat center;
+}
+
+/* !PROGRAMS AND SERVICES DOWNLOADS BOXES */
+
+.parent-pageid-23 .programs-downloads {
+	float: right;
+	margin: -10px 0 10px 10px;
+	background: #ECF0F2;
+	border: 1px solid #355495;
+	-webkit-border-radius: 0 0 6px 6px;
+	-moz-border-radius: 0 0 6px 6px;
+	border-radius: 0 0 6px 6px;
+}
+
+.parent-pageid-23 .programs-downloads h4 {
+	display: block;
+	margin: 0;
+	padding: 5px;
+	background: #355495;
+	color: #FFF;
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	text-transform: uppercase;
+}
+
+.parent-pageid-23 .programs-downloads ul {
+	list-style-type: none;
+	margin: 0;
+	margin-top: 5px;
+	padding: 5px;
+}
+
+.parent-pageid-23 #right-column .programs-downloads li {
+	margin-bottom: 0;
+}
+.parent-pageid-23 .programs-downloads li a {
+	display: block;
+	font-size: 12px;
+}
+
+
+
+
+/* temporary solution - FAFSA Assistance page  
+
+
+DO NOT LEAVE THIS UNATTENDED !!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+*/
+#downloads-passport {
+	float: right;
+	margin: -10px 0 10px 10px;
+	background: #ECF0F2;
+	border: 1px solid #355495;
+	-webkit-border-radius: 0 0 6px 6px;
+	-moz-border-radius: 0 0 6px 6px;
+	border-radius: 0 0 6px 6px;
+}
+
+#downloads-passport h4 {
+	display: block;
+	margin: 0;
+	padding: 5px;
+	background: #355495;
+	color: #FFF;
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	text-transform: uppercase;
+}
+
+#downloads-passport ul {
+	list-style-type: none;
+	margin: 0;
+	margin-top: 5px;
+	padding: 5px;
+}
+
+#downloads-passport li {
+	margin-bottom: 0;
+}
+#downloads-passport li a {
+	display: block;
+	font-size: 12px;
+}
+
+
+
+
+
+
+
+/* !CLAIMS LANDING PAGE */
+
+.page-id-294 #right-column h3.claims {
+	padding: 0 0 0 60px;
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: 800;
+	font-size: 16px;
+	line-height: 1.2;
+	text-transform: uppercase;
+	min-height: 40px;
+}
+
+.page-id-294 #right-column h3.claims-1 {
+	color: #019AD2;
+	background: url('/wp-content/themes/occwp/images/water.png') no-repeat 10px center;
+}
+
+.page-id-294 #right-column h3.claims-2 {
+	color: #355495;
+	background: url('/wp-content/themes/occwp/images/car.png') no-repeat left center;
+}
+
+.page-id-294 #right-column h3.claims-3 {
+	color: #BD2F29;
+	background: url('/wp-content/themes/occwp/images/worker.png') no-repeat left center;
+}
+
+/* !CLERKS KIDS */
+
+.page-id-342 #right-column #ck-slider {
+	padding: 5px 60px;
+	margin: 0 0 15px 0;
+}
+
+.page-id-342 #right-column #ck-left {
+	float: left;
+	padding: 5px;
+	width: 620px;
+}
+
+.page-id-342 #right-column #ck-right {
+	float: left;
+	margin: 0 0 0 10px;
+	padding: 5px;
+	width: 130px;
+}
+
+/* !KIDS & MEDICAL ID */
+
+.page-id-353 #right-column #id-image, .page-id-366 #right-column #id-image {
+	margin: 10px 0 0 0;
+}
+
+/* !OFFICE INFO CONTACT US PAGE */
+
+.page-id-27 #right-column #contact-us-table, .page-id-27 #right-column #stay-connected {
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+.page-id-27 #right-column #contact-us-table tr td, .page-id-27 #right-column #stay-connected tr td {
+	width: 25%;
+	padding: 5px;
+}
+
+.page-id-27 #right-column #stay-connected #contact-fb-inner a.btn {
+	margin-top: 10px;
+}
+
+.page-id-27 #right-column #content {
+	min-height: 230px;
+}
+
+/* !OFFICE INFO & DOG REGISTRATION OFFICE LOCATIONS TABLE */
+
+.page-id-388 #right-column a.map, .page-id-257 #right-column a.map {
+	display: block;
+	width: 225px;
+	height: 225px;
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: 800;
+	font-size: 16px;
+	text-transform: uppercase;
+	text-align: center;
+	text-decoration: none;
+	border: 1px solid #BBB;
+}
+
+.page-id-388 #right-column a.map span, .page-id-257 #right-column a.map span {
+	display: block;
+	margin-top: 195px;
+	padding: 5px;
+	background: #355495;
+	opacity: 0.75;
+	color: #FFF;
+	text-decoration: none;
+}
+
+.page-id-388 #right-column a.map:hover, .page-id-257 #right-column a.map:hover {
+	text-decoration: none;
+}
+
+.page-id-388 #right-column a.map:hover span, .page-id-257 #right-column a.map:hover span {
+	color: #FF0000;
+	text-decoration: none;
+	border: 0;
+}
+
+.page-id-388 #right-column a.cityhall, .page-id-257 #right-column a.cityhall {
+	background: url('/wp-content/themes/occwp/images/map-cityhall.jpg') no-repeat center center;	
+}
+
+.page-id-388 #right-column a.gale, .page-id-257 #right-column a.gale {
+	background: url('/wp-content/themes/occwp/images/map-gale.jpg') no-repeat center center;	
+}
+
+.page-id-388 #right-column a.archer, .page-id-257 #right-column a.archer {
+	background: url('/wp-content/themes/occwp/images/map-archer.jpg') no-repeat center center;
+}
+
+/* !NEWS LANDING PAGE TAB STYLES */
+
+.page-id-25 #right-column h2.entry-title {
+	display: none;
+}
+
+.page-id-25 #right-column ul.occ-tabs li a.occ-tab-link, .home #right-column ul.occ-tabs li a.occ-tab-link {
+	width: 173px;
+	text-align: center;
+	color: #FFF;
+	border-bottom: 0;
+}
+
+.home #right-column ul.occ-tabs li a.occ-tab-link {
+	width: 170px;
+}
+
+.page-id-25 #right-column ul.occ-tabs li a#occ-tab-toggle-clerk, .home #right-column ul.occ-tabs li a#occ-tab-toggle-clerk {
+	background: #BD2F29;
+	border: 1px solid #BD2F29;
+	border-bottom: 0;
+}
+
+.page-id-25 #right-column ul.occ-tabs li a#occ-tab-toggle-council, .home #right-column ul.occ-tabs a#occ-tab-toggle-council {
+	background: #59B259;
+	border: 1px solid #59B259;
+	border-bottom: 0;
+}
+
+.page-id-25 #right-column ul.occ-tabs li a.occ-tab-link#occ-tab-toggle-tw, .home #right-column ul.occ-tabs a#occ-tab-toggle-tw {
+	background: #019AD2;
+	border: 1px solid #019AD2;
+	border-bottom: 0;
+	padding-right: 0;
+	margin-right: 0;
+}
+
+.page-id-25 #right-column ul.occ-tabs li a.occ-tab-link#occ-tab-toggle-tw {
+	width: 174px;
+}
+
+.page-id-25 #right-column ul.occ-tabs li a#occ-tab-toggle-clerk:hover, .page-id-25 #right-column ul.occ-tabs li a#occ-tab-toggle-clerk.current, .home #right-column ul.occ-tabs li a#occ-tab-toggle-clerk.current, .home #right-column ul.occ-tabs li a#occ-tab-toggle-clerk:hover {
+	color: #BD2F29;
+}
+
+.page-id-25 #right-column ul.occ-tabs li a#occ-tab-toggle-council:hover, .page-id-25 #right-column ul.occ-tabs li a#occ-tab-toggle-council.current, .home #right-column ul.occ-tabs li a#occ-tab-toggle-council.current, .home #right-column ul.occ-tabs li a#occ-tab-toggle-council:hover {
+	color: #59B259;
+}
+
+.page-id-25 #right-column ul.occ-tabs li a#occ-tab-toggle-fb:hover, .page-id-25 #right-column ul.occ-tabs li a#occ-tab-toggle-fb.current, .home #right-column ul.occ-tabs li a#occ-tab-toggle-fb.current, .home #right-column ul.occ-tabs li a#occ-tab-toggle-fb:hover {
+	color: #355495;
+}
+
+.page-id-25 #right-column ul.occ-tabs li a#occ-tab-toggle-tw:hover, .page-id-25 #right-column ul.occ-tabs li a#occ-tab-toggle-tw.current, .home #right-column ul.occ-tabs li a#occ-tab-toggle-tw.current, .home #right-column ul.occ-tabs li a#occ-tab-toggle-tw:hover {
+	color: #019AD2;
+}
+
+.page-id-25 #right-column ul.occ-tabs li a.occ-tab-link:hover, .page-id-25 #right-column ul.occ-tabs li a.current, .home #right-column ul.occ-tabs li a.current, .home #right-column ul.occ-tabs li a.occ-tab-link:hover {
+	background: #ECF0F2 !important;
+	border: 1px solid #355495 !important;
+	border-bottom: 0 !important;
+}
+
+.page-id-25 #right-column #occ-tab-content, .home #right-column #occ-tab-content {
+	-webkit-border-radius: 0 0 6px 0;
+	-moz-border-radius: 0 0 6px 0;
+	border-radius: 0 0 6px 0;
+}
+
+/* !HOME PAGE AND NEWS LANDING PAGE TWITTER TAB STYLES */
+
+.page-id-25 #right-column #occ-tab-content-tw #twitter-logo {
+	display: inline-block;
+	float: left;
+}
+
+.page-id-25 #right-column #occ-tab-content-tw #twitter-follow-btn {
+	display: inline-block;
+	float: left;
+	margin-top: 5px;
+	margin-left: 5px;
+}
+
+.page-id-25 #right-column #occ-tab-content-tw .tweet_list, .home #right-column #occ-tab-content-tw .tweet_list {
+	list-style-type: none;
+	padding-top: 10px;
+	margin-left: 0;
+	margin-top: 15px;
+}
+
+.page-id-25 #right-column #occ-tab-content-tw .tweet_list li, .home #right-column #occ-tab-content-tw .tweet_list li {
+	padding: 0;
+	padding-left: 0;
+	margin: 0 0 10px 0;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #BBB;
+}
+
+.page-id-25 #right-column #occ-tab-content-tw .tweet_avatar,  .home #right-column #occ-tab-content-tw .tweet_avatar {
+	display: block;
+	float: left;
+	width: 50px;
+}
+
+.page-id-25 #right-column #occ-tab-content-tw .tweet_list li a, .home #right-column #occ-tab-content-tw .tweet_list li a {
+	color: #019AD2;
+	font-weight: bold;
+}
+
+/* !NEWS LANDING PAGE FACEBOOK TAB STYLES */
+
+.page-id-25 #right-column #occ-tab-content-fb ul#facebook-feed, .home #right-column #occ-tab-content-fb ul#facebook-feed {
+	list-style-type: none;
+	margin: 0;
+	margin-top: 15px;
+}
+
+.page-id-25 #right-column #occ-tab-content-fb ul#facebook-feed li, .home #right-column #occ-tab-content-fb ul#facebook-feed li {
+	border-bottom: 1px solid #BBB;
+	margin: 0 0 10px 0;
+	padding: 0 0 10px 0;
+}
+
+.page-id-25 #right-column #occ-tab-content-fb ul#facebook-feed li .fb-thumb, .home #right-column #occ-tab-content-fb ul#facebook-feed .fb-thumb {
+	width: 50px;
+	float: left;
+}
+
+.page-id-25 #right-column #occ-tab-content-fb ul#facebook-feed li .fb-story, .home #right-column #occ-tab-content-fb ul#facebook-feed .fb-story {
+	min-height: 40px;
+	border-bottom: 0;
+	margin-bottom: 0;
+	padding-bottom: 0;
+	width: 685px;
+	float: left;
+}
+
+.page-id-25 #right-column #occ-tab-content-fb ul#facebook-feed .fb-story a, .home #right-column #occ-tab-content-fb ul#facebook-feed .fb-story a {
+	font-weight: bold;
+}
+
+.page-id-25 #right-column #occ-tab-content-fb ul#facebook-feed li abbr, .home #right-column #occ-tab-content-fb ul#facebook-feed li abbr {
+	border: 0;	
+}
+
+.page-id-25 #right-column #occ-tab-content-fb ul#facebook-feed li abbr:hover, .home #right-column #occ-tab-content ul#facebook-feed li abbr:hover {
+	cursor: pointer;
+}
+
+/* !NEWS (CLERK AND COUNCIL) PAGES STYLES */
+
+#right-column #occ-tab-content .feed-box, .page-template-page-news-php #right-column .feed-box, .home #right-column .feed-box {
+	padding: 0 0 5px 0;
+	border-bottom: 1px solid #BBB;
+}
+
+#right-column #occ-tab-content .feed-thumb, .page-template-page-news-php #right-column .feed-thumb, .home #right-column .feed-thumb {
+	width: 100px;
+	float: left;
+	padding: 5px;
+	margin: 5px 15px 5px 0;
+	text-align: center;
+}
+
+#right-column #occ-tab-content .feed-text, .page-template-page-news-php #right-column .feed-text, .home #right-column .feed-text {
+	width: 600px;
+	float: left;
+	padding: 5px;
+}
+
+.page-id-25 #right-column #occ-tab-content .feed-text h5, .page-template-page-news-php #right-column .feed-text h5, .home #right-column .feed-text h5 {
+	margin-bottom: 0;
+	margin-top: 3px;
+	font-weight: normal;
+}
+
+.page-id-25 #right-column #occ-tab-content .feed-text h4, .page-template-page-news-php #right-column .feed-text h4, .home #right-column .feed-text h4 {
+	margin-top: 0;
+}
+
+.page-id-25 #right-column #occ-tab-content .feed-text h4 span.ordinance, .page-template-page-news-php #right-column .feed-text h4 span.ordinance, .home #right-column .feed-text h4 span.ordinance {
+	display: inline-block;
+	font-family: 'Georgia', Times, serif;
+	font-weight: normal;
+	font-size: 14px;
+	font-style: italic;
+}
+
+.page-id-25 #right-column #occ-tab-content .feed-text a.btn-primary, .page-template-page-news-php #right-column .feed-text a.btn-primary, .home #right-column .feed-text a.btn-primary {
+	margin-right: 15px;
+}
+
+.page-id-25 #right-column #occ-tab-content .feed-text a.read-more, .page-template-page-news-php #right-column .feed-text a.read-more, .home #right-column .feed-text a.read-more {
+	text-decoration: underline;
+	font-family: 'Georgia', Times, serif;
+	font-style: italic;
+	
+}
+
+.page-id-25 #right-column #occ-tab-content .view-all-items, .home #right-column #occ-tab-content .view-all-items {
+	text-align: right;
+	margin: 10px 0 0 0;
+}
+
+.page-id-563 #right-column td.btn-col {
+	width: 150px !important;
+}
+
+.search #content, .error404 #content {
+	padding: 15px;
+}
+
+.error404 #no-column {
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+}
+
+.error404 #no-column h2.entry-title {
+	font-family: 'Georgia', Times, serif;
+}
+
+/* !CNC Homepage Banner Styles */
+
+#cnc-ad a{
+	text-decoration: none;
+}
+
+.home #right-column #cnc-ad {
+	margin-bottom: 15px;
+	background: url('/wp-content/themes/occwp/images/cnc-ad-index-2.png');
+	width: 785px;
+	height: 95px;
+	text-align: center;
+}
+
+.home #right-column a.cnc-ad-link span.cnc-top, .home #right-column a.cnc-ad-link span.cnc-bottom {
+	display: block;
+	padding-top: 3px;
+	font-family: 'Georgia', Times, serif;
+	font-style: italic;
+	font-size: 16px;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	color: #333;
+}
+
+.home #right-column a.cnc-ad-link span.cnc-title {
+	display: block;
+	margin-top: 15px;
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: 800;
+	font-size: 34px;
+	text-transform: uppercase;
+	color: #BD2F29;
+}
+
+.home #right-column a.cnc-ad-link span.cnc-bottom {
+	margin-top: 12px;
+}
+
+/* custom alerts */
+.alert-box {
+  border-style: solid;
+  border-width: 1px;
+  display: block;
+  margin-bottom: 1.25em;
+  position: relative;
+  padding: 0.6875em 1.3125em 0.75em 0.6875em;
+  background-color: #850A0D;
+  border-color: #6B080A;
+  color: white; }
+  .alert-box .close {
+    font-size: 1.375em;
+    padding: 5px 4px 4px;
+    line-height: 0;
+    position: absolute;
+    top: 0.4375em;
+    right: 0.3125em;
+    color: #333333;
+    opacity: 0.3; }
+    .alert-box .close:hover, .alert-box .close:focus {
+      opacity: 0.5; }
+  .alert-box.radius {
+    -webkit-border-radius: 3px;
+    border-radius: 3px; }
+  .alert-box.round {
+    -webkit-border-radius: 1000px;
+    border-radius: 1000px; }
+  .alert-box.success {
+    background-color: #5da423;
+    border-color: #457a1a;
+    color: white; }
+  .alert-box.alert {
+    background-color: #c60f13;
+    border-color: #970b0e;
+    color: white; }
+  .alert-box.secondary {
+    background-color: #e9e9e9;
+    border-color: #d0d0d0;
+    color: #505050; }
+
+
+/* Store Locator */
+#sl_div #tag_to_search_for{
+	width: 269px;
+}
+
+#sl_div #addressInput{
+	margin-left: 22px;
+}
+
+#sl_div #addy_in_address{
+	margin: 10px 0 10px 0;
+}
+
+#sl_div #address_search LABEL{
+	text-align: left;
+}
+
+#sl_div #radiusSelect{
+	margin-left: 21px;
+}
+
+#sl_div #radius_in_submit{
+	
+}

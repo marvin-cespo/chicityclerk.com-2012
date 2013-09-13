@@ -1,0 +1,402 @@
+/* New Styles */
+
+body {
+	background: url('/wp-content/themes/occwp/images/bg.png') #182E5F repeat-x top left;
+}
+
+#occ-banner {
+	text-align: center;
+	margin-top: 15px;
+}
+
+/* End New Styles */
+
+#cnc #right-column {
+	width: 1030px;
+	padding: 10px;
+	margin: 10px auto 0;
+	float: none;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	background: #ECF0F2;
+}
+
+#cnc .content-wrap {
+	margin-top: 5px;
+	margin-bottom: 25px;
+}
+
+#footer {
+	color: #FFF;
+	text-align: center;
+	margin: 15px auto;
+}
+
+/* BEGIN SEATING CHART STYLES */
+
+#ald-seats {
+	background: url('/council/img/council-large.jpg') no-repeat top left;
+	width: 770px;
+	height: 396px;
+	display: block;
+	margin: 0 auto;
+	padding: 0;
+	position: relative;
+}
+
+#ald-seats li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	position: absolute;
+	display: block;
+	width: 23px;
+	height: 37px;
+}
+
+#ald-seats li span:hover {
+	border: 3px solid #BD2F29;
+}
+
+#ald-seats li span div {
+	display: none;
+}
+
+span#wlink-52 {
+	width: 35px !important;
+	height: 48px !important;
+}
+
+#ald-seats li span {
+	display: block;
+	width: 23px;
+	height: 37px;
+}
+
+#ald-seats li span:hover {
+	cursor: pointer;
+}
+
+.seating-chart {
+	position: relative;
+}
+
+a.cnc-tw-link {
+	display: block;
+	height: 24px;
+	background: url('/wp-content/themes/occwp/images/twitter-24.png') no-repeat left center;
+	padding: 10px 0 0 30px;
+}
+
+#ward-1 {
+	left: 76px;
+	top: 223px;
+}
+
+#ward-2 {
+	left: 115px;
+	top: 198px;
+}
+
+#ward-3 {
+	top: 179px;
+	left: 153px;
+	
+}
+
+#ward-4 {
+	top: 163px;
+	left: 190px;
+}
+
+#ward-5 {
+	top: 136px;
+	left: 323px;
+	
+}
+
+#ward-6 {
+	top: 130px;
+	left: 362px;
+}
+
+#ward-7 {
+	top: 137px;
+	left: 401px;
+}
+
+#ward-8 {
+	top: 145px;
+	left: 443px;
+}
+
+#ward-9 {
+	top: 165px;
+	left: 542px;
+}
+
+#ward-10 {
+	top: 179px;
+	left: 579px;
+}
+
+#ward-11 {
+	top: 198px;
+	left: 619px;
+}
+
+#ward-12 {
+	top: 223px;
+	left: 655px;
+}
+
+#ward-13 {
+	top: 185px;
+	left: 693px;
+}
+
+#ward-14 {
+	top: 145px;
+	left: 281px;
+}
+
+#ward-15 {
+	top: 155px;
+	left: 656px;
+}
+
+#ward-16 {
+	top: 131px;
+	left: 617px;
+}
+
+#ward-17 {
+	top: 114px;
+	left: 580px;
+}
+
+#ward-18 {
+	top: 101px;
+	left: 541px;	
+}
+
+#ward-19 {
+	top: 84px;
+	left: 482px;
+}
+
+#ward-20 {
+	top: 77px;
+	left: 445px;
+}
+
+#ward-21 {
+	top: 70px;
+	left: 405px;
+}
+
+#ward-22 {
+	top: 67px;
+	left: 365px;
+}
+
+#ward-23 {
+	top: 70px;
+	left: 327px;
+}
+
+#ward-24 {
+	top: 74px;
+	left: 286px;
+}
+
+#ward-25 {
+	top: 82px;
+	left: 246px;
+}
+
+#ward-26 {
+	top: 96px;
+	left: 191px;
+}
+
+#ward-27 {
+	top: 111px;
+	left: 155px;
+}
+
+#ward-28 {
+	top: 131px;
+	left: 115px;
+}
+
+#ward-29 {
+	top: 154px;
+	left: 78px;
+}
+
+#ward-30 {
+	top: 184px;
+	left: 43px;
+}
+
+#ward-31 {
+	top: 145px;
+	left: 4px;
+}
+
+#ward-32 {
+	top: 116px;
+	left: 41px;
+}
+
+#ward-33 {
+	top: 90px;
+	left: 78px;
+}
+
+#ward-34 {
+	top: 67px;
+	left: 116px;
+}
+
+#ward-35 {
+	top: 50px;
+	left: 154px;
+}
+
+#ward-36 {
+	top: 35px;
+	left: 190px;
+}
+
+#ward-37 {
+	top: 23px;
+	left: 232px;
+}
+
+#ward-38 {
+	top: 15px;
+	left: 271px;
+}
+
+#ward-39 {
+	top: 7px;
+	left: 308px;
+}
+
+#ward-40 {
+	top: 4px;
+	left: 347px;
+}
+
+#ward-41 {
+	top: 5px;
+	left: 385px;
+}
+
+#ward-42 {
+	top: 7px;
+	left: 422px;
+}
+
+#ward-43 {
+	top: 14px;
+	left: 462px;
+}
+
+#ward-44 {
+	top: 22px;
+	left: 500px;
+}
+
+#ward-45 {
+	top: 35px;
+	left: 542px;
+}
+
+#ward-46 {
+	top: 49px;
+	left: 578px;
+}
+
+#ward-47 {
+	top: 67px;
+	left: 618px;
+}
+
+#ward-48 {
+	top: 90px;
+	left: 656px;
+}
+
+#ward-49 {
+	top: 115px;
+	left: 694px;
+}
+
+#ward-50 {
+	top: 145px;
+	left: 730px;
+}
+
+#ward-51 {
+	top: 249px;
+	left: 362px;
+}
+
+#ward-52 {
+	top: 317px;
+	left: 356px;
+	width: 38px !important;
+	height: 51px !important;
+}
+
+.hover {
+	background: red !important;
+}
+
+ul#ald-seats li a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	text-decoration: none;
+}
+
+ul#ald-seats li#ward-52 a {
+	width: 93%;
+	height: 93%;
+}
+
+ul#ald-seats li a:hover {
+	border: 3px solid #355495;
+}
+
+.popover {
+	width: 330px;
+}
+
+.popover.top {
+	margin-top: -15px;
+}
+
+.ward-num {
+	color: #355495;
+}
+
+h3.popover-title {
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: 800;
+	font-size: 16px;
+	text-transform: uppercase;
+}
+
+.popover-title {
+	background: #333;
+	color: #FFF;
+}
+
+.push-right {
+	margin-left: 15px;
+}

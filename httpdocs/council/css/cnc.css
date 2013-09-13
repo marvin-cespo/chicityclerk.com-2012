@@ -1,0 +1,201 @@
+/* New Styles */
+
+body {
+	background: url('/wp-content/themes/occwp/images/bg.png') #182E5F repeat-x top left;
+}
+
+#occ-banner {
+	text-align: center;
+	margin-top: 15px;
+}
+
+/* End New Styles */
+
+#cnc #right-column {
+	width: 1030px;
+	padding: 10px;
+	margin: 10px auto 0;
+	float: none;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	background: #FFF;
+}
+
+#cnc .content-wrap {
+	margin-top: 5px;
+	margin-bottom: 25px;
+}
+
+#cnc-banner {
+	display: block;
+	width: 1050px;
+	height: 130px;
+	margin: 15px auto;
+	background: url('/council/img/cnc-header.png') no-repeat center center;
+}
+
+p.banner-top, p.banner-bottom {
+	padding-top: 5px;
+	font-family: 'Georgia', Times, serif;
+	font-style: italic;
+	font-size: 20px;
+	line-height: 1.2;
+	text-align: center;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+p.banner-title {
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: 800;
+	font-size: 48px;
+	line-height: 1.0;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+#cnc-table {
+	margin-bottom: 0;
+}
+
+#cnc-table thead tr td {
+	font-family: 'Georgia', Times, serif;
+	font-style: italic;
+	font-weight: bold;
+	font-size: 20px;
+	color: #355495;
+	border-top: 0;
+}
+
+#cnc-table, #cnc-table tr, #cnc-table td, #cnc-table th {
+	border-color: #355495;
+}
+
+#cnc-video {
+	width: 370px;
+}
+
+a.btn-silverlight {
+	display: block;
+	width: 370px;
+	margin-bottom: 10px;
+}
+
+#cnc-placeholder {
+	display: block;
+	width: 400px;
+	height: 330px;
+}
+
+#cnc-placeholder a {
+	display: block;
+	height: 310px;
+	background: url('/council/img/cnc-video-placeholder.jpg') no-repeat center center;
+	font-family: 'Georgia', Times, serif;
+	font-style: italic;
+	font-size: 16px;
+	color: white;
+}
+
+#cnc-placeholder a:hover {
+	text-decoration: none;
+	color: #FF0000;
+}
+
+#cnc-placeholder a span.link {
+	display: block;
+	position: relative;
+	padding: 15px;
+	top: 250px;
+	background: black;
+}
+
+#cnc-placeholder a span span.red {
+	color: red;
+}
+
+td.tweet {
+	width: 275px !important;	
+}
+
+#cnc-connect-wrap {
+	height: 550px;
+	overflow: scroll;
+	overflow-x: hidden;
+}
+
+#cnc-connect {
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	border-top: 1px solid #E8E8E8;
+	font-size: 12px;
+	width: 100%;
+}
+
+#cnc-connect tr td {
+	padding: 5px;
+	border: 0;
+}
+
+#cnc-connect tr td:first-child {
+	border-left: 1px solid #E8E8E8;
+}
+
+#cnc-connect tr td:last-child {
+	border-right: 1px solid #E8E8E8;
+}
+
+#cnc-connect tr.table-row-odd {
+	border-bottom: 1px solid #E8E8E8;
+}
+
+.pull-up {
+	margin-top: -15px;
+	*margin-top: -5px;
+}
+
+#cnc-loading {
+	display: none;
+	text-align: center;
+}
+
+#cnc-loading h2 {
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: 800;
+	text-transform: uppercase;
+	color: #355495;
+}
+
+.twitter-widget-fix {
+	width: 270px !important;
+}
+
+.twitter-stream-fix {
+	height: 421px !important;
+}
+
+#quick-links {
+	margin: 0 auto 15px;
+	width: 1040px;
+	padding: 5px;
+	background: #FFF;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+}
+
+span.os {
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: 800;
+	font-size: 20px;
+	text-transform: uppercase;
+	text-align: center;
+	color: #355495;
+}
+
+#footer {
+	color: #FFF;
+	text-align: center;
+	margin: 15px auto;
+}

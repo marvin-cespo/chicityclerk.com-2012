@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Office of the City Clerk, City of Chicago</title>
+<link rel="stylesheet" type="text/css" href="http://temp.chicityclerk.com/css/bootstrap.css" />
+<style type="text/css">
+body {
+	background: url('http://temp.chicityclerk.com/images/bg.png') #182E5F repeat-x left top;
+}
+
+#banner {
+	text-align: center;
+	margin-top: 30px;
+}
+
+#content {
+	margin: 15px auto;
+	padding: 15px;
+	width: 1040px;
+	background: #ECF0F2;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+}
+
+#content h1 {
+	font-family: 'Georgia', Times, serif;
+	font-weight: bold;
+	font-style: italic;
+	color: #355495;
+	border-bottom: 1px solid #355495;
+}
+
+#content p {
+	text-align: center;
+}
+
+#content table tr td {
+	padding: 5px;
+}
+</style>
+</head>
+<body>
+	<div id="banner">
+		<img src="http://temp.chicityclerk.com/images/header.png" />
+	</div>
+	<div id="content">
+		<h1>We'll be right back...</h1>
+		<p>Tuesday, October 30, 2012, 5pm</p>
+		<p>We are currently performing maintenance work on our website, scheduled to be completed by 9pm.</p>
+		<p>Please note that you can still access the following web resources provided by the Office of the City Clerk, City of Chicago:</p>
+		<table style="width: 100%">
+			<tbody>
+				<tr>
+					<td style="width: 33%;"><a class="btn btn-block btn-large btn-primary" href="http://chicago.legistar.com/Legislation.aspx" target="_blank">Legislative Information Center</a></td>
+					<td style="width: 33%;"><a class="btn btn-block btn-large btn-success" href="http://www.amlegal.com/library/il/chicago.shtml" target="_blank">Municipal Code</a></td>
+					<td style="width: 33%;"><a class="btn btn-block btn-large btn-danger" href="https://webapps.cityofchicago.org/StickerOnlineWeb" target="_blank">EZ>Buy</a></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td><small>(for city stickers, residential parking permits and dog registration)</small></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
