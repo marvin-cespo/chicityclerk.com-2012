@@ -20,7 +20,7 @@
 				<h2>City Council</h2>
 				<div class="announcement" id="announcement-council">
 					<h5><a href="#calendar-select" data-toggle="modal">Next City Council Meeting</a></h5>
-					<p>Wednesday, October 16, 2013<br />Time: 10:00a.m.<br />Location: City Council Chambers<br>
+					<p>Wednesday, November 13, 2013<br />Time: 10:00a.m.<br />Location: City Council Chambers<br>
 					City Hall 121 N LaSalle St</p>
 					<div id="calendar-select" class="modal hide fade in" style="display: none;">
 						<div class="modal-header">
@@ -74,7 +74,7 @@
 			</div>
 		</div>
 		<div class="span9home homeborder" id="right-column">
-			<!-- BEGIN DAY-OF,PRESTART COUNCIL NEWS CENTRAL BANNER -->
+			<!-- BEGIN DAY-OF,PRESTART COUNCIL NEWS CENTRAL BANNER 
 			<div id="cnc-ad">
 				<a class="cnc-ad-link" href="/council/council-news-central.php">
 					<span class="cnc-top">City Council Meets Today, Wenesday, October  16th, 10am.  Check Out...</span>
@@ -84,9 +84,9 @@
 			</div>
 			<!-- END DAY-OF,PRESTART COUNCIL NEWS CENTRAL BANNER -->
 			
-			<!-- BEGIN DAY-OF,CONCLUDED NO VIDEO COUNCIL NEWS CENTRAL BANNER 
+			<!-- BEGIN DAY-OF,CONCLUDED NO VIDEO COUNCIL NEWS CENTRAL BANNER -->
 			<div id="cnc-ad">
-				<a class="cnc-ad-link" href="http://chicago.legistar.com/MeetingDetail.aspx?ID=258828&GUID=8DB1618E-A8CF-4076-9DB9-1D048F87AE04&Options=&Search=">
+				<a class="cnc-ad-link" href="https://chicago.legistar.com/MeetingDetail.aspx?ID=258828&GUID=8DB1618E-A8CF-4076-9DB9-1D048F87AE04&Options=&Search=">
 					<span class="cnc-top">City Council met earlier today.  Check out the...</span>
 					<span class="cnc-title">Legislative Information Center</span>
 					<span class="cnc-bottom">... to view meeting records.  Video will be posted shortly.</span>					
