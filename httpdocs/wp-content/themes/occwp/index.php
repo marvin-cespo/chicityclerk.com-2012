@@ -20,7 +20,8 @@
 				<h2>City Council</h2>
 				<div class="announcement" id="announcement-council">
 					<h5><a href="#calendar-select" data-toggle="modal">Next City Council Meeting</a></h5>
-					<p>Wednesday, October 16, 2013<br />Time: 10:00a.m.<br />Location: City Hall</p>
+					<p>Wednesday, October 16, 2013<br />Time: 10:00a.m.<br />Location: City Council Chambers<br>
+					City Hall 121 N LaSalle St</p>
 					<div id="calendar-select" class="modal hide fade in" style="display: none;">
 						<div class="modal-header">
 							<a class="close" data-dismiss="modal">x</a>
@@ -73,10 +74,10 @@
 			</div>
 		</div>
 		<div class="span9home homeborder" id="right-column">
-			<!-- BEGIN DAY-OF,PRESTART COUNCIL NEWS CENTRAL BANNER 
+			<!-- BEGIN DAY-OF,PRESTART COUNCIL NEWS CENTRAL BANNER -->
 			<div id="cnc-ad">
 				<a class="cnc-ad-link" href="/council/council-news-central.php">
-					<span class="cnc-top">City Council Meets Today, Wenesday, September  11th, 10am.  Check Out...</span>
+					<span class="cnc-top">City Council Meets Today, Wenesday, October  16th, 10am.  Check Out...</span>
 					<span class="cnc-title">Council News Central</span>
 					<span class="cnc-bottom">... to watch live video, read community tweets, and connect with council members.</span>					
 				</a>
@@ -94,7 +95,7 @@
 			<!-- END DAY-OF,CONCLUDED NO VIDEO COUNCIL NEWS CENTRAL BANNER -->
 			
 			
-			<!-- BEGIN DAY-OF,CONCLUDED VIDEO UP COUNCIL NEWS CENTRAL BANNER -->
+			<!-- BEGIN DAY-OF,CONCLUDED VIDEO UP COUNCIL NEWS CENTRAL BANNER 
 			<div id="cnc-ad">
 				<a class="cnc-ad-link" href="https://chicago.legistar.com/MeetingDetail.aspx?ID=258828&GUID=8DB1618E-A8CF-4076-9DB9-1D048F87AE04&Options=&Search=">
 					<span class="cnc-top">City Council met this week.  Check out the...</span>
