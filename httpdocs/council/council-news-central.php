@@ -61,7 +61,7 @@
 						<tbody>
 							<tr>
 								<!-- <td style="width: 20%; padding: 5px;"><span class="os-strong">HELPFUL LINKS:</span></td> -->
-								<td style="width: 20%; padding: 5px;"><a class="btn btn-danger btn-block btn-large" href="https://chicago.legistar.com/MeetingDetail.aspx?ID=258828&GUID=8DB1618E-A8CF-4076-9DB9-1D048F87AE04&Options=&Search=" target="_blank">Meeting Agenda</a></td>
+								<td style="width: 20%; padding: 5px;"><a class="btn btn-danger btn-block btn-large" href="https://chicago.legistar.com/MeetingDetail.aspx?ID=263270&GUID=04D500CC-3698-4036-BE24-CFA69B424229&Options=&Search=" target="_blank">Meeting Agenda</a></td>
 								<td style="width: 20%; padding: 5px;"><a class="btn btn-warning btn-block btn-large" href="http://chicityclerk.com/council/budgets.php" target="_blank">2013 City Budget</a></td>
 								<td style="width: 20%; padding: 5px;"><a class="btn btn-info btn-block btn-large" href="/council/seating-chart.php" target="_blank">Council Seating Chart</a></td>
 								<td style="width: 20%; padding: 5px;"><a class="btn btn-primary btn-block btn-large" href="/legislation-records/about-chicago-government/about-city-council-meetings/" target="_blank">Rules of Order</a></td>

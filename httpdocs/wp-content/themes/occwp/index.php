@@ -84,7 +84,7 @@
 			</div>
 			<!-- END DAY-OF,PRESTART COUNCIL NEWS CENTRAL BANNER -->
 			
-			<!-- BEGIN DAY-OF,CONCLUDED NO VIDEO COUNCIL NEWS CENTRAL BANNER -->
+			<!-- BEGIN DAY-OF,CONCLUDED NO VIDEO COUNCIL NEWS CENTRAL BANNER 
 			<div id="cnc-ad">
 				<a class="cnc-ad-link" href="https://chicago.legistar.com/MeetingDetail.aspx?ID=258828&GUID=8DB1618E-A8CF-4076-9DB9-1D048F87AE04&Options=&Search=">
 					<span class="cnc-top">City Council met earlier today.  Check out the...</span>
@@ -97,7 +97,7 @@
 			
 			<!-- BEGIN DAY-OF,CONCLUDED VIDEO UP COUNCIL NEWS CENTRAL BANNER 
 			<div id="cnc-ad">
-				<a class="cnc-ad-link" href="https://chicago.legistar.com/MeetingDetail.aspx?ID=258828&GUID=8DB1618E-A8CF-4076-9DB9-1D048F87AE04&Options=&Search=">
+				<a class="cnc-ad-link" href="https://chicago.legistar.com/MeetingDetail.aspx?ID=263270&GUID=04D500CC-3698-4036-BE24-CFA69B424229&Options=&Search=">
 					<span class="cnc-top">City Council met this week.  Check out the...</span>
 					<span class="cnc-title">Legislative Information Center</span>
 					<span class="cnc-bottom">... to watch video and view meeting records.</span>					
