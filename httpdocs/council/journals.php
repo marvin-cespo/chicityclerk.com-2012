@@ -156,6 +156,10 @@ $(document).ready(function() {
 									<h2 class="entry-title">Journals of the Proceedings</h2>
 									<div class="entry-content">
 										<p>The Journal of the Proceedings serves as the official record of City Council meetings and reflects all legislative actions. Included in the official record is a synopsis of Mayoral and Aldermanic introductions referred to committees, committee reports, complete text of adopted legislation, roll call votes, motions and parliamentary actions, notifications of filings with and legislative publications by the City Clerk, approval of City Council Journal, and other actions taken on the Council Floor.</p>
+										
+										<div class="alert-box" style="margin:10px 0;">
+										<p>Due to the file size of the Journal of Proceedings, the journals will now be provided as ZIP files. Download times for the Journal of Proceedings may take a few minutes based on internet connections.</p>
+										</div>
 										<ul class="occ-tabs">
 											<li><a class="occ-tab-link current" href="/council/journals.php">View All Journals</a></li>
 											<li><a class="occ-tab-link" href="/council/journals-search.php">Search Journals</a></li>

@@ -40,6 +40,11 @@
 					</div>
 					<a id="modal-show" data-toggle="modal" class="btn btn-block btn-info" href="#calendar-select">Add to Calendar</a>
 				</div>
+				<div class="announcement" id="announcement-council">
+				<h5><a href="http://chicityclerk.com/legislation-records/journals-reports/city-budgets/" style="color:#f89406;">2014 BUDGET ADDRESS</a></h5>
+					<p>View the 2014 Budget Address</p>
+					<a class="btn btn-block btn-warning" href="http://chicityclerk.com/legislation-records/journals-reports/city-budgets/">Read More</a>
+				</div>
 				<?php 
 				$announcements_args = array( 'post_type' => 'occ_announcements', 'posts_per_page' => 2 );
 				$announcements = new WP_Query( $announcements_args );
@@ -77,7 +82,7 @@
 			<!-- BEGIN DAY-OF,PRESTART COUNCIL NEWS CENTRAL BANNER 
 			<div id="cnc-ad">
 				<a class="cnc-ad-link" href="/council/council-news-central.php">
-					<span class="cnc-top">City Council Meets Today, Wenesday, October  16th, 10am.  Check Out...</span>
+					<span class="cnc-top">City Council Meets Today, Wenesday, October  23rd, 10am.  Check Out...</span>
 					<span class="cnc-title">Council News Central</span>
 					<span class="cnc-bottom">... to watch live video, read community tweets, and connect with council members.</span>					
 				</a>
