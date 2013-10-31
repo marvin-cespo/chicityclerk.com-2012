@@ -41,8 +41,8 @@
 					<a id="modal-show" data-toggle="modal" class="btn btn-block btn-info" href="#calendar-select">Add to Calendar</a>
 				</div>
 				<div class="announcement" id="announcement-council">
-				<h5><a href="http://chicityclerk.com/legislation-records/journals-reports/city-budgets/" style="color:#f89406;">2014 BUDGET ADDRESS</a></h5>
-					<p>View the 2014 Budget Address</p>
+				<h5><a href="http://chicityclerk.com/legislation-records/journals-reports/city-budgets/" style="color:#f89406;">2014 BUDGET</a></h5>
+					<p>View the 2014 Budget</p>
 					<a class="btn btn-block btn-warning" href="http://chicityclerk.com/legislation-records/journals-reports/city-budgets/">Read More</a>
 				</div>
 				<?php 
