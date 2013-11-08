@@ -109,26 +109,7 @@
 				</a>
 			</div>
 			<!-- END DAY-OF,CONCLUDED VIDEO UP COUNCIL NEWS CENTRAL BANNER -->
-			<div id="actions">
-				<h2>Chicago City Vehicle Stickers</h2>
-				<a class="action purchase" href="http://webapps.cityofchicago.org/ezbuy/">
-					<h4>Buy Online Now</h4>
-					<span>on EZ>Buy</span>
-				</a>
-				<a class="action register" href="/city-stickers-parking/storelocator/">
-					<h4>Store Locator</h4>
-					<span>Find where to buy</span>
-				</a>
-				<a class="action research" href="/city-stickers-parking/about-city-vehicle-stickers/seniors-and-special-programs//">
-					<h4>Seniors</h4>
-					<span>Make sure you receive your senior discount</span>
-				</a>
-				<a class="action watch" href="/city-stickers-parking/about-city-vehicle-stickers/no-renewal-form/">
-					<h4>No Renewal</h4>
-					<span>Click here if you do not have a renewal form</span>
-				</a>
-				<div style="clear:both;"></div>
-			</div>
+			
 			 <div id="slideshow">
 				<div id="slides" style="overflow: hidden;">
 					<div id="slide-1" style="width: 770px; height: 250px;">
