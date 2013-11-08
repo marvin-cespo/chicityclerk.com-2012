@@ -327,3 +327,6 @@ $(document).ready(function() {
 				</div>
 			</header>
 			<div id="container">
+				<div class="alert-box">
+					<p><strong>Please Note:</strong> The Office of the City Clerk will not be open on Monday, November 11, 2013 in honor of Veterans Day. <a style="color:#fff; font-weight:bold; text-decoration:underline;" href="/office-info/office-locations/" title="Hours and Locations for the Office of the City Clerk" target="_self">Normal business hours</a> will resume on Tuesday, November 12, 2013.</p>
+				</div>

@@ -135,12 +135,9 @@
 					</div>
 					<div id="slide-4" style="width: 770px; height: 250px;">
 						<a href="/office-info/about-city-clerk-susana-a-mendoza/">
-							<span class="panel-4-head">About City Clerk Susana A. Mendoza</span>
-							<span class="panel-4-points">
-								<span class="panel-4-point">The first female Chicago City Clerk</span>
-								<span class="panel-4-point">Served six terms in the Illinois House of Representatives</span>
-								<span class="panel-4-point">Dedicated to making the City Clerk's Office work for you.</span>
-							</span>					
+							<span class="panel-4-head">Susana A. Mendoza</span>
+							<span class="panel-4-body">Chicago's first female City Clerk. She served six terms in the Illinois House of Representatives and is dedicated to making the Office of the City Clerk work for you.<br />
+							<button id="csp-btn" style="margin-top:10px;" class="btn btn-info btn-large">Learn More</button></span>			
 						</a>
 					</div>
 				</div>			
