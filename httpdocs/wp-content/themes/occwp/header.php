@@ -325,10 +325,5 @@ $(document).ready(function() {
 				<div id="branding">
 					<img src="/wp-content/themes/occwp/images/header.png" />
 				</div>
-				<nav>
-				<!-- <div id="search">
-					<?php get_search_form(); ?>
-				</div> -->
-				</nav>
 			</header>
 			<div id="container">
