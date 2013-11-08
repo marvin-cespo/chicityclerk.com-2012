@@ -17,17 +17,20 @@
 
 
 class wpCSL_helper__slplus {
-    private $bugoutDivCount;
+
+    /**
+     * Has the create_SimpleMessage deprecation notice been shown already?
+     * 
+     * @var boolean $depnotice_create_SimpleMessage
+     */
+    private  $depnotice_create_SimpleMessage = false;
+
 
     /**
      *
-     * @param type $params
+     * @param mixed[] $params
      */
     function __construct($params=null) {
-
-        // Defaults
-        //
-        $this->bugoutDivCount = 0;
 
         // Set by incoming parameters
         //
@@ -39,101 +42,134 @@ class wpCSL_helper__slplus {
 
     }
 
+    /**
+     * Generate the HTML for a drop down settings interface element.
+     *
+     * @params mixed[] $params
+     * @return string HTML
+     */
+    function createstring_DropDownDiv($params) {
+        return
+            "<div class='form_entry'>".
+                "<div class='".$this->parent->css_prefix."-input'>" .
+                "<label  for='{$params['name']}'>{$params['label']}:</label>".
+                $this->createstring_DropDownMenu($params) .
+                "</div>".
+                $this->CreateHelpDiv($params['name'],$params['helptext']) .
+            "</div>"
+            ;
+        }
 
     /**
-     * Executes the included php (or html) file and returns the output as a string.
+     * Create the bulk actions block for the top-of-table navigation.
      *
-     * Parameters:
-     * @param string $file - required fully qualified file name
+     * $params is a named array:
+     *
+     * The drop down components:
+     *
+     * string  $params['id'] the ID that goes in the select tag, defaults to 'actionType'
+     *
+     * string  $params['name'] the name that goes in the select tag, defaults to 'action'
+     *
+     * string  $params['onchange'] JavaScript to run on select change.
+     *
+     * string  $params['selectedVal'] if the item value matches this param, mark it as selected
+     *
+     * mixed[] $params['items'] the named array of drop down elements
+     *
+     *     $params['items'] is an array of named arrays:
+     *
+     *         string  $params['items'][0]['label'] the label to put in the drop down selection
+     *
+     *         string  $params['items'][0]['value'] the value of the option
+     *
+     *         boolean $params['items'][0]['selected] true of selected
+     *
+     * @param mixed[] $params a named array of the drivers for this method.
+     * @return string the HTML for the drop down with a button beside it
+     *
      */
-    function get_string_from_phpexec($file) {
-        if (file_exists($file)) {
-            ob_start();
-            include($file);
-            return ob_get_clean();
+    function createstring_DropDownMenu($params) {
+        if (!isset($params['items'      ]) || !is_array($params['items'])) { return; }
+
+        if (!isset($params['id'         ])) { $params['id'          ] = 'actionType'                ; }
+        if (!isset($params['name'       ])) { $params['name'        ] = 'action'                    ; }
+        if (!isset($params['onchange'   ])) { $params['onchange'    ] = ''                          ; }
+        if (!isset($params['selectedVal'])) { $params['selectedVal' ] = ''                          ; }
+
+        // Drop down menu
+        //
+        $dropdownHTML = '';
+        foreach ($params['items'] as $item) {
+            if (!isset($item['label'])|| empty($item['label'])) { continue; }
+            if (!isset($item['value'])) { $item['value'] = $item['label']; }
+            if ($item['value'] === $params['selectedVal']) { $item['selected'] = true; }
+            $selected = (isset($item['selected']) && $item['selected']) ? 'selected="selected" ' : '';
+            $dropdownHTML .= "<option $selected value='{$item['value']}'>{$item['label']}</option>";
         }
-    }
-    
-    
-     
-    /**
-     *
-     * Executes the a php file in ./templates/ file and prints out the results.
-     *
-     * Makes for easy include templates that depend on processing logic to be
-     * dumped mid-stream into a WordPress page. 
-     *
-     * @param string $file - required file name in the ./templates directory
-     * @param type $dir - optional directory path, defaults to plugin_dir_path
-     */
-    function execute_and_output_template($file,$dir=null) {
-        if ($dir === null) {
-            $dir = $this->parent->plugin_path;
-        }
-        print $this->get_string_from_phpexec($dir.'templates/'.$file);
+        return
+            "<select id='{$params['id']}' name='{$params['name']}' "                .
+                (!empty($params['onchange'])?'onChange="'.$params['onchange'].'"':'').
+                '>'         .
+            $dropdownHTML   .
+            '</select>'
+            ;
     }
 
     /**
-     * Render a debugging div.
+     * Create the bulk actions block for the top-of-table navigation.
+     * 
+     * $params is a named array:
      *
-     * @param string $message - what you want to say
-     * @param string $instructions - additonal notes, like how to turn off debugging
-     */
-    /**
-     * Render a debugging div.
+     * The drop down components:
      *
-     * @param string $message - what you want to say
-     * @param string $instructions - additonal notes, like how to turn off debugging
+     * string  $params['id'] the ID that goes in the select tag, defaults to 'actionType'
+     * string  $params['name'] the name that goes in the select tag, defaults to 'action'
+     * string  $params['onchange'] JavaScript to run on select change.
+     * mixed[] $params['items'] the named array of drop down elements
+     *     $params['items'] is an array of named arrays:
+     *         string  $params['items'][0]['label'] the label to put in the drop down selection
+     *         string  $params['items'][0]['value'] the value of the option
+     *         boolean $params['items'][0]['selected] true of selected
+     *
+     * string  $params['buttonLabel'] the text that goes on the accompanying button, defaults to 'Apply'
+     * string  $params['onclick'] JavaScript to run on button click.
+     *
+     * @param mixed[] $params a named array of the drivers for this method.
+     * @return string the HTML for the drop down with a button beside it
+     *
      */
-    function bugout($message='',$instructions='', $title='', $file='',$line='') {
-        if (($message != '') && ($this->parent->debugging)) {
-            print "<div class='debugging_wrap' ".
-                    'onClick="jQuery(\'#bugout_'.$this->bugoutDivCount.'\').toggle(\'slow\');" ' .
-                    '>' .
-                    (($title!='')?"$title - ":'').
-                    __('Click me to see the debugging goodness...', 'wpcsl') . '<br/>'
+    function createstring_DropDownMenuWithButton($params) {
+        if (!isset($params['items'      ]) || !is_array($params['items'])) { return; }
+
+        if (!isset($params['id'         ])) { $params['id'          ] = 'actionType'                ; }
+        if (!isset($params['name'       ])) { $params['name'        ] = 'action'                    ; }
+        if (!isset($params['buttonlabel'])) { $params['buttonlabel' ] = __('Apply'      ,'wpcsl')   ; }
+        if (!isset($params['onchange'   ])) { $params['onchange'    ] = ''                          ; }
+        if (!isset($params['onclick'    ])) { $params['onclick'     ] = ''                          ; }
+
+        // Drop down menu
+        //
+        $dropdownHTML = $this->createstring_DropDownMenu($params);
+
+        // Button
+        //
+        $submitButton =
+                '<input id="doaction_'.$params['id'].'" class="button action" type="submit" '         .
+                    'value="'.$params['buttonlabel'].'" name="" '                       .
+                    (!empty($params['onclick'])?'onClick="'.$params['onclick'].'"':'')  .
+                    '/>'
                     ;
-            print "<div class='debugging' id='bugout_".$this->bugoutDivCount."' name='bugout_".$this->bugoutDivCount."' style='display:none;'>";
-            if ($instructions == '') {
-                $instructions = $this->parent->debug_instructions;
-            }
-            if ($instructions != '') {
-                print $instructions . "<br/>\n";
-            }
-            if (($file != '') && ($line != '')) {
-                print "From $file at $line<br/>\n";
-            }
-            print $message . '</div></div>';
-            $this->bugoutDivCount++;
-        }
-    }
-    
 
-    /**
-     * Convert text in the WP readme file format (wiki markup) to basic HTML
-     *
-     * Parameters:
-     * @param string $file - optional name of the file in the plugin dir defaults to readme.txt
-     * @param type $dir - optional directory path, defaults to plugin_dir_path
-     */
-    function convert_text_to_html($file='readme.txt',$dir=null) {
-        if ($dir === null) {
-            $dir = $this->parent->plugin_path;
-        }
-        ob_start();
-        include($dir.$file);
-        $content=ob_get_contents();
-        ob_end_clean();
-        $content=preg_replace('#\=\=\= #', "<h2>", $content);
-        $content=preg_replace('# \=\=\=#', "</h2>", $content);
-        $content=preg_replace('#\=\= #', "<div id='wphead' style='color:white'><h1 id='site-heading'><span id='site-title'>", $content);
-        $content=preg_replace('# \=\=#', "</h1></span></div>", $content);
-        $content=preg_replace('#\= #', "<b><u>", $content);
-        $content=preg_replace('# \=#', "</u></b>", $content);
-        $content=do_hyperlink($content);
-        return nl2br($content);
+        // Render The Div
+        //
+        return
+            '<div class="alignleft actions">'   .
+                $dropdownHTML                   .
+                $submitButton                   .
+            '</div>'
+            ;
     }
- 
 
         /**
          * Create a help div next to a settings entry.
@@ -144,10 +180,15 @@ class wpCSL_helper__slplus {
          */
         function CreateHelpDiv($divname,$msg) {
             $jqDivName = str_replace(']','\\\\]',str_replace('[','\\\\[',$divname));
-            return "<a class='moreinfo_clicker' onclick=\"jQuery('div#".$this->parent->css_prefix."-help$jqDivName').toggle('slow');\" href=\"javascript:;\">".
-                '<div class="'.$this->parent->css_prefix.'-moreicon" title="click for more info"><br/></div>'.
+            $moreInfoText = esc_html($msg);
+            return
+                "<a class='wpcsl-helpicon' ".
+                    "onclick=\"jQuery('div#{$this->parent->css_prefix}-help{$jqDivName}').toggle('slow');\" ".
+                    "href=\"javascript:;\" ".
+                    "alt='{$moreInfoText}' title='{$moreInfoText}'" .
+                    '>'.
                 "</a>".
-                "<div id='".$this->parent->css_prefix."-help$divname' class='input_note' style='display: none;'>".
+                "<div id='{$this->parent->css_prefix}-help{$divname}' class='input_note wpcsl_helptext' style='display: none;'>".
                     $msg.
                 "</div>"
                 ;
@@ -173,11 +214,13 @@ class wpCSL_helper__slplus {
          * @param string $prefix - defaults to SLPLUS_PREFIX, can be ''
          * @param boolean $disabled - defaults to false
          * @param mixed $default
+         * @param mixed $checkOption - if present, test this variable == 1 to mark as checked otherwise get the boxname option.
          * @return type
          */
-        function CreateCheckboxDiv($boxname,$label='',$msg='',$prefix=null, $disabled=false, $default=0) {
+        function CreateCheckboxDiv($boxname,$label='',$msg='',$prefix=null, $disabled=false, $default=0, $checkOption = null) {
             if ($prefix === null) { $prefix = $this->parent->prefix; }
             $whichbox = $prefix.$boxname;
+            if ($checkOption === null) { $checkOption = get_option($whichbox,$default); }
             return
                 "<div class='form_entry'>".
                     "<div class='".$this->parent->css_prefix."-input'>" .
@@ -186,7 +229,7 @@ class wpCSL_helper__slplus {
                         ">$label:</label>".
                     "<input name='$whichbox' value='1' ".
                         "type='checkbox' ".
-                        ((get_option($whichbox,$default) ==1)?' checked ':' ').
+                        (($checkOption ==1)?' checked ':' ').
                         ($disabled?"disabled='disabled'":' ') .
                     ">".
                     "</div>".
@@ -196,24 +239,34 @@ class wpCSL_helper__slplus {
             }
 
     /**
-     * Generate a consistent HTML wrapper for a message in the admin panels.
-     */
-    function create_SimpleMessage($message) {
-        return '<p class="message">'.$message.'</p>';
-    }
-
-    /**
      * function: SavePostToOptionsTable
      */
-    function SavePostToOptionsTable($optionname,$default=null) {
+
+
+    function SavePostToOptionsTable($optionname,$default=null,$cboptions=null) {
         if ($default != null) {
             if (!isset($_POST[$optionname])) {
                 $_POST[$optionname] = $default;
             }
         }
+
+        // Save the option
+        //
         if (isset($_POST[$optionname])) {
-            $_POST[$optionname] = stripslashes_deep($_POST[$optionname]);
-            update_option($optionname,$_POST[$optionname]);
+            $optionValue = $_POST[$optionname];
+
+            // Checkbox Pre-processor
+            //
+            if ($cboptions !== null){
+                foreach ($cboptions as $cbname) {
+                    if (!isset($optionValue[$cbname])) {
+                        $optionValue[$cbname] = '0';
+                    }
+                }
+            }
+
+            $optionValue = stripslashes_deep($optionValue);
+            update_option($optionname,$optionValue);
         }
     }
 
@@ -231,19 +284,6 @@ class wpCSL_helper__slplus {
         $whichbox = $prefix.$separator.$boxname;
         $_POST[$whichbox] = (isset($_POST[$whichbox])&&!empty($_POST[$whichbox]))?1:0;
         $this->SavePostToOptionsTable($whichbox,0);
-    }
-
-    /**
-     * Saves a textbox from an option input form to the options table.
-     *
-     * @param string $boxname - base name of the option
-     * @param string $prefix - the plugin prefix
-     * @param string $separator - the separator char
-     */
-    function SaveTextboxToDB($boxname,$prefix = null, $separator='-') {
-        if ($prefix === null) { $prefix = $this->parent->prefix; }
-        $whichbox = $prefix.$separator.$boxname;
-        $this->SavePostToOptionsTable($whichbox);
     }
 
     /**
@@ -351,4 +391,22 @@ class wpCSL_helper__slplus {
             }
         }
     }
+
+     //------------------------------------------------------------------------
+     // DEPRECATED
+     //------------------------------------------------------------------------
+
+     /**
+      * Do not use, deprecated.
+      *
+      * @deprecated 4.0
+      */
+     function create_SimpleMessage() {
+        if (!$this->depnotice_create_SimpleMessage) {
+            $this->parent->notifications->add_notice(9,$this->parent->createstring_Deprecated(__FUNCTION__));
+            $this->parent->notifications->display();
+            $this->depnotice_create_SimpleMessage = true;
+        }
+     }
+
 }

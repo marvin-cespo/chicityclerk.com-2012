@@ -5,6 +5,27 @@
 (function ($) {
 
   wpcslAdminInterface = {
+
+      /**
+       * Confirm a message then redirect the user.
+       */
+        confirmClick: function(message,href) {
+            if (confirm(message)) {	location.href=href; }
+            else  { return false; }
+        },
+
+        /**
+         * Perform an action on the specified form.
+         */
+        doAction: function(theAction,thePrompt,formID) {
+            formID = typeof formID !== 'undefined' ? formID : 'locationForm';
+            if((thePrompt === '') || confirm(thePrompt)){
+                jQuery('#'+formID+' [name="act"]').attr('value',theAction);
+                jQuery('#'+formID).submit();
+            }else{
+                return false;
+            }
+        },
   
 /**
  * toggle_nav_tabs()
@@ -46,7 +67,7 @@
  	load_first_tab: function () {
         $( '.group' ).hide();
         var selectedNav = $('#selected_nav_element').val();
-        if (selectedNav == '') {
+        if ((typeof selectedNav === 'undefined') || (selectedNav == '')) {
             $( '.group:has(".section"):first' ).fadeIn(); // Fade in the first tab containing options (not just the first tab).
         } else {
             $(selectedNav).fadeIn();

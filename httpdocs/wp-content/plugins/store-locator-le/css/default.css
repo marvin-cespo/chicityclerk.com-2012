@@ -1,9 +1,10 @@
 /**
  ** file: default.css
  ** label: Default Theme
- ** The default SLPLUS Theme.
+ ** description: The default SLPLUS Theme.
  **
  **/
+
 
 /**
  * General - All areas
@@ -17,7 +18,7 @@
     margin-right: 8px;
 }
 .onoffswitch-pretext {
-    display: linline-block;
+    display: inline-block;
     padding-right: 12px;
     vertical-align: super;
 }
@@ -69,14 +70,50 @@
     right: 0px;
     }
 
+
+/*----------------------------------
+ *
+ * A div that looks like a button.
+ */
+.like-a-button {
+	background: #FFF; /* for non-css3 browsers */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#DDDDDD'); /* for IE */
+    background: -webkit-gradient(linear, left top, left bottom, from(#FFF), to(#DDD)); /* for webkit browsers */
+    background: -moz-linear-gradient(top,  #FFF,  #DDD); /* for firefox 3.6+ */
+    text-decoration: none;
+
+  border: 1px solid #BBBBBB;
+  margin: 0;
+  padding: 3px 12px;
+  text-align: center;
+  width: auto;
+  cursor: pointer;
+  color: #333;
+  display: inline-block;
+  line-height: 1em;
+
+  /* Corners */
+  -webkit-border-radius:3px;
+  -moz-border-radius:3px;
+  border-radius:3px;
+   -khtml-border-radius: 3px;
+}
+.like-a-button:hover {
+	background: #DDD; /* for non-css3 browsers */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#DDDDDD', endColorstr='#FFFFFF'); /* for IE */
+    background: -webkit-gradient(linear, left top, left bottom, from(#DDD), to(#FFF)); /* for webkit browsers */
+    background: -moz-linear-gradient(top,  #DDD,  #FFF); /* for firefox 3.6+ */
+}
+.like-a-button A {
+    text-decoration:none;
+}
+
+
 /**
  * General SLP Div Only
  **/
 #sl_div {
-	padding:10px;
-	font-weight:bold;
-}
-#sl_div a {
+	padding:1px;
 }
 #sl_div a.storelocatorlink {
 	color:#0000FF;
@@ -89,14 +126,7 @@
 	background-image:none;
 	max-width:none;
 }
-div.entry-content div#sl_div #map_table IMG {
-	max-width:none;
-    box-shadow: none;
-    border-radius: 0px;
-    border: none;
-    padding: 0px;
-    margin: 0px;
-}
+
 #sl_div table, #sl_div tr, #sl_div td {
 	border:none;
 }
@@ -104,63 +134,14 @@ div.entry-content div#sl_div #map_table IMG {
 /**
  * Search Form
  **/
-.sl_header img, .sl_header td {
-    border: none;
-    cursor: pointer;   
-}
-
-.sl_header #addressSubmit.slp_ui_button {
-    /* like-a-button */
-    background: #FFF; /* for non-css3 browsers */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#DDDDDD'); /* for IE */
-    background: -webkit-gradient(linear, left top, left bottom, from(#FFF), to(#DDD)); /* for webkit browsers */
-    background: -moz-linear-gradient(top,  #FFF,  #DDD); /* for firefox 3.6+ */
-    text-decoration: none;
-    
-    font-size: 14px;
-    border: 1px solid #BBBBBB;
-    border-radius: 3px 3px 3px 3px;
-    height: 26px;
-    margin: 0px 2px 2px 0px;
-    padding: 0px 4px;
-    text-align: center;
-    cursor: pointer;
-    color: #5F5E5E;
+#searchForm .search_item {
+	clear: both;
     display: block;
-    
-    /* Corners */
-    -webkit-border-radius:6px;
-    -moz-border-radius:6px;
-    border-radius:6px;
-    -khtml-border-radius: 6px;
-    
-    /* Shadow */
-    -moz-box-shadow: 0px 1px 3px #AAA;
-    -webkit-box-shadow: 0px 1px 3px #AAA;
-    box-shadow: 0px 1px 3px #AAA;           
-}    
-
-.sl_header #addressSubmit.slp_ui_button:hover {
-    margin: 2px 0px 0px 2px;
-    -moz-box-shadow: 0px 0px 0px #AAA;
-    -webkit-box-shadow: 0px 0px 0px #AAA;
-    box-shadow: 0px 0px 0px #AAA;           
+	float: none;
+    padding-bottom: 6px;
+    vertical-align: middle;
 }
-
-.sl_header #addressSubmit.slp_image_button {
-}
-
-.sl_header td {
-	vertical-align:top;
-	text-align:left;
-}
-.sl_header td, .sl_header th, .sl_header tr {
-	padding:4px;
-}
-#address_search {
-    width: 600px;
-}
-#address_search LABEL {
+#searchForm LABEL {
     text-align: right;
     min-width: 100px;
     font-size: 14px;
@@ -168,30 +149,59 @@ div.entry-content div#sl_div #map_table IMG {
     float: left;
     padding-right: 8px;
 }
-#address_search SELECT {
-	margin:0px 6px 0px 0px;
-    width: 100px;
-}
-#address_search INPUT {
+#searchForm SELECT {
 	margin:0px 6px 0px 0px;
 }
-#address_search .search_item {
-	display: block;
-	float: none;
-	clear: both;
-}
-#address_search .search_item INPUT {
+#searchForm INPUT {
 	border:solid 1px silver;
-	padding-left:3px; 
-	background:white url(../images/search-input.gif) repeat-x;
 	color: black;
 	margin:0px 6px 0px 0px;
-	width: 256px;
+	padding-left:3px; 
 	padding-top:0px;
 }
-#address_search .search_item SELECT {
-	margin:0px 6px 0px 0px;
+
+/* Radius */
+#addy_in_radius {
+    display: inline-block;
 }
+
+/* Submit Button */
+#radius_in_submit {
+    display: inline-block;
+}
+#addressSubmit.slp_ui_button {
+    /* like-a-button */
+    background: #FFF; /* for non-css3 browsers */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#DDDDDD'); /* for IE */
+    background: -webkit-gradient(linear, left top, left bottom, from(#FFF), to(#DDD)); /* for webkit browsers */
+    background: -moz-linear-gradient(top,  #FFF,  #DDD); /* for firefox 3.6+ */
+    text-decoration: none;
+
+    border: 1px solid #BBBBBB;
+    padding: 0px 4px;
+    text-align: center;
+    cursor: pointer;
+    color: #5F5E5E;
+
+    /* Corners */
+    border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+    -khtml-border-radius: 3px;
+
+    /* Shadow */
+    box-shadow: none;
+}
+
+#addressSubmit.slp_ui_button:hover {
+    background: #EEE; /* for non-css3 browsers */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#EEE', endColorstr='#CCC'); /* for IE */
+    background: -webkit-gradient(linear, left top, left bottom, from(#EEE), to(#CCC)); /* for webkit browsers */
+    background: -moz-linear-gradient(top,  #EEE,  #CCC); /* for firefox 3.6+ */
+}
+
+
 #addy_in_city {
     clear: both;
     float: left;
@@ -205,19 +215,7 @@ div.entry-content div#sl_div #map_table IMG {
     padding-top: 3px;
     padding-bottom: 3px;
 }
-#addy_in_radius {
-    clear:both;
-    float: left;
-    padding-top: 3px;
-    padding-right: 12px;
-    white-space: nowrap;
-    width: 250px;
-}
-#radius_in_submit {
-    float: left;
-    width: 300px;
-    padding-top: 3px;
-}
+
 span.slp_checkbox_entry {
     padding-right: 12px;
 }
@@ -226,27 +224,56 @@ span.slp_checkbox_entry input[type="checkbox"] {
     vertical-align: text-bottom;
 }
 
-/**** Map Box
- **
- ** Since we only use these div IDs when a static image is present
- ** we start with the image shown and map hidden.  JQuery will flip
- ** this for us.
- **
- **/
-div#map {
-    border-top: solid 1px #CCCCCC;
-    border-left: solid 1px #CCCCCC;
-    border-right: solid 1px #CCCCCC;
-    width: auto !important;
+/* Tagalong Search Inputs */
+#tagalong_category_selector {
+    display: block;
+    height: 2em;
+    width: 100%;
 }
+#tagalong_category_selector .category_selector.parent {
+    display: block;
+    float: left;
+}
+#tagalong_category_selector .category_selector.child {
+    display: none;
+    float: left;
+}
+
+
+/*---------------------
+ * Map
+ *
+ * Since we only use these div IDs when a static image is present
+ * we start with the image shown and map hidden.  JQuery will flip
+ * this for us.
+ *
+ *---------------------*/
 
 /* Hide the default Google bubble shadow */
 div#map img[src='http://maps.gstatic.com/mapfiles/iws3.png'] {
     display:none;
 }
-
-#sl_div #map img {
+/* Don't let WordPress Mangle Map Images */
+div#map img {
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+    max-width: none;
+    opacity: 1.0;
     visibility: visible;
+}
+
+div.entry-content div#sl_div #map IMG {
+    border-radius: 0px;
+    padding: 0px;
+    margin: 0px;
+}
+
+div#map {
+    border-top: solid 1px #CCCCCC;
+    border-left: solid 1px #CCCCCC;
+    border-right: solid 1px #CCCCCC;
+    width: auto;
 }
 
 #map_box_image {
@@ -260,13 +287,13 @@ div#map img[src='http://maps.gstatic.com/mapfiles/iws3.png'] {
 /**
  * Map Info Bubble
  **/
+div#sl_div .gm-style-iw {
+    max-width: 90%;
+    width: auto !important;
+}
 #sl_info_bubble {
-	padding:10px;
-	max-width:300px;
-	font-size:11px;
-	font-family:Arial;
-	text-align:justify;
-	line-height:normal;
+    font-size: xx-small;
+    font-weight: normal;
 }
 #sl_info_bubble img{
 	width:250px;
@@ -274,10 +301,13 @@ div#map img[src='http://maps.gstatic.com/mapfiles/iws3.png'] {
 	border:0px;
 }
 #sl_info_bubble .your_location_label{
-	font-weight:bold;
+	font-weight: normal;
 }
 #sl_info_bubble .location_detail_label{
-	font-weight:bold;
+	font-weight: normal;
+}
+#sl_info_bubble .location_detail_hours{
+	white-space: pre-wrap;
 }
 
 
@@ -285,53 +315,71 @@ div#map img[src='http://maps.gstatic.com/mapfiles/iws3.png'] {
  * Tagline
  **/
 div#slp_tagline {
-    text-align: right;
+    background-color: #AABBDD;
+    font-size: 11px;
+    font-family: Arial, sans-serif;
+    opacity: 0.45;
+    filter:alpha(opacity=45);
+    margin-bottom: 3px;
     padding-right: 3px;
-}
-table.sl_footer {
-    margin-bottom: 12px;
-    border-bottom: solid 1px #CCCCCC;
-    border-left: solid 1px #CCCCCC;
-    border-right: solid 1px #CCCCCC;
-}
-tr.slp_map_tagline td {
-    color: #444444;
-    background-color: #F4F4F4;
-    font-size: 0.9em;
-    font-style: italic;
-    padding: 3px;
     text-align: right;
-}
+    width: 100%;
 
+}
 
 /**
  * Results
  **/
-tr.slp_results_row:hover {
+div.results_entry {
+    cursor: pointer;
+    display: inline-block;
+    padding-bottom: 18px;
+    width: 100%;
+}
+div.results_entry:hover {
     background-color: #F2F2F2;
 }
-tr.slp_map_search_results td {
-    border: none;
-    padding-bottom: 18px;
-    vertical-align: text-top;
+div.results_entry.featured {
+    background-color: #EFF0DE;
 }
-tr.slp_map_search_results td.results_row_left_column {
-    width: 240px;
+div.results_entry.featured:hover {
+    background-color: #E7F8D6;
 }
-tr.slp_map_search_results td.results_row_right_column {
+
+div.results_row_left_column {
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    vertical-align: top;
+    width: 40%;
+}
+div.results_row_center_column {
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    vertical-align: top;
+    width: 40%;
+}
+div.results_row_right_column {
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
     text-align: right;
+    vertical-align: top;
+    width: 18%;
 }
-tr.slp_map_search_results span.location_name {
+div.results_entry span.location_name {
     color: #CC0000;
+    display:block;
     font-weight: bold;
 }
-tr.slp_map_search_results a {
+div.results_entry a {
     color: #444444;
     display: inline-block;
     text-decoration: none;
     width: 100%;
 }
-tr.slp_map_search_results a:hover {
+div.results_entry a:hover {
     color: #4444FF;
     background-color: #F2F2F2;
 }
@@ -348,4 +396,26 @@ span.slp_result_contact {
 }
 div#map_sidebar {
     overflow: auto;
+}
+
+/* Tagalong result icons */
+.results_line.location_iconarray > a {
+    display: inline-block;
+    height: auto;
+    width: auto;
+}
+#tagalong_legend {
+    border: 3px double #444444;
+    padding: 12px;
+}
+#tagalong_legend .legend_text {
+    display: inline-block;
+    margin-left: 6px;
+    margin-right: 20px;
+    vertical-align: middle;
+}
+#tagalong_legend .tagalong_legend_icon {
+    display: inline-block;
+    margin-bottom: 12px;
+    min-width: 190px;
 }
