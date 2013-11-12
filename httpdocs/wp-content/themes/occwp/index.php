@@ -46,7 +46,7 @@
 					<a class="btn btn-block btn-warning" href="http://chicityclerk.com/legislation-records/journals-reports/city-budgets/">Read More</a>
 				</div>
 				<?php 
-				$announcements_args = array( 'post_type' => 'occ_announcements', 'posts_per_page' => 2 );
+				$announcements_args = array( 'post_type' => 'occ_announcements', 'posts_per_page' => 4 );
 				$announcements = new WP_Query( $announcements_args );
 				$homepage_i = 0;
 				while ($announcements->have_posts()) : $announcements->the_post();
@@ -113,7 +113,7 @@
 			 <div id="slideshow">
 				<div id="slides" style="overflow: hidden;">
 					<div id="slide-1" style="width: 770px; height: 250px;">
-						<a href="http://webapps.cityofchicago.org/ezbuy/">
+						<a href="https://webapps3.cityofchicago.org/StickerOnlineWeb/">
 							<span class="panel-1-head">NEW 2013-2014 CHICAGO CITY VEHICLE STICKER ON SALE</span>
 							<span class="panel-1-body">Buy yours NOW online via EZ>Buy<br />
 							<button id="csp-btn" style="margin-top:10px;" class="btn btn-info btn-large">Purchase a City Sticker</button></span>
