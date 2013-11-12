@@ -153,7 +153,7 @@
 				<div id="occ-tab-content">
 					<div class="occ-tab-int current" id="occ-tab-content-clerk">
 						<?php
-							$clerknews_args = array( 'post_type' => 'occ_clerk_news', 'posts_per_page' => 2 );
+							$clerknews_args = array( 'post_type' => 'occ_clerk_news', 'posts_per_page' => 5 );
 							$clerknews = new WP_query( $clerknews_args );
 							while ($clerknews->have_posts()) : $clerknews->the_post();
 						?>
@@ -175,7 +175,7 @@
 					</div>
 					<div class="occ-tab-int" id="occ-tab-content-council">
 						<?php
-							$councilnews_args = array( 'post_type' => 'occ_council_news', 'posts_per_page' => 2 );
+							$councilnews_args = array( 'post_type' => 'occ_council_news', 'posts_per_page' => 5 );
 							$councilnews = new WP_Query( $councilnews_args );
 							while ($councilnews->have_posts()) : $councilnews->the_post();
 						?>
