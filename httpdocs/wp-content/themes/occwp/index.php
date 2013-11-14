@@ -20,7 +20,7 @@
 				<h2>City Council</h2>
 				<div class="announcement" id="announcement-council">
 					<h5><a href="#calendar-select" data-toggle="modal">Next City Council Meeting</a></h5>
-					<p>Wednesday, November 13, 2013<br />Time: 10:00a.m.<br />Location: City Council Chambers<br>
+					<p>Wednesday, November 20, 2013<br />Time: 10:00a.m.<br />Location: City Council Chambers<br>
 					City Hall 121 N LaSalle St</p>
 					<div id="calendar-select" class="modal hide fade in" style="display: none;">
 						<div class="modal-header">
@@ -82,7 +82,7 @@
 			<!-- BEGIN DAY-OF,PRESTART COUNCIL NEWS CENTRAL BANNER 
 			<div id="cnc-ad">
 				<a class="cnc-ad-link" href="/council/council-news-central.php">
-					<span class="cnc-top">City Council Meets Today, Wenesday, October  23rd, 10am.  Check Out...</span>
+					<span class="cnc-top">City Council Meets Today, Wenesday, November 13th, 10am.  Check Out...</span>
 					<span class="cnc-title">Council News Central</span>
 					<span class="cnc-bottom">... to watch live video, read community tweets, and connect with council members.</span>					
 				</a>
@@ -91,18 +91,18 @@
 			
 			<!-- BEGIN DAY-OF,CONCLUDED NO VIDEO COUNCIL NEWS CENTRAL BANNER 
 			<div id="cnc-ad">
-				<a class="cnc-ad-link" href="https://chicago.legistar.com/MeetingDetail.aspx?ID=258828&GUID=8DB1618E-A8CF-4076-9DB9-1D048F87AE04&Options=&Search=">
+				<a class="cnc-ad-link" href="">
 					<span class="cnc-top">City Council met earlier today.  Check out the...</span>
 					<span class="cnc-title">Legislative Information Center</span>
-					<span class="cnc-bottom">... to view meeting records.  Video will be posted shortly.</span>					
+					<span class="cnc-bottom">... to view meeting records.  Video will be posted by Thursday November 14th 2013.</span>					
 				</a>
 			</div>
 			<!-- END DAY-OF,CONCLUDED NO VIDEO COUNCIL NEWS CENTRAL BANNER -->
 			
 			
-			<!-- BEGIN DAY-OF,CONCLUDED VIDEO UP COUNCIL NEWS CENTRAL BANNER 
+			<!-- BEGIN DAY-OF,CONCLUDED VIDEO UP COUNCIL NEWS CENTRAL BANNER -->
 			<div id="cnc-ad">
-				<a class="cnc-ad-link" href="https://chicago.legistar.com/MeetingDetail.aspx?ID=263270&GUID=04D500CC-3698-4036-BE24-CFA69B424229&Options=&Search=">
+				<a class="cnc-ad-link" href="https://chicago.legistar.com/MeetingDetail.aspx?ID=266620&GUID=46422AA4-BBB3-483D-A715-472FBA9299E9&Options=&Search=">
 					<span class="cnc-top">City Council met this week.  Check out the...</span>
 					<span class="cnc-title">Legislative Information Center</span>
 					<span class="cnc-bottom">... to watch video and view meeting records.</span>					

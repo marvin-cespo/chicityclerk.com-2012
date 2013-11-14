@@ -54,14 +54,14 @@
 				<div id="cnc-banner">
 					<p class="banner-top">Welcome to...</p>
 					<p class="banner-title">Council News Central</p>
-					<p class="banner-bottom">Council will meet Wednesday, October 23, 2013  at 10a.m.<a href="http://chicago.legistar.com/Calendar.aspx" target="_blank">Visit the LIC to view prior meetings</a>.</p>
+					<p class="banner-bottom">Council will meet Wednesday, November 13, 2013  at 10a.m.<a href="http://chicago.legistar.com/Calendar.aspx" target="_blank">Visit the LIC to view prior meetings</a>.</p>
 				</div>
 				<div id="quick-links">
 					<table style="width: 100%;">
 						<tbody>
 							<tr>
 								<!-- <td style="width: 20%; padding: 5px;"><span class="os-strong">HELPFUL LINKS:</span></td> -->
-								<td style="width: 20%; padding: 5px;"><a class="btn btn-danger btn-block btn-large" href="https://chicago.legistar.com/MeetingDetail.aspx?ID=266759&GUID=81AB3F06-740A-4FED-882E-0C767C721AE7&Options=&Search=" target="_blank">Meeting Agenda</a></td>
+								<td style="width: 20%; padding: 5px;"><a class="btn btn-danger btn-block btn-large" href="https://chicago.legistar.com/MeetingDetail.aspx?ID=266620&GUID=46422AA4-BBB3-483D-A715-472FBA9299E9&Options=&Search=" target="_blank">Meeting Agenda</a></td>
 								<td style="width: 20%; padding: 5px;"><a class="btn btn-warning btn-block btn-large" href="http://chicityclerk.com/legislation-records/journals-reports/city-budgets/" target="_blank">2014 City Budget</a></td>
 								<td style="width: 20%; padding: 5px;"><a class="btn btn-info btn-block btn-large" href="/council/seating-chart.php" target="_blank">Council Seating Chart</a></td>
 								<td style="width: 20%; padding: 5px;"><a class="btn btn-primary btn-block btn-large" href="/legislation-records/about-chicago-government/about-city-council-meetings/" target="_blank">Rules of Order</a></td>
