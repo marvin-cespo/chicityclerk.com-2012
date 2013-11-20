@@ -20,7 +20,7 @@
 				<h2>City Council</h2>
 				<div class="announcement" id="announcement-council">
 					<h5><a href="#calendar-select" data-toggle="modal">Next City Council Meeting</a></h5>
-					<p>Wednesday, November 20, 2013<br />Time: 10:00a.m.<br />Location: City Council Chambers<br>
+					<p>Tuesday, November 26, 2013<br />Time: 10:00a.m.<br />Location: City Council Chambers<br>
 					City Hall 121 N LaSalle St</p>
 					<div id="calendar-select" class="modal hide fade in" style="display: none;">
 						<div class="modal-header">
@@ -31,7 +31,7 @@
 							<table style="width: 100%;">
 								<tbody>
 									<tr>
-										<td><a class="btn btn-primary btn-block" href="https://www.google.com/calendar/event?action=TEMPLATE&tmeid=YW1ma2g1aWY5M2ppbGw0djg2aHFhZ3B2dW8gY2hpY2Fnb2NpdHljbGVya0Bt&tmsrc=chicagocityclerk%40gmail.com" target="_blank">Add to Google Calendar</a></td>
+										<td><a class="btn btn-primary btn-block" href="https://www.google.com/calendar/embed?src=chicagocityclerk%40gmail.com&ctz=America/Chicago" target="_blank">Add to Google Calendar</a></td>
 										<td><a class="btn btn-primary btn-block" href="webcal://chicityclerk.com/city-council.ics" target="_blank">Add to Outlook Calendar</a></td>
 									</tr>
 								</tbody>
@@ -82,19 +82,19 @@
 			<!-- BEGIN DAY-OF,PRESTART COUNCIL NEWS CENTRAL BANNER 
 			<div id="cnc-ad">
 				<a class="cnc-ad-link" href="/council/council-news-central.php">
-					<span class="cnc-top">City Council Meets Today, Wenesday, November 13th, 10am.  Check Out...</span>
+					<span class="cnc-top">City Council Meets Today, Wenesday, November 20th, 10am.  Check Out...</span>
 					<span class="cnc-title">Council News Central</span>
 					<span class="cnc-bottom">... to watch live video, read community tweets, and connect with council members.</span>					
 				</a>
 			</div>
-			<!-- END DAY-OF,PRESTART COUNCIL NEWS CENTRAL BANNER -->
+			<!-- END DAY-OF,PRESTART COUNCIL NEWS CENTRAL BANNER 
 			
 			<!-- BEGIN DAY-OF,CONCLUDED NO VIDEO COUNCIL NEWS CENTRAL BANNER 
 			<div id="cnc-ad">
-				<a class="cnc-ad-link" href="">
+				<a class="cnc-ad-link" href="https://chicago.legistar.com/DepartmentDetail.aspx?ID=12357&GUID=4B24D5A9-FED0-4015-9154-6BFFFB2A8CB4">
 					<span class="cnc-top">City Council met earlier today.  Check out the...</span>
 					<span class="cnc-title">Legislative Information Center</span>
-					<span class="cnc-bottom">... to view meeting records.  Video will be posted by Thursday November 14th 2013.</span>					
+					<span class="cnc-bottom">... to view meeting records.  Video will be posted shortly.</span>					
 				</a>
 			</div>
 			<!-- END DAY-OF,CONCLUDED NO VIDEO COUNCIL NEWS CENTRAL BANNER -->
@@ -102,7 +102,7 @@
 			
 			<!-- BEGIN DAY-OF,CONCLUDED VIDEO UP COUNCIL NEWS CENTRAL BANNER -->
 			<div id="cnc-ad">
-				<a class="cnc-ad-link" href="https://chicago.legistar.com/MeetingDetail.aspx?ID=266620&GUID=46422AA4-BBB3-483D-A715-472FBA9299E9&Options=&Search=">
+				<a class="cnc-ad-link" href="https://chicago.legistar.com/DepartmentDetail.aspx?ID=12357&GUID=4B24D5A9-FED0-4015-9154-6BFFFB2A8CB4">
 					<span class="cnc-top">City Council met this week.  Check out the...</span>
 					<span class="cnc-title">Legislative Information Center</span>
 					<span class="cnc-bottom">... to watch video and view meeting records.</span>					
