@@ -110,6 +110,9 @@
 			</div>
 			<!-- END DAY-OF,CONCLUDED VIDEO UP COUNCIL NEWS CENTRAL BANNER -->
 			
+			<a class="btn btn-primary btn-block btn-large btn-lic" style="text-decoration:none;" href="https://webapps3.cityofchicago.org/StickerOnlineWeb/" target="_self">Buy City Stickers &amp; Guess Passes online now</a>
+
+
 			 <div id="slideshow">
 				<div id="slides" style="overflow: hidden;">
 					<div id="slide-1" style="width: 770px; height: 250px;">
@@ -146,9 +149,9 @@
 			<div id="newsfeed">
 				<ul class="occ-tabs">
 					<li><a class="occ-tab-link current" id="occ-tab-toggle-clerk" href="javascript:;">City Clerk News</a></li>
-					<li><a class="occ-tab-link" id="occ-tab-toggle-council" href="javascript:;">City Council News</a></li>
+					<!-- <li><a class="occ-tab-link" id="occ-tab-toggle-council" href="javascript:;">City Council News</a></li> -->
 					<li><a class="occ-tab-link" id="occ-tab-toggle-fb" href="javascript:;">Facebook</a></li>
-					<li><a class="occ-tab-link" id="occ-tab-toggle-tw" href="javascript:;">Twitter</a></li>
+					<!-- <li><a class="occ-tab-link" id="occ-tab-toggle-tw" href="javascript:;">Twitter</a></li> -->
 				</ul>
 				<div id="occ-tab-content">
 					<div class="occ-tab-int current" id="occ-tab-content-clerk">
@@ -173,7 +176,7 @@
 							<a class="btn btn-primary" a href="/news/city-clerk-news/">View All City Clerk News</a>
 						</div>
 					</div>
-					<div class="occ-tab-int" id="occ-tab-content-council">
+					<!-- <div class="occ-tab-int" id="occ-tab-content-council">
 						<?php
 							$councilnews_args = array( 'post_type' => 'occ_council_news', 'posts_per_page' => 5 );
 							$councilnews = new WP_Query( $councilnews_args );
@@ -191,12 +194,12 @@
 								<a class="btn btn-primary" href="<?php echo $url_details; ?>" target="_blank">Details / Status</a> <a class="btn btn-primary" href="<?php echo $url_legis; ?>" target="_blank">Read Legislation</a>
 							</div>
 							<div style="clear:both;"></div>
-						</div>
-						<?php endwhile; ?>
+						</div> 
+						<?php endwhile; ?> 
 						<div class="view-all-items">
 							<a class="btn btn-primary" href="/news/city-council-news/">View All City Council Headlines</a>
 						</div>
-					</div>
+					</div> -->
 					<div class="occ-tab-int" id="occ-tab-content-fb">
 						<ul id="facebook-feed">
 							<?php
@@ -226,9 +229,9 @@
 							?>
 						</ul>
 					</div>
-					<div class="occ-tab-int" id="occ-tab-content-tw">
+					<!-- <div class="occ-tab-int" id="occ-tab-content-tw">
 						<div class="tweet"></div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>
