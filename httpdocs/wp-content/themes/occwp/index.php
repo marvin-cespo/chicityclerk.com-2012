@@ -79,10 +79,10 @@
 			</div>
 		</div>
 		<div class="span9home homeborder" id="right-column">
-			<!-- BEGIN DAY-OF,PRESTART COUNCIL NEWS CENTRAL BANNER 
+			<!-- BEGIN DAY-OF,PRESTART COUNCIL NEWS CENTRAL BANNER -->
 			<div id="cnc-ad">
 				<a class="cnc-ad-link" href="/council/council-news-central.php">
-					<span class="cnc-top">City Council Meets Today, Wenesday, November 20th, 10am.  Check Out...</span>
+					<span class="cnc-top">City Council Meets Today, Tuesday, November 26th, 10am.  Check Out...</span>
 					<span class="cnc-title">Council News Central</span>
 					<span class="cnc-bottom">... to watch live video, read community tweets, and connect with council members.</span>					
 				</a>
@@ -100,7 +100,7 @@
 			<!-- END DAY-OF,CONCLUDED NO VIDEO COUNCIL NEWS CENTRAL BANNER -->
 			
 			
-			<!-- BEGIN DAY-OF,CONCLUDED VIDEO UP COUNCIL NEWS CENTRAL BANNER -->
+			<!-- BEGIN DAY-OF,CONCLUDED VIDEO UP COUNCIL NEWS CENTRAL BANNER 
 			<div id="cnc-ad">
 				<a class="cnc-ad-link" href="https://chicago.legistar.com/DepartmentDetail.aspx?ID=12357&GUID=4B24D5A9-FED0-4015-9154-6BFFFB2A8CB4">
 					<span class="cnc-top">City Council met this week.  Check out the...</span>
