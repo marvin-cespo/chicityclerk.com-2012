@@ -20,7 +20,7 @@
 				<h2>City Council</h2>
 				<div class="announcement" id="announcement-council">
 					<h5><a href="#calendar-select" data-toggle="modal">Next City Council Meeting</a></h5>
-					<p>Tuesday, November 26, 2013<br />Time: 10:00a.m.<br />Location: City Council Chambers<br>
+					<p>Wednesday, December 11, 2013<br />Time: 10:00a.m.<br />Location: City Council Chambers<br>
 					City Hall 121 N LaSalle St</p>
 					<div id="calendar-select" class="modal hide fade in" style="display: none;">
 						<div class="modal-header">
@@ -79,7 +79,7 @@
 			</div>
 		</div>
 		<div class="span9home homeborder" id="right-column">
-			<!-- BEGIN DAY-OF,PRESTART COUNCIL NEWS CENTRAL BANNER -->
+			<!-- BEGIN DAY-OF,PRESTART COUNCIL NEWS CENTRAL BANNER 
 			<div id="cnc-ad">
 				<a class="cnc-ad-link" href="/council/council-news-central.php">
 					<span class="cnc-top">City Council Meets Today, Tuesday, November 26th, 10am.  Check Out...</span>
@@ -110,7 +110,7 @@
 			</div>
 			<!-- END DAY-OF,CONCLUDED VIDEO UP COUNCIL NEWS CENTRAL BANNER -->
 			
-			<a class="btn btn-primary btn-block btn-large btn-lic" style="text-decoration:none;" href="https://webapps3.cityofchicago.org/StickerOnlineWeb/" target="_self">Buy City Stickers &amp; Guess Passes online now</a>
+			<a class="btn btn-primary btn-block btn-large btn-lic" style="text-decoration:none;" href="https://webapps3.cityofchicago.org/StickerOnlineWeb/" target="_self">Buy City Stickers &amp; Guest Passes online now</a>
 
 
 			 <div id="slideshow">
