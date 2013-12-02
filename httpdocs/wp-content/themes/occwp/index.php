@@ -105,7 +105,7 @@
 				<a class="cnc-ad-link" href="https://chicago.legistar.com/DepartmentDetail.aspx?ID=12357&GUID=4B24D5A9-FED0-4015-9154-6BFFFB2A8CB4">
 					<span class="cnc-top">City Council met this week.  Check out the...</span>
 					<span class="cnc-title">Legislative Information Center</span>
-					<span class="cnc-bottom">... to watch video and view meeting records.</span>					
+					<span class="cnc-bottom">... to watch video and view meeting records.</span>
 				</a>
 			</div>
 			<!-- END DAY-OF,CONCLUDED VIDEO UP COUNCIL NEWS CENTRAL BANNER -->
