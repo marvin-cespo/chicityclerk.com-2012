@@ -20,7 +20,7 @@
 				<h2>City Council</h2>
 				<div class="announcement" id="announcement-council">
 					<h5><a href="#calendar-select" data-toggle="modal">Next City Council Meeting</a></h5>
-					<p>Wednesday, December 11, 2013<br />Time: 10:00a.m.<br />Location: City Council Chambers<br>
+					<p>Wednesday, January 15, 2014<br />Time: 10:00a.m.<br />Location: City Council Chambers<br>
 					City Hall 121 N LaSalle St</p>
 					<div id="calendar-select" class="modal hide fade in" style="display: none;">
 						<div class="modal-header">
@@ -82,7 +82,7 @@
 			<!-- BEGIN DAY-OF,PRESTART COUNCIL NEWS CENTRAL BANNER 
 			<div id="cnc-ad">
 				<a class="cnc-ad-link" href="/council/council-news-central.php">
-					<span class="cnc-top">City Council Meets Today, Tuesday, November 26th, 10am.  Check Out...</span>
+					<span class="cnc-top">City Council Meets Today, Wednesday, December 11th, 10am.  Check Out...</span>
 					<span class="cnc-title">Council News Central</span>
 					<span class="cnc-bottom">... to watch live video, read community tweets, and connect with council members.</span>					
 				</a>
@@ -91,7 +91,7 @@
 			
 			<!-- BEGIN DAY-OF,CONCLUDED NO VIDEO COUNCIL NEWS CENTRAL BANNER 
 			<div id="cnc-ad">
-				<a class="cnc-ad-link" href="https://chicago.legistar.com/DepartmentDetail.aspx?ID=12357&GUID=4B24D5A9-FED0-4015-9154-6BFFFB2A8CB4">
+				<a class="cnc-ad-link" href="https://chicago.legistar.com/MeetingDetail.aspx?ID=276579&GUID=67A5EC48-6A0F-4AB7-8F65-28FB4D92F68E&Options=&Search=">
 					<span class="cnc-top">City Council met earlier today.  Check out the...</span>
 					<span class="cnc-title">Legislative Information Center</span>
 					<span class="cnc-bottom">... to view meeting records.  Video will be posted shortly.</span>					
@@ -100,9 +100,9 @@
 			<!-- END DAY-OF,CONCLUDED NO VIDEO COUNCIL NEWS CENTRAL BANNER -->
 			
 			
-			<!-- BEGIN DAY-OF,CONCLUDED VIDEO UP COUNCIL NEWS CENTRAL BANNER 
+			<!-- BEGIN DAY-OF,CONCLUDED VIDEO UP COUNCIL NEWS CENTRAL BANNER -->
 			<div id="cnc-ad">
-				<a class="cnc-ad-link" href="https://chicago.legistar.com/DepartmentDetail.aspx?ID=12357&GUID=4B24D5A9-FED0-4015-9154-6BFFFB2A8CB4">
+				<a class="cnc-ad-link" href="https://chicago.legistar.com/MeetingDetail.aspx?ID=276579&GUID=67A5EC48-6A0F-4AB7-8F65-28FB4D92F68E&Options=&Search=">
 					<span class="cnc-top">City Council met this week.  Check out the...</span>
 					<span class="cnc-title">Legislative Information Center</span>
 					<span class="cnc-bottom">... to watch video and view meeting records.</span>
