@@ -184,9 +184,10 @@ $(document).ready(function() {
 												</ul>
 												<p> The table below lists the 2,500 most popular vehicles on the road today and possible sticker prices.</p>
 
-												
-												
 												<p>Use the controls below to sort, filter and search this table to find vehicles and corresponding vehicle/sticker type.</p>
+												
+												<p><strong>PLEASE NOTE:</strong> The following prices are only for residents who purchased a vehicle and/or moved to the City of Chicago within in the last 30 days. All residents who failed to buy their Chicago City Vehicle Sticker in a timely and proper manner will be required to pay a late fee of $60.00 in addition to the regular fees.</p>
+
 												<table id="datatable" class="table table-bordered table-striped table-condensed">
 													<thead>
 														<tr>

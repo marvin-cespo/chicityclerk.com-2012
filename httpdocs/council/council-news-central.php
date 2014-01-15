@@ -54,14 +54,14 @@
 				<div id="cnc-banner">
 					<p class="banner-top">Welcome to...</p>
 					<p class="banner-title">Council News Central</p>
-					<p class="banner-bottom">Council will meet Wednesday, December 11, 2013  at 10a.m.<a href="https://chicago.legistar.com/MeetingDetail.aspx?ID=276579&GUID=67A5EC48-6A0F-4AB7-8F65-28FB4D92F68E&Options=&Search=" target="_blank">Visit the LIC to view prior meetings</a>.</p>
+					<p class="banner-bottom">Council will meet Wednesday, January 15, 2014  at 10a.m.<a href="https://chicago.legistar.com/Calendar.aspx" target="_blank">Visit the LIC to view prior meetings</a>.</p>
 				</div>
 				<div id="quick-links">
 					<table style="width: 100%;">
 						<tbody>
 							<tr>
 								<!-- <td style="width: 20%; padding: 5px;"><span class="os-strong">HELPFUL LINKS:</span></td> -->
-								<td style="width: 20%; padding: 5px;"><a class="btn btn-danger btn-block btn-large" href="https://chicago.legistar.com/MeetingDetail.aspx?ID=275884&GUID=8B16ED60-3664-4E21-9318-B716986EC024&Options=&Search=" target="_blank">Meeting Agenda</a></td>
+								<td style="width: 20%; padding: 5px;"><a class="btn btn-danger btn-block btn-large" href="https://chicago.legistar.com/MeetingDetail.aspx?ID=278040&GUID=F2A94BE5-830A-446A-9415-91A015BC1B3F&Options=info|&Search=" target="_blank">Meeting Agenda</a></td>
 								<td style="width: 20%; padding: 5px;"><a class="btn btn-warning btn-block btn-large" href="http://chicityclerk.com/legislation-records/journals-reports/city-budgets/" target="_blank">2014 City Budget</a></td>
 								<td style="width: 20%; padding: 5px;"><a class="btn btn-info btn-block btn-large" href="/council/seating-chart.php" target="_blank">Council Seating Chart</a></td>
 								<td style="width: 20%; padding: 5px;"><a class="btn btn-primary btn-block btn-large" href="/legislation-records/about-chicago-government/about-city-council-meetings/" target="_blank">Rules of Order</a></td>
@@ -86,13 +86,13 @@
 										
 										<!-- Begin photo Placeholders -->
 										<div id="cnc-placeholder">
-        									<a href="https://chicago.legistar.com/DepartmentDetail.aspx?ID=12357&GUID=4B24D5A9-FED0-4015-9154-6BFFFB2A8CB4" target="_blank"><span class="link">Video and captions will begin streaming in this area about 15 minutes prior to meeting - just refresh the browser at that time. Video of prior meetings is available in the <span class="red">Legislative Information Center</span>.</span></a>
+        									<a href="https://chicago.legistar.com/Calendar.aspx" target="_blank"><span class="link">Video and captions will begin streaming in this area about 15 minutes prior to meeting - just refresh the browser at that time. Video of prior meetings is available in the <span class="red">Legislative Information Center</span>.</span></a>
         								</div>
         								
         								
 										<!-- End photo Placeholder -->
 										
-										<!-- Begin Video + Caption Container 
+										<!-- Begin Video + Caption Container
 										<div id="cnc-video" class="pull-up">
 											<iframe id="DataStreamController" height="0" width="0" style="height: 0px; width: 0px; border:0; "></iframe>
 			                        		<script type="text/javascript" src="http://chicago.granicus.com/core/js/flash/swfobject.js"></script>

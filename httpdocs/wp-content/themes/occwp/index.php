@@ -20,7 +20,7 @@
 				<h2>City Council</h2>
 				<div class="announcement" id="announcement-council">
 					<h5><a href="#calendar-select" data-toggle="modal">Next City Council Meeting</a></h5>
-					<p>Wednesday, January 15, 2014<br />Time: 10:00a.m.<br />Location: City Council Chambers<br>
+					<p>Wednesday, February 05, 2014<br />Time: 10:00a.m.<br />Location: City Council Chambers<br>
 					City Hall 121 N LaSalle St</p>
 					<div id="calendar-select" class="modal hide fade in" style="display: none;">
 						<div class="modal-header">
@@ -39,11 +39,6 @@
 						</div>
 					</div>
 					<a id="modal-show" data-toggle="modal" class="btn btn-block btn-info" href="#calendar-select">Add to Calendar</a>
-				</div>
-				<div class="announcement" id="announcement-council">
-				<h5><a href="http://chicityclerk.com/legislation-records/journals-reports/city-budgets/" style="color:#f89406;">CHICAGO 2014 BUDGET</a></h5>
-					<p>View the 2014 Budget</p>
-					<a class="btn btn-block btn-warning" href="http://chicityclerk.com/legislation-records/journals-reports/city-budgets/">Read More</a>
 				</div>
 				<?php 
 				$announcements_args = array( 'post_type' => 'occ_announcements', 'posts_per_page' => 4 );
@@ -82,16 +77,16 @@
 			<!-- BEGIN DAY-OF,PRESTART COUNCIL NEWS CENTRAL BANNER 
 			<div id="cnc-ad">
 				<a class="cnc-ad-link" href="/council/council-news-central.php">
-					<span class="cnc-top">City Council Meets Today, Wednesday, December 11th, 10am.  Check Out...</span>
+					<span class="cnc-top">City Council Meets Today, Wednesday, February 5th, 10am.  Check Out...</span>
 					<span class="cnc-title">Council News Central</span>
 					<span class="cnc-bottom">... to watch live video, read community tweets, and connect with council members.</span>					
 				</a>
 			</div>
 			<!-- END DAY-OF,PRESTART COUNCIL NEWS CENTRAL BANNER 
 			
-			<!-- BEGIN DAY-OF,CONCLUDED NO VIDEO COUNCIL NEWS CENTRAL BANNER 
+			<!-- BEGIN DAY-OF,CONCLUDED NO VIDEO COUNCIL NEWS CENTRAL BANNER -->
 			<div id="cnc-ad">
-				<a class="cnc-ad-link" href="https://chicago.legistar.com/MeetingDetail.aspx?ID=276579&GUID=67A5EC48-6A0F-4AB7-8F65-28FB4D92F68E&Options=&Search=">
+				<a class="cnc-ad-link" href="https://chicago.legistar.com/MeetingDetail.aspx?ID=278040&GUID=F2A94BE5-830A-446A-9415-91A015BC1B3F&Options=info|&Search=">
 					<span class="cnc-top">City Council met earlier today.  Check out the...</span>
 					<span class="cnc-title">Legislative Information Center</span>
 					<span class="cnc-bottom">... to view meeting records.  Video will be posted shortly.</span>					
@@ -120,6 +115,13 @@
 							<span class="panel-1-head">NEW 2013-2014 CHICAGO CITY VEHICLE STICKER ON SALE</span>
 							<span class="panel-1-body">Buy yours NOW online via EZ>Buy<br />
 							<button id="csp-btn" style="margin-top:10px;" class="btn btn-info btn-large">Purchase a City Sticker</button></span>
+						</a>
+					</div>
+					<div id="slide-pothole" style="width: 770px; height: 250px;">
+						<a href="/programs-services/claims/" target="_self">
+							<span class="panel-pothole-head">POTHOLE DAMAGE</span><br />
+							<span class="panel-pothole-body">Find more information about filing a damage claim.<br />
+								<button id="csp-btn" style="margin-top:10px;" class="btn btn-info btn-large">Learn More</button></span>
 						</a>
 					</div>
 					<div id="slide-2" style="width: 770px; height: 250px;">
