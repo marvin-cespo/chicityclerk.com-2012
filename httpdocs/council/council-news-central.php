@@ -54,7 +54,7 @@
 				<div id="cnc-banner">
 					<p class="banner-top">Welcome to...</p>
 					<p class="banner-title">Council News Central</p>
-					<p class="banner-bottom">Council will meet Wednesday, January 15, 2014  at 10a.m.<a href="https://chicago.legistar.com/Calendar.aspx" target="_blank">Visit the LIC to view prior meetings</a>.</p>
+					<p class="banner-bottom">Council will meet Wednesday, February 5, 2014  at 10a.m.<a href="https://chicago.legistar.com/Calendar.aspx" target="_blank">Visit the LIC to view prior meetings</a>.</p>
 				</div>
 				<div id="quick-links">
 					<table style="width: 100%;">
