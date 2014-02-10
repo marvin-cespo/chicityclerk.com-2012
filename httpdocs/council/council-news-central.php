@@ -54,14 +54,14 @@
 				<div id="cnc-banner">
 					<p class="banner-top">Welcome to...</p>
 					<p class="banner-title">Council News Central</p>
-					<p class="banner-bottom">Council will meet Wednesday, February 5, 2014  at 10a.m.<a href="https://chicago.legistar.com/Calendar.aspx" target="_blank">Visit the LIC to view prior meetings</a>.</p>
+					<p class="banner-bottom">Council will meet Wednesday, March 5, 2014  at 10a.m.<a href="https://chicago.legistar.com/Calendar.aspx" target="_blank">Visit the LIC to view prior meetings</a>.</p>
 				</div>
 				<div id="quick-links">
 					<table style="width: 100%;">
 						<tbody>
 							<tr>
 								<!-- <td style="width: 20%; padding: 5px;"><span class="os-strong">HELPFUL LINKS:</span></td> -->
-								<td style="width: 20%; padding: 5px;"><a class="btn btn-danger btn-block btn-large" href="https://chicago.legistar.com/MeetingDetail.aspx?ID=278040&GUID=F2A94BE5-830A-446A-9415-91A015BC1B3F&Options=info|&Search=" target="_blank">Meeting Agenda</a></td>
+								<td style="width: 20%; padding: 5px;"><a class="btn btn-danger btn-block btn-large" href="https://chicago.legistar.com/MeetingDetail.aspx?ID=297019&GUID=03464703-F378-4210-BFC2-44C878F59602&Options=&Search=" target="_blank">Meeting Agenda</a></td>
 								<td style="width: 20%; padding: 5px;"><a class="btn btn-warning btn-block btn-large" href="http://chicityclerk.com/legislation-records/journals-reports/city-budgets/" target="_blank">2014 City Budget</a></td>
 								<td style="width: 20%; padding: 5px;"><a class="btn btn-info btn-block btn-large" href="/council/seating-chart.php" target="_blank">Council Seating Chart</a></td>
 								<td style="width: 20%; padding: 5px;"><a class="btn btn-primary btn-block btn-large" href="/legislation-records/about-chicago-government/about-city-council-meetings/" target="_blank">Rules of Order</a></td>
@@ -92,7 +92,7 @@
         								
 										<!-- End photo Placeholder -->
 										
-										<!-- Begin Video + Caption Container
+										<!-- Begin Video + Caption Container 
 										<div id="cnc-video" class="pull-up">
 											<iframe id="DataStreamController" height="0" width="0" style="height: 0px; width: 0px; border:0; "></iframe>
 			                        		<script type="text/javascript" src="http://chicago.granicus.com/core/js/flash/swfobject.js"></script>

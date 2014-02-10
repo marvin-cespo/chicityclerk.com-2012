@@ -220,7 +220,33 @@
 						</div>
 					<?php endif; ?>
 					
-					<!-- END COPY OF CITY CLERK 2012 LIST, UPDATED FOR 2013 -->
+					
+					<?php if( is_page(1363) ) : ?>
+						<div id="city-clerk-feed">
+							<?php
+								$clerknews_args = array( 'post_type' => 'occ_clerk_news', 'posts_per_page' => -1, 'year' => 2014 );
+								$clerknews = new WP_query( $clerknews_args );
+								while ($clerknews->have_posts()) : $clerknews->the_post();
+							?>
+							<div class="feed-box">
+								<div class="feed-thumb">
+									<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( array( 100, 100 ), array( 'class' => 'img-polaroid' )) ; ?></a>
+								</div>
+								<div class="feed-text">
+									<h5><?php echo get_the_date(); ?></h5>
+									<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+									<?php the_excerpt(); ?>
+								</div>
+								<div style="clear:both;"></div>
+							</div>
+							<?php endwhile; ?>
+						</div>
+					<?php endif; ?>
+					
+					<!-- END COPY OF CITY CLERK 2014 LIST, UPDATED FOR 2014  -->
+
+
+					
 					
 					<?php if( is_page(944) ) : ?>
 						<div id="city-clerk-feed">

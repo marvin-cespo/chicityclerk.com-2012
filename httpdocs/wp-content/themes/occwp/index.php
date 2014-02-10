@@ -20,7 +20,7 @@
 				<h2>City Council</h2>
 				<div class="announcement" id="announcement-council">
 					<h5><a href="#calendar-select" data-toggle="modal">Next City Council Meeting</a></h5>
-					<p>Wednesday, February 05, 2014<br />Time: 10:00a.m.<br />Location: City Council Chambers<br>
+					<p>Wednesday, March 05, 2014<br />Time: 10:00a.m.<br />Location: City Council Chambers<br>
 					City Hall 121 N LaSalle St</p>
 					<div id="calendar-select" class="modal hide fade in" style="display: none;">
 						<div class="modal-header">
@@ -74,7 +74,7 @@
 			</div>
 		</div>
 		<div class="span9home homeborder" id="right-column">
-			<!-- BEGIN DAY-OF,PRESTART COUNCIL NEWS CENTRAL BANNER 
+			<!-- BEGIN DAY-OF,PRESTART COUNCIL NEWS CENTRAL BANNER
 			<div id="cnc-ad">
 				<a class="cnc-ad-link" href="/council/council-news-central.php">
 					<span class="cnc-top">City Council Meets Today, Wednesday, February 5th, 10am.  Check Out...</span>
@@ -86,7 +86,7 @@
 			
 			<!-- BEGIN DAY-OF,CONCLUDED NO VIDEO COUNCIL NEWS CENTRAL BANNER 
 			<div id="cnc-ad">
-				<a class="cnc-ad-link" href="https://chicago.legistar.com/MeetingDetail.aspx?ID=278040&GUID=F2A94BE5-830A-446A-9415-91A015BC1B3F&Options=info|&Search=">
+				<a class="cnc-ad-link" href="https://chicago.legistar.com/MeetingDetail.aspx?ID=297019&GUID=03464703-F378-4210-BFC2-44C878F59602&Options=&Search=">
 					<span class="cnc-top">City Council met earlier today.  Check out the...</span>
 					<span class="cnc-title">Legislative Information Center</span>
 					<span class="cnc-bottom">... to view meeting records.  Video will be posted shortly.</span>					
@@ -97,7 +97,7 @@
 			
 			<!-- BEGIN DAY-OF,CONCLUDED VIDEO UP COUNCIL NEWS CENTRAL BANNER 
 			<div id="cnc-ad">
-				<a class="cnc-ad-link" href="https://chicago.legistar.com/MeetingDetail.aspx?ID=278040&GUID=F2A94BE5-830A-446A-9415-91A015BC1B3F&Options=info|&Search=">
+				<a class="cnc-ad-link" href="https://chicago.legistar.com/MeetingDetail.aspx?ID=297019&GUID=03464703-F378-4210-BFC2-44C878F59602&Options=&Search=">
 					<span class="cnc-top">City Council met this week.  Check out the...</span>
 					<span class="cnc-title">Legislative Information Center</span>
 					<span class="cnc-bottom">... to watch video and view meeting records.</span>
@@ -110,11 +110,11 @@
 
 			 <div id="slideshow">
 				<div id="slides" style="overflow: hidden;">
-					<div id="slide-1" style="width: 770px; height: 250px;">
-						<a href="https://webapps3.cityofchicago.org/StickerOnlineWeb/">
-							<span class="panel-1-head">NEW 2013-2014 CHICAGO CITY VEHICLE STICKER ON SALE</span>
-							<span class="panel-1-body">Buy yours NOW online via EZ>Buy<br />
-							<button id="csp-btn" style="margin-top:10px;" class="btn btn-info btn-large">Purchase a City Sticker</button></span>
+					<div id="slide-animal" style="width: 770px; height: 250px;">
+						<a href="/clerk-news/city-clerk-susana-a-mendoza-is-protecting-pets-consumers/">
+							<span class="panel-animal-head">How Chicago City Clerk Susana A. Mendoza is Protecting Consumers &amp; Pets</span>
+							<span class="panel-animal-body"><br />
+							<button id="csp-btn" style="margin-top:10px;" class="btn btn-info btn-large">Learn More</button></span>
 						</a>
 					</div>
 					<div id="slide-pothole" style="width: 770px; height: 250px;">
