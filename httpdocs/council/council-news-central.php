@@ -61,7 +61,7 @@
 						<tbody>
 							<tr>
 								<!-- <td style="width: 20%; padding: 5px;"><span class="os-strong">HELPFUL LINKS:</span></td> -->
-								<td style="width: 20%; padding: 5px;"><a class="btn btn-danger btn-block btn-large" href="https://chicago.legistar.com/MeetingDetail.aspx?ID=297019&GUID=03464703-F378-4210-BFC2-44C878F59602&Options=&Search=" target="_blank">Meeting Agenda</a></td>
+								<td style="width: 20%; padding: 5px;"><a class="btn btn-danger btn-block btn-large" href="https://chicago.legistar.com/MeetingDetail.aspx?ID=297716&GUID=D98723D6-14A0-4175-9A72-5C5077A33827&Options=&Search=" target="_blank">Meeting Agenda</a></td>
 								<td style="width: 20%; padding: 5px;"><a class="btn btn-warning btn-block btn-large" href="http://chicityclerk.com/legislation-records/journals-reports/city-budgets/" target="_blank">2014 City Budget</a></td>
 								<td style="width: 20%; padding: 5px;"><a class="btn btn-info btn-block btn-large" href="/council/seating-chart.php" target="_blank">Council Seating Chart</a></td>
 								<td style="width: 20%; padding: 5px;"><a class="btn btn-primary btn-block btn-large" href="/legislation-records/about-chicago-government/about-city-council-meetings/" target="_blank">Rules of Order</a></td>
@@ -84,7 +84,7 @@
 								<tr>
 									<td>
 										
-										<!-- Begin photo Placeholders -->
+										<!-- Begin photo Placeholders 
 										<div id="cnc-placeholder">
         									<a href="https://chicago.legistar.com/Calendar.aspx" target="_blank"><span class="link">Video and captions will begin streaming in this area about 15 minutes prior to meeting - just refresh the browser at that time. Video of prior meetings is available in the <span class="red">Legislative Information Center</span>.</span></a>
         								</div>
@@ -92,7 +92,7 @@
         								
 										<!-- End photo Placeholder -->
 										
-										<!-- Begin Video + Caption Container 
+										<!-- Begin Video + Caption Container -->
 										<div id="cnc-video" class="pull-up">
 											<iframe id="DataStreamController" height="0" width="0" style="height: 0px; width: 0px; border:0; "></iframe>
 			                        		<script type="text/javascript" src="http://chicago.granicus.com/core/js/flash/swfobject.js"></script>

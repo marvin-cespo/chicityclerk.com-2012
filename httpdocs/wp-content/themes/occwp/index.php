@@ -74,10 +74,10 @@
 			</div>
 		</div>
 		<div class="span9home homeborder" id="right-column">
-			<!-- BEGIN DAY-OF,PRESTART COUNCIL NEWS CENTRAL BANNER
+			<!-- BEGIN DAY-OF,PRESTART COUNCIL NEWS CENTRAL BANNER -->
 			<div id="cnc-ad">
 				<a class="cnc-ad-link" href="/council/council-news-central.php">
-					<span class="cnc-top">City Council Meets Today, Wednesday, February 5th, 10am.  Check Out...</span>
+					<span class="cnc-top">City Council Meets Today, Wednesday, March 5th, 10am.  Check Out...</span>
 					<span class="cnc-title">Council News Central</span>
 					<span class="cnc-bottom">... to watch live video, read community tweets, and connect with council members.</span>					
 				</a>
@@ -86,7 +86,7 @@
 			
 			<!-- BEGIN DAY-OF,CONCLUDED NO VIDEO COUNCIL NEWS CENTRAL BANNER 
 			<div id="cnc-ad">
-				<a class="cnc-ad-link" href="https://chicago.legistar.com/MeetingDetail.aspx?ID=297019&GUID=03464703-F378-4210-BFC2-44C878F59602&Options=&Search=">
+				<a class="cnc-ad-link" href="https://chicago.legistar.com/MeetingDetail.aspx?ID=297716&GUID=D98723D6-14A0-4175-9A72-5C5077A33827&Options=&Search=">
 					<span class="cnc-top">City Council met earlier today.  Check out the...</span>
 					<span class="cnc-title">Legislative Information Center</span>
 					<span class="cnc-bottom">... to view meeting records.  Video will be posted shortly.</span>					
@@ -97,7 +97,7 @@
 			
 			<!-- BEGIN DAY-OF,CONCLUDED VIDEO UP COUNCIL NEWS CENTRAL BANNER 
 			<div id="cnc-ad">
-				<a class="cnc-ad-link" href="https://chicago.legistar.com/MeetingDetail.aspx?ID=297019&GUID=03464703-F378-4210-BFC2-44C878F59602&Options=&Search=">
+				<a class="cnc-ad-link" href="https://chicago.legistar.com/MeetingDetail.aspx?ID=297716&GUID=D98723D6-14A0-4175-9A72-5C5077A33827&Options=&Search=">
 					<span class="cnc-top">City Council met this week.  Check out the...</span>
 					<span class="cnc-title">Legislative Information Center</span>
 					<span class="cnc-bottom">... to watch video and view meeting records.</span>
