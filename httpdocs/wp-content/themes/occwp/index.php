@@ -20,7 +20,7 @@
 				<h2>City Council</h2>
 				<div class="announcement" id="announcement-council">
 					<h5><a href="#calendar-select" data-toggle="modal">Next City Council Meeting</a></h5>
-					<p>Wednesday, March 05, 2014<br />Time: 10:00a.m.<br />Location: City Council Chambers<br>
+					<p>Wednesday, April 02, 2014<br />Time: 10:00a.m.<br />Location: City Council Chambers<br>
 					City Hall 121 N LaSalle St</p>
 					<div id="calendar-select" class="modal hide fade in" style="display: none;">
 						<div class="modal-header">
@@ -74,7 +74,7 @@
 			</div>
 		</div>
 		<div class="span9home homeborder" id="right-column">
-			<!-- BEGIN DAY-OF,PRESTART COUNCIL NEWS CENTRAL BANNER -->
+			<!-- BEGIN DAY-OF,PRESTART COUNCIL NEWS CENTRAL BANNER 
 			<div id="cnc-ad">
 				<a class="cnc-ad-link" href="/council/council-news-central.php">
 					<span class="cnc-top">City Council Meets Today, Wednesday, March 5th, 10am.  Check Out...</span>
