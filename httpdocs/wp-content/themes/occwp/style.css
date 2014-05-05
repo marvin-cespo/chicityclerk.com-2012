@@ -2109,6 +2109,21 @@ DO NOT LEAVE THIS UNATTENDED !!!!!!!!!!!!!!!!!!!!!!!!!!!
     color: #505050; }
 
 
+/* sticker alert for homepage */
+
+#sticker-banner{
+	font-size: 14px;
+	margin-bottom: 15px;
+	background-color: darkgreen;
+	padding: 15px 18px;
+	color: #fff;
+}
+	#sticker-banner a{
+		color: #fff;
+		text-decoration: underline;
+	}
+
+
 /* Store Locator */
 #sl_div #tag_to_search_for{
 	width: 269px;

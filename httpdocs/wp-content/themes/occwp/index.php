@@ -74,6 +74,10 @@
 			</div>
 		</div>
 		<div class="span9home homeborder" id="right-column">
+			<div id="sticker-banner">
+				<p>Please note, the EZ&gt;BUY online sales application is offline for maintenance for at least two weeks. We will resume all online sales services with the start of the 2014 Chicago City Vehicle Sticker Sales Season in mid-May.</p>
+				<p><a href="http://chicityclerk.com/city-stickers-parking/ezbuy-maintenance/" target="_self" title="EZBUY Down for Maintenance">Click here</a> to fill out a short form to receive an email notification when EZ&gt;BUY is back online.</p>
+			</div>
 			<!-- BEGIN DAY-OF,PRESTART COUNCIL NEWS CENTRAL BANNER 
 			<div id="cnc-ad">
 				<a class="cnc-ad-link" href="/council/council-news-central.php">
@@ -95,7 +99,7 @@
 			<!-- END DAY-OF,CONCLUDED NO VIDEO COUNCIL NEWS CENTRAL BANNER -->
 			
 			
-			<!-- BEGIN DAY-OF,CONCLUDED VIDEO UP COUNCIL NEWS CENTRAL BANNER -->
+			<!-- BEGIN DAY-OF,CONCLUDED VIDEO UP COUNCIL NEWS CENTRAL BANNER 
 			<div id="cnc-ad">
 				<a class="cnc-ad-link" href="https://chicago.legistar.com/MeetingDetail.aspx?ID=312797&GUID=10E78C32-310F-4DFF-A5D9-AF531CAF3BB9&Options=&Search=">
 					<span class="cnc-top">City Council met this week. Check out the...</span>
