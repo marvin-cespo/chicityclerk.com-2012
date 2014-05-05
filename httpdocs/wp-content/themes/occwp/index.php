@@ -114,13 +114,6 @@
 
 			 <div id="slideshow">
 				<div id="slides" style="overflow: hidden;">
-					<div id="slide-animal" style="width: 770px; height: 250px;">
-						<a href="/clerk-news/city-clerk-susana-a-mendoza-is-protecting-pets-consumers/">
-							<span class="panel-animal-head">How Chicago City Clerk Susana A. Mendoza is Protecting Consumers &amp; Pets</span>
-							<span class="panel-animal-body"><br />
-							<button id="csp-btn" style="margin-top:10px;" class="btn btn-info btn-large">Learn More</button></span>
-						</a>
-					</div>
 					<div id="slide-pothole" style="width: 770px; height: 250px;">
 						<a href="/programs-services/claims/" target="_self">
 							<span class="panel-pothole-head">POTHOLE DAMAGE</span><br />
