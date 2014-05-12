@@ -25,12 +25,20 @@ class SLPlus_AdminUI_MapSettings {
      *
      * @var \SLPlus $plugin
      */
-    private $plugin;
+	private $plugin;
+
+	/**
+	 * A string array store user notify message
+	 *
+	 * @var string[] $update_info
+	 */
+	private $update_info = array();
 
     /**
      * @var \wpCSL_settings__slplus $settings
      */
-    public $settings;
+	public $settings;
+
 
     //-----------------------------
     // Methods
@@ -87,7 +95,7 @@ class SLPlus_AdminUI_MapSettings {
 
         // Theme Selector
         //
-        $this->plugin->themes->add_admin_settings($this->settings,$sectName,'Style');
+        $this->plugin->themes->admin->add_settings($this->settings,$sectName,'Style');
 
         // ACTION: slp_uxsettings_modify_viewpanel
         //    params: settings object, section name
@@ -177,7 +185,7 @@ class SLPlus_AdminUI_MapSettings {
                 $default                                                   :
                 stripslashes(esc_textarea(get_option($whichbox,$default))) ;
         return
-            "<div class='wpcsl-setting'>" .
+            "<div class='form_entry'>" .
                 "<div class='wpcsl-input wpcsl-textarea'>" .
                     "<label for='$whichbox'>$label:</label>".
                     "<textarea  name='$whichbox'>{$value}</textarea>".
@@ -198,7 +206,18 @@ class SLPlus_AdminUI_MapSettings {
         update_option('sl_google_map_country', $sl_google_map_arr[0]);
         update_option('sl_google_map_domain', $sl_google_map_arr[1]);
 
-        // Height, strip non-digits, if % set range 0..100
+		// Set height uint to blank, if height is "auto !important"
+		if ($_POST['sl_map_height'] === "auto !important" && $_POST['sl_map_height_units'] != "") {
+			$_POST['sl_map_height_units'] = "";
+			array_push($this->update_info, __("Auto set height unit to blank when height is 'auto !important'", 'csa-slplus'));
+		}
+		// Set weight uint to blank, if height is "auto !important"
+		if ($_POST['sl_map_width'] === "auto !important" && $_POST['sl_map_width_units'] != "") {
+			$_POST['sl_map_width_units'] = "";
+			array_push($this->update_info, __("Auto set width unit to blank when width is 'auto !important'", 'csa-slplus'));
+		}
+		
+		// Height, strip non-digits, if % set range 0..100
         if (in_array($_POST['sl_map_height_units'],array('%','px','pt','em'))) {
             $_POST['sl_map_height']=preg_replace('/[^0-9]/', '', $_POST['sl_map_height']);
             if ($_POST['sl_map_height_units'] == '%') {
@@ -231,7 +250,6 @@ class SLPlus_AdminUI_MapSettings {
                     'sl_map_home_icon'                      ,
                     'sl_map_end_icon'                       ,
                     'sl_map_type'                           ,
-                    'sl_num_initial_displayed'              ,
                     'sl_distance_unit'                      ,
                     'sl_radius_label'                       ,
                     'sl_search_label'                       ,
@@ -240,16 +258,26 @@ class SLPlus_AdminUI_MapSettings {
                     SLPLUS_PREFIX.'_label_fax'              ,
                     SLPLUS_PREFIX.'_label_hours'            ,
                     SLPLUS_PREFIX.'_label_phone'            ,
-                    SLPLUS_PREFIX.'_tag_search_selections'  ,
+                    SLPLUS_PREFIX.'_map_center'             ,
                     SLPLUS_PREFIX.'-map_language'           ,
-                    SLPLUS_PREFIX.'_maxreturned'            ,
                     SLPLUS_PREFIX.'-theme'                  ,
                 )
             );
         foreach ($BoxesToHit as $JustAnotherBox) {
             $this->plugin->helper->SavePostToOptionsTable($JustAnotherBox);
-        }
-
+		}
+		// Register need translate text to WPML
+		//
+		$BoxesToHit =
+            apply_filters('slp_regwpml_map_settings_inputs',
+                array(
+                    'sl_radius_label'                       ,
+                    'sl_search_label'                       ,
+                )
+            );
+		foreach ($BoxesToHit as $JustAnotherBox) {
+            $this->plugin->AdminWPML->regPostOptions($JustAnotherBox);
+		}
         // Checkboxes
         //
         $BoxesToHit =
@@ -258,7 +286,7 @@ class SLPlus_AdminUI_MapSettings {
                     SLPLUS_PREFIX.'_use_email_form'             ,
                     SLPLUS_PREFIX.'_email_form'                 ,
                     SLPLUS_PREFIX.'_disable_find_image'         ,
-                    SLPLUS_PREFIX.'-force_load_js'              ,
+                    //SLPLUS_PREFIX.'-force_load_js'              ,
                     'sl_load_locations_default'                 ,
                     'sl_remove_credits'                         ,
                     )
@@ -274,7 +302,9 @@ class SLPlus_AdminUI_MapSettings {
         //
         array_walk($_REQUEST,array($this->plugin,'set_ValidOptions'));
         update_option(SLPLUS_PREFIX.'-options', $this->plugin->options);
-        $this->plugin->debugMP('slp.mapsettings','pr','Map Settings Saved to '.SLPLUS_PREFIX.'-options',$this->plugin->options,__FILE__,__LINE__);
+
+        array_walk($_REQUEST,array($this->plugin,'set_ValidOptionsNoJS'));
+        update_option(SLPLUS_PREFIX.'-options_nojs', $this->plugin->options_nojs);
     }
 
     //=======================================
@@ -348,6 +378,15 @@ class SLPlus_AdminUI_MapSettings {
                     '',
                     false,
                     0
+                    ) .
+            $this->CreateTextAreaDiv(
+                    SLPLUS_PREFIX.'_map_center',
+                    __('Center Map At','csa-slplus'),
+                    __('Enter an address to serve as the initial focus for the map. '                                   ,'csa-slplus') .
+                    __('Default is the center of the country.'                                                          ,'csa-slplus') .
+                    __('Enhanced Map add-on must be installed to set per-page with center_map_at="address" shortcode. ' ,'csa-slplus') .
+                    __('Force JavaScript setting must be off when using the shortcode attribute. '                      ,'csa-slplus') ,
+                    ''
                     )
                 ;
 
@@ -610,7 +649,6 @@ class SLPlus_AdminUI_MapSettings {
      * @return mixed the value of the option as saved in the database
      */
     function getCompoundOption($optionName,$default='') {
-        if (!$this->set_Plugin()) { return; }
         $matches = array();
         if (preg_match('/^(.*?)\[(.*?)\]/',$optionName,$matches) === 1) {
             if (!isset($this->plugin->mapsettingsData[$matches[1]])) {
@@ -640,7 +678,10 @@ class SLPlus_AdminUI_MapSettings {
         if ($_POST) {
             add_action('slp_save_map_settings',array($this,'save_settings') ,10);
             do_action('slp_save_map_settings');
-            $update_msg = "<div class='highlight'>".__('Successful Update', 'csa-slplus').'</div>';
+			$update_msg = "<div class='highlight'>".__('Successful Update', 'csa-slplus');
+			foreach( $this->update_info as $info_msg)
+				$update_msg	.= '<br/>'.$info_msg;
+			$update_msg	.= '</div>';
         }
 
         // Initialize Plugin Settings Data
@@ -741,9 +782,11 @@ class SLPlus_AdminUI_MapSettings {
         $slpDescription =
             $this->plugin->helper->create_SubheadingLabel(__('Search Results','csa-slplus')) .
             $this->CreateInputDiv(
-                        '_maxreturned',
+                        'max_results_returned',
                         __('Max Search Results','csa-slplus'),
-                        __('How many locations does a search return? Default is 25.','csa-slplus')
+                        __('How many locations does a search return? Default is 25.','csa-slplus'),
+                        '',
+                        $this->plugin->options_nojs['max_results_returned']
                         ).
             $this->plugin->helper->CreateCheckboxDiv(
                     'sl_load_locations_default',
@@ -754,22 +797,23 @@ class SLPlus_AdminUI_MapSettings {
                     1
                     ).
             $this->CreateInputDiv(
-                    'sl_num_initial_displayed',
+                    'initial_results_returned',
                     __('Number To Show Initially','csa-slplus'),
                     __('How many locations should be shown when Immediately Show Locations is checked.  Recommended maximum is 50.','csa-slplus'),
-                    ''
+                    '',
+                    $this->plugin->options['initial_results_returned']
                     ).
-                $this->CreateInputDiv(
-                        'initial_radius',
-                        __('Radius To Search Initially','csa-slplus'),
-                        __('What should immediately show locations use as the default search radius? Leave empty to use map radius default or set to a large number like 25000 to search everywhere.','csa-slplus') .
-                        sprintf(
-                            __('Can be set with <a href="%s" target="csa">shortcode attribute initial_radius</a> if Force Load JavaScript is turned off.','csa-slplus'),
-                            $this->plugin->url . 'support/documentation/store-locator-plus/shortcodes/'
-                        ),
-                        '',
-                        $this->plugin->options['initial_radius']
-                        )
+            $this->CreateInputDiv(
+                    'initial_radius',
+                    __('Radius To Search Initially','csa-slplus'),
+                    __('What should immediately show locations use as the default search radius? Leave empty to use map radius default or set to a large number like 25000 to search everywhere.','csa-slplus') .
+                    sprintf(
+                        __('Can be set with <a href="%s" target="csa">shortcode attribute initial_radius</a> if Force Load JavaScript is turned off.','csa-slplus'),
+                        $this->plugin->url . 'support/documentation/store-locator-plus/shortcodes/'
+                    ),
+                    '',
+                    $this->plugin->options['initial_radius']
+                    )
             ;
 
         // FILTER: slp_settings_results_locationinfo - add input fields to results locaiton info

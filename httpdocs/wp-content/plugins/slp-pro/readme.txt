@@ -1,11 +1,11 @@
 === Store Locator Plus : Pro Pack ===
 Plugin Name:  Store Locator Plus : Pro Pack
 Contributors: charlestonsw
-Donate link: http://www.charlestonsw.com/product/store-locator-plus/
+Donate link: http://www.storelocatorplus.com/
 Tags: store locator plus, pro pack
-Requires at least: 3.3
-Tested up to: 3.5.1
-Stable tag: 3.11.004
+Requires at least: 3.4
+Tested up to: 3.8.1
+Stable tag: 4.1.00
 
 A premium add-on for the Store Locator Plus location management system for WordPress.
 
@@ -17,14 +17,14 @@ This plugin will help site admins manage large listings of locations with tools 
 
 = Requirements =
 
-* Store Locator Plus: 3.11+
+* Store Locator Plus: 4.0+
 * Wordpress: 3.5.1+
 * PHP: 5.2.4+
 
 = Install After SLP =
 
-1. Go fetch and install Store Locator Plus version 3.11 or higher.
-2. Purchase this plugin from CSA to get the latest .zip file.
+1. Go fetch and install the latest version of Store Locator Plus.
+2. Purchase this plugin from the [Store Locator Plus website](http://www.storelocatorplus.com) to get the latest .zip file.
 3. Go to plugins/add new.
 4. Select upload.
 5. Upload the zip file.
@@ -33,43 +33,20 @@ This plugin will help site admins manage large listings of locations with tools 
 
 = What are the terms of the license? =
 
-The license is GPL.  You get the code, feel free to modify it as you
-wish.  We prefer that our customers pay us because they like what we do and
-want to support our efforts to bring useful software to market.  Learn more
-on our [CSL License Terms](http://www.charlestonsw.com/products/general-eula/).
+The license is GPL.  You get the code, feel free to modify it as you wish.
+Hopefully you like it enough to want to support the effort to bring useful software to market.
+Learn more on the [CSL License Terms](http://www.storelocatorplus.com/products/general-eula/) page.
 
 == Changelog ==
 
-We update about once per month or more frequently as needed.
+Visit the [Online Change Log for details](http://www.storelocatorplus.com/tag/slp4-changelog/).
 
-Visit the [CSA Website for details](http://www.charlestonsw.com/).
+= 4.1.00
 
-= 3.11.004 =
-
-* Fix: Admin page styling on Pro Pack tabs.
-
-= 3.11.3 =
-
-* Fix: stop undefined object errors.
-
-= 3.11.2 =
-
-* Enhancement: Update i18n/l10n language constants for better language file support.
-* Enhancement: Debug My Plugin debugging hooks updated with new panels.
-* Fix: Reporting CSV exports.
-* Fix: Reporting stylesheet.
-
-= 3.11.1 =
-
-* Fix: show uncoded fix
-
-= 3.11 =
-
-* Change: Requires SLP 3.11+.
-* Change: Editing lat/long is now part of the base Store Locator Plus product.
-* Enhancement: "Any" text on tag pulldown can now be set works in conjunction with Pro Pack.
-* Enhancement: Check that the proper version of the base plugin is installed before executing.
-
-= 3.10 =
-
-* Change: First release as a separate install file.
+* Fix: Tag labels do not appear for Drop Down or Radio buttons has been fixed.
+* Fix: Incorrect textdomain strings to help with translation files.
+* Fix: Show uncoded filter on manage locations has been addressed.
+* Fix: Clean up reporting tab CSS.
+* Fix: Typo in HTML structure on tag text input.
+* Enhancement: Get the reporting tables under the Pro Pack add-on for complete control of the reports interface.
+* Enhancement: Setup a separate admin class to reduce the front-end memory footprint on the map pages (17M to 15.2M).

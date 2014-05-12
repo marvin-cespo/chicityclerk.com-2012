@@ -127,7 +127,7 @@ class SLPlus_UI {
        //
        // return TRUE if the value is 'true' (this is for shortcode atts)
        if (isset($this->plugin->data[$attribute])) {
-            return ($this->ShortcodeAttTrue($this->plugin->data[$attribute]) === '1');
+            return $this->plugin->is_CheckTrue($this->plugin->data[$attribute]);
 
        // If the data attribute is NOT set or it is set and is null (isset = false if value is null)
        // return the value of the database setting
@@ -136,20 +136,6 @@ class SLPlus_UI {
        }
     }
 
-    /**
-     * Return '1' if the given value is set to 'true', 'on', or '1' (case insensitive).
-     * Return '0' otherwise.
-     *
-     * @param string $attValue
-     * @return boolean
-     */
-    function ShortcodeAttTrue($attValue) {
-        if (strcasecmp($attValue,'true')==0) { return '1'; }
-        if (strcasecmp($attValue,'on'  )==0) { return '1'; }
-        if (strcasecmp($attValue,'1'   )==0) { return '1'; }
-        return '0';
-    }
-    
     /**
      * Create a search form input div.
      */
@@ -268,7 +254,7 @@ class SLPlus_UI {
         $this->plugin->debugMP('msg',__FUNCTION__);
         return $this->plugin->UI->createstring_InputDiv(
             'addressInput',
-            get_option('sl_search_label',__('Address','csa-slplus')),
+            $this->plugin->WPML->getWPMLText('sl_search_label', get_option('sl_search_label',__('Address','csa-slplus'))),
             $placeholder,
             (get_option(SLPLUS_PREFIX.'_hide_address_entry',0) == 1),
             'addy_in_address',
@@ -285,7 +271,7 @@ class SLPlus_UI {
             $HTML =
                 "<div id='addy_in_radius'>".
                 "<label for='radiusSelect'>".
-                get_option('sl_radius_label',__('Within','csa-slplus')).
+                $this->plugin->WPML->getWPMLText('sl_radius_label', get_option('sl_radius_label',__('Within','csa-slplus'))).
                 '</label>'.
                 "<select id='radiusSelect'>".$this->plugin->data['radius_options'].'</select>'.
                 "</div>"
@@ -686,7 +672,16 @@ class SLPlus_UI {
      * Uses country by default.
      */
     function set_MapCenter() {
-        return apply_filters('slp_map_center',esc_attr(get_option('sl_google_map_country','United States')));
+
+        // Map Settings "Center Map At"
+        //
+        $customAddress = get_option(SLPLUS_PREFIX.'_map_center','');
+        if ((preg_replace('/\W/','',$customAddress) != '')) {
+            $customAddress = str_replace(array("\r\n","\n","\r"),', ',esc_attr($customAddress));
+        } else {
+            $customAddress = esc_attr(get_option('sl_google_map_country','United States'));
+        }
+        return apply_filters('slp_map_center',$customAddress);
     }
 
     /**
@@ -859,32 +854,6 @@ class SLPlus_UI {
         return str_replace(array("\r","\n"),'',$inStr);
     }
 
-    /**
-     * Puts the tag list on the search form for users to select tags.
-     *
-     * @param string[] $tags tags as an array of strings
-     * @param boolean $showany show the any pulldown entry if true
-     */
-    static function slp_render_search_form_tag_list($tags,$showany = false) {
-        print "<select id='tag_to_search_for' >";
-
-        // Show Any Option (blank value)
-        //
-        if ($showany) {
-            print "<option value=''>".
-                get_option(SLPLUS_PREFIX.'_tag_pulldown_first',__('Any','csa-slplus')).
-                '</option>';
-        }
-
-        foreach ($tags as $selection) {
-            $clean_selection = preg_replace('/\((.*)\)/','$1',$selection);
-            print "<option value='$clean_selection' ";
-            print (preg_match('#\(.*\)#', $selection))? " selected='selected' " : '';
-            print ">$clean_selection</option>";
-        }print "</select>";
-    }
-
-
      //------------------------------------------------------------------------
      // DEPRECATED
      //------------------------------------------------------------------------
@@ -904,6 +873,20 @@ class SLPlus_UI {
       * @deprecated 4.0
       */
      function setResultsString() {
+        if (!$this->setPlugin()) { return false; }
+        if (!$this->depnotice_setResultsString) {
+            $this->plugin->notifications->add_notice(9,$this->plugin->createstring_Deprecated(__FUNCTION__));
+            $this->plugin->notifications->display();
+            $this->depnotice_setResultsString = true;
+         }
+     }
+
+     /**
+      * Do not use, deprecated.
+      *
+      * @deprecated 4.0
+      */
+     function slp_render_search_form_tag_list() {
         if (!$this->setPlugin()) { return false; }
         if (!$this->depnotice_setResultsString) {
             $this->plugin->notifications->add_notice(9,$this->plugin->createstring_Deprecated(__FUNCTION__));

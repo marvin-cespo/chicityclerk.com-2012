@@ -100,8 +100,9 @@ abstract class TablePress_View {
 	 */
 	public function __construct() {
 		$screen = get_current_screen();
-		if ( 0 != $this->screen_columns )
+		if ( 0 != $this->screen_columns ) {
 			$screen->add_option( 'layout_columns', array( 'max' => $this->screen_columns ) );
+		}
 		add_filter( "get_user_option_screen_layout_{$screen->id}", array( $this, 'set_current_screen_layout_columns' ) ); // enable two column layout
 
 		// add help tab
@@ -109,11 +110,11 @@ abstract class TablePress_View {
 			'id' => 'tablepress-help', // This should be unique for the screen.
 			'title' => __( 'TablePress Help', 'tablepress' ),
 			'content' => '<p>' . $this->help_tab_content() . '</p>'
-						. '<p>' . sprintf( __( 'More information about TablePress can be found on the <a href="%1$s">plugin&#8217;s website</a> or on its page in the <a href="%s">WordPress Plugin Directory</a>.', 'tablepress' ), 'http://tablepress.org/', 'http://wordpress.org/plugins/tablepress/' ) . ' '
+						. '<p>' . sprintf( __( 'More information about TablePress can be found on the <a href="%1$s">plugin&#8217;s website</a> or on its page in the <a href="%s">WordPress Plugin Directory</a>.', 'tablepress' ), 'http://tablepress.org/', 'https://wordpress.org/plugins/tablepress/' ) . ' '
 						. sprintf( __( 'For technical information, please see the <a href="%s">documentation</a>.', 'tablepress' ), 'http://tablepress.org/documentation/' ) . ' '
-						. sprintf( __( '<a href="%1$s">Support</a> is provided through the <a href="%2$s">WordPress Support Forums</a>.', 'tablepress' ), 'http://tablepress.org/support/', 'http://wordpress.org/tags/tablepress' ) . ' '
+						. sprintf( __( '<a href="%1$s">Support</a> is provided through the <a href="%2$s">WordPress Support Forums</a>.', 'tablepress' ), 'http://tablepress.org/support/', 'https://wordpress.org/tags/tablepress' ) . ' '
 						. sprintf( __( 'Before asking for support, please carefully read the <a href="%s">Frequently Asked Questions</a>, where you will find answers to the most common questions, and search through the forums.', 'tablepress' ), 'http://tablepress.org/faq/' ) . '<br />'
-						. sprintf( __( 'If you like the plugin, <a href="%1$s"><strong>a donation</strong></a> is recommended.', 'tablepress' ), 'http://tablepress.org/donate/' ) . '</p>'
+						. sprintf( __( 'If you like the plugin, <a href="%1$s"><strong>a donation</strong></a> is recommended.', 'tablepress' ), 'http://tablepress.org/donate/' ) . '</p>',
 		) );
 		// "sidebar" in the help tab
 		$screen->set_help_sidebar( '<p><strong>' . __( 'For more information:', 'tablepress' ) . '</strong></p><p><a href="http://tablepress.org/" target="_blank">TablePress Website</a></p><p><a href="http://tablepress.org/faq/" target="_blank">TablePress FAQ</a></p><p><a href="http://tablepress.org/documentation/" target="_blank">TablePress Documentation</a></p><p><a href="http://tablepress.org/support/" target="_blank">TablePress Support</a></p>' );
@@ -128,12 +129,13 @@ abstract class TablePress_View {
 	 * @return int New value for the user option
 	 */
 	public function set_current_screen_layout_columns( $result ) {
-		if ( false === $result )
+		if ( false === $result ) {
 			// the user option does not yet exist
 			$result = $this->screen_columns;
-		elseif ( $result > $this->screen_columns )
+		} elseif ( $result > $this->screen_columns ) {
 			// the value of the user option is bigger than what is possible on this screen (e.g. because the number of columns was reduced in an update)
 			$result = $this->screen_columns;
+		}
 		return $result;
 	}
 
@@ -155,14 +157,14 @@ abstract class TablePress_View {
 		// admin page helpers, like script/style loading, could be moved to view
 		$this->admin_page = TablePress::load_class( 'TablePress_Admin_Page', 'class-admin-page-helper.php', 'classes' );
 		$this->admin_page->enqueue_style( 'common' );
-		remove_action( 'admin_print_styles', array( TablePress::$controller, 'add_tablepress_hidpi_css' ), 21 ); // Don't load HiDPI CSS via <style> on TablePress pages, as it's part of common.css
 		// RTL styles for the admin interface
-		if ( is_rtl() )
+		if ( is_rtl() ) {
 			$this->admin_page->enqueue_style( 'common-rtl', array( 'tablepress-common' ) );
+		}
 		$this->admin_page->enqueue_script( 'common', array( 'jquery', 'postbox' ), array(
 			'common' => array(
 				'ays_delete_single_table' => _n( 'Do you really want to delete this table?', 'Do you really want to delete these tables?', 1, 'tablepress' ),
-				'ays_delete_multiple_tables' => _n( 'Do you really want to delete this table?', 'Do you really want to delete these tables?', 2, 'tablepress' )
+				'ays_delete_multiple_tables' => _n( 'Do you really want to delete this table?', 'Do you really want to delete these tables?', 2, 'tablepress' ),
 			)
 		) );
 
@@ -214,15 +216,16 @@ abstract class TablePress_View {
 	 * @param bool $wrap Whether the content of the text box shall be wrapped in a <div> container
 	 */
 	protected function add_text_box( $id, $callback, $context = 'normal', $wrap = false ) {
-		if ( ! isset( $this->textboxes[ $context ] ) )
+		if ( ! isset( $this->textboxes[ $context ] ) ) {
 			$this->textboxes[ $context ] = array();
+		}
 
 		$long_id = "tablepress_{$this->action}-{$id}";
 		$this->textboxes[ $context ][ $id ] = array(
 			'id' => $long_id,
 			'callback' => $callback,
 			'context' => $context,
-			'wrap' => $wrap
+			'wrap' => $wrap,
 		);
 	}
 
@@ -252,15 +255,18 @@ abstract class TablePress_View {
 	 * @param string $context Context (normal, side, additional, header, submit) for which registered text boxes shall be rendered
 	 */
 	protected function do_text_boxes( $context ) {
-		if ( empty( $this->textboxes[ $context ] ) )
+		if ( empty( $this->textboxes[ $context ] ) ) {
 			return;
+		}
 
 		foreach ( $this->textboxes[ $context ] as $box ) {
-			if ( $box['wrap'] )
+			if ( $box['wrap'] ) {
 				echo "<div id=\"{$box['id']}\" class=\"textbox\">\n";
+			}
 			call_user_func( $box['callback'], $this->data, $box );
-			if ( $box['wrap'] )
+			if ( $box['wrap'] ) {
 				echo "</div>\n";
+			}
 		}
 	}
 
@@ -273,8 +279,9 @@ abstract class TablePress_View {
 	 * @param string $context Context (normal, side, additional) for which registered post meta boxes shall be rendered
 	 */
 	protected function do_meta_boxes( $context ) {
-		if ( ! $this->has_meta_boxes )
+		if ( ! $this->has_meta_boxes ) {
 			return;
+		}
 		do_meta_boxes( null, $context, $this->data );
 	}
 
@@ -289,8 +296,9 @@ abstract class TablePress_View {
 	 * @param array $box Information about the text box
 	 */
 	protected function default_nonce_fields( array $data, array $box ) {
-		if ( ! $this->has_meta_boxes )
+		if ( ! $this->has_meta_boxes ) {
 			return;
+		}
 		wp_nonce_field( 'closedpostboxes', 'closedpostboxesnonce', false ); echo "\n";
 		wp_nonce_field( 'meta-box-order', 'meta-box-order-nonce', false ); echo "\n";
 	}
@@ -328,7 +336,6 @@ abstract class TablePress_View {
 	public function render() {
 		?>
 		<div id="tablepress-page" class="wrap">
-		<?php screen_icon( 'tablepress' ); ?>
 		<?php
 			$this->print_nav_tab_menu();
 			// print all header messages
@@ -383,13 +390,16 @@ abstract class TablePress_View {
 			echo __( 'TablePress', 'tablepress' ) . '<span class="separator"></span>';
 			foreach ( $this->data['view_actions'] as $action => $entry ) {
 				// special case: Add a separator before the group that starts with "Plugin Options", for some spacing
-				if ( 'options' == $action )
+				if ( 'options' == $action ) {
 					echo '<span class="separator"></span><span class="separator"></span>';
+				}
 
-				if ( '' == $entry['nav_tab_title'] )
+				if ( '' == $entry['nav_tab_title'] ) {
 					continue;
-				if ( ! current_user_can( $entry['required_cap'] ) )
+				}
+				if ( ! current_user_can( $entry['required_cap'] ) ) {
 					continue;
+				}
 
 				$url = esc_url( TablePress::url( array( 'action' => $action ) ) );
 				$active = ( $action == $this->action ) ? ' nav-tab-active' : '';
@@ -434,8 +444,9 @@ abstract class TablePress_View {
 	 */
 	protected function _init_wp_pointers() {
 		// Check if there are WP pointers for this view
-		if ( empty( $this->wp_pointers ) )
+		if ( empty( $this->wp_pointers ) ) {
 			return;
+		}
 
 		// Get dismissed pointers
 		$dismissed = explode( ',', (string) get_user_meta( get_current_user_id(), 'dismissed_wp_pointers', true ) );
@@ -447,8 +458,9 @@ abstract class TablePress_View {
 			$got_pointers = true;
 		}
 
-		if ( ! $got_pointers )
+		if ( ! $got_pointers ) {
 			return;
+		}
 
 		// Add pointers script and style to queue
 		wp_enqueue_style( 'wp-pointer' );

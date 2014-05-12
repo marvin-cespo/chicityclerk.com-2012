@@ -71,18 +71,21 @@ class TablePress_Import {
 	 * @since 1.0.0
 	 */
 	public function __construct() {
-		// filter from @see unzip_file() in WordPress
-		if ( class_exists( 'ZipArchive' ) && apply_filters( 'unzip_file_use_ziparchive', true ) )
+		/** This filter is documented in the WordPress function unzip_file() in wp-admin/includes/file.php */
+		if ( class_exists( 'ZipArchive' ) && apply_filters( 'unzip_file_use_ziparchive', true ) ) {
 			$this->zip_support_available = true;
+		}
 
-		if ( class_exists( 'DOMDocument' ) && function_exists( 'simplexml_import_dom' ) && function_exists( 'libxml_use_internal_errors' ) )
+		if ( class_exists( 'DOMDocument' ) && function_exists( 'simplexml_import_dom' ) && function_exists( 'libxml_use_internal_errors' ) ) {
 			$this->html_import_support_available = true;
+		}
 
 		// initiate here, because function call not possible outside a class method
 		$this->import_formats = array();
 		$this->import_formats['csv'] = __( 'CSV - Character-Separated Values', 'tablepress' );
-		if ( $this->html_import_support_available )
+		if ( $this->html_import_support_available ) {
 			$this->import_formats['html'] = __( 'HTML - Hypertext Markup Language', 'tablepress' );
+		}
 		$this->import_formats['json'] = __( 'JSON - JavaScript Object Notation', 'tablepress' );
 		$this->import_formats['xls'] = __( 'XLS - Microsoft Excel 97-2003 (experimental)', 'tablepress' );
 		$this->import_formats['xlsx'] = __( 'XLSX - Microsoft Excel 2007-2013 (experimental)', 'tablepress' );
@@ -100,8 +103,9 @@ class TablePress_Import {
 	public function import_table( $format, $data ) {
 		$this->import_data = $data;
 
-		if ( ! in_array( $format, array( 'xlsx', 'xls' ) ) )
+		if ( ! in_array( $format, array( 'xlsx', 'xls' ) ) ) {
 			$this->fix_table_encoding();
+		}
 
 		switch ( $format ) {
 			case 'csv':
@@ -145,8 +149,9 @@ class TablePress_Import {
 	 * @since 1.0.0
 	 */
 	protected function import_html() {
-		if ( ! $this->html_import_support_available )
+		if ( ! $this->html_import_support_available ) {
 			return false;
+		}
 
 		// extract table from HTML, pattern: <table> (with eventually class, id, ...
 		// . means any charactery (except newline),
@@ -161,8 +166,9 @@ class TablePress_Import {
 		}
 
 		$temp_data = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>' . $temp_data; // Prepend XML declaration, for better encoding support
-		if ( function_exists( 'libxml_disable_entity_loader' ) )
+		if ( function_exists( 'libxml_disable_entity_loader' ) ) {
 			libxml_disable_entity_loader( true ); // don't expand external entities (see http://websec.io/2012/08/27/Preventing-XXE-in-PHP.html)
+		}
 		libxml_use_internal_errors( true ); // no warnings/errors raised, but stored internally
 		$dom = new DOMDocument( '1.0', 'UTF-8' );
 		$dom->strictErrorChecking = false; // no strict checking for invalid HTML
@@ -201,16 +207,18 @@ class TablePress_Import {
 
 		$html_table = array(
 			'data' => array(),
-			'options' => array()
+			'options' => array(),
 		);
 		if ( isset( $table->thead ) ) {
 			$html_table['data'] = array_merge( $html_table['data'], $this->_import_html_rows( $table->thead[0]->tr ) );
 			$html_table['options']['table_head'] = true;
 		}
-		if ( isset( $table->tbody ) )
+		if ( isset( $table->tbody ) ) {
 			$html_table['data'] = array_merge( $html_table['data'], $this->_import_html_rows( $table->tbody[0]->tr ) );
-		if ( isset( $table->tr ) )
+		}
+		if ( isset( $table->tr ) ) {
 			$html_table['data'] = array_merge( $html_table['data'], $this->_import_html_rows( $table->tr ) );
+		}
 		if ( isset( $table->tfoot ) ) {
 			$html_table['data'] = array_merge( $html_table['data'], $this->_import_html_rows( $table->tfoot[0]->tr ) );
 			$html_table['options']['table_foot'] = true;
@@ -257,8 +265,9 @@ class TablePress_Import {
 		if ( is_null( $json_table ) ) {
 			if ( function_exists( 'json_last_error' ) ) {
 				// Constant JSON_ERROR_UTF8 is only available as of PHP 5.3.3
-				if ( ! defined( 'JSON_ERROR_UTF8' ) )
+				if ( ! defined( 'JSON_ERROR_UTF8' ) ) {
 					define( 'JSON_ERROR_UTF8', 5 );
+				}
 
 				switch ( json_last_error() ) {
 					case JSON_ERROR_NONE:
@@ -291,12 +300,16 @@ class TablePress_Import {
 			}
 		}
 
-		if ( isset( $json_table['data'] ) )
+		if ( isset( $json_table['data'] ) ) {
 			// JSON data contained a full export
 			$table = $json_table;
-		else
+		} else {
 			// JSON data contained only the data of a table, but no options
-			$table = array( 'data' => $json_table );
+			$table = array( 'data' => array() );
+			foreach ( $json_table as $row ) {
+				$table['data'][] = array_values( (array) $row );
+			}
+		}
 
 		$table['data'] = $this->pad_array_to_max_cols( $table['data'] );
 		$this->imported_table = $table;
@@ -328,8 +341,9 @@ class TablePress_Import {
 		// transform colspan/rowspan properties to TablePress equivalent (cell content)
 		foreach ( $table as $row_idx => $row ) {
 			foreach ( $row as $col_idx => $cell ) {
-				if ( 1 == $cell['rowspan'] && 1 == $cell['colspan'] )
+				if ( 1 == $cell['rowspan'] && 1 == $cell['colspan'] ) {
 					continue;
+				}
 
 				if ( 1 < $cell['colspan'] ) {
 					for ( $i = 1; $i < $cell['colspan']; $i++ ) {
@@ -357,7 +371,7 @@ class TablePress_Import {
 		foreach ( $table as $row_idx => $row ) {
 			$table_row = array();
 			foreach ( $row as $col_idx => $cell ) {
-				$table_row[] = (string)$cell['val'];
+				$table_row[] = (string) $cell['val'];
 			}
 			$result_table[] = $table_row;
 		}
@@ -374,8 +388,11 @@ class TablePress_Import {
 		TablePress::load_file( 'simplexlsx.class.php', 'libraries' );
 		$simplexlsx = new SimpleXLSX( $this->import_data, true );
 
-		if ( $simplexlsx->success() ) {
-			$this->imported_table = array( 'data' => $this->pad_array_to_max_cols( $simplexlsx->rows() ) );
+		if ( $simplexlsx->success() && 0 < $simplexlsx->sheetsCount() ) {
+			// Get Worksheet ID of the first Worksheet (not necessarily "1", which is the default in SimpleXLSX)
+			$sheet_ids = array_keys( $simplexlsx->sheetNames() );
+			$worksheet_id = $sheet_ids[0];
+			$this->imported_table = array( 'data' => $this->pad_array_to_max_cols( $simplexlsx->rows( $worksheet_id ) ) );
 		} else {
 			$output = '<strong>' . __( 'The imported file contains errors:', 'tablepress' ) . '</strong><br /><br />' . $simplexlsx->error() . '<br />';
 			wp_die( $output, 'Import Error', array( 'response' => 200, 'back_link' => true ) );
@@ -436,8 +453,9 @@ class TablePress_Import {
 		// Detect the character encoding and convert to UTF-8, if it's different
 		if ( function_exists( 'mb_detect_encoding' ) && function_exists( 'iconv' ) ) {
 			$current_encoding = mb_detect_encoding( $this->import_data, 'ASCII, UTF-8, ISO-8859-1' );
-			if ( 'UTF-8' != $current_encoding )
+			if ( 'UTF-8' != $current_encoding ) {
 				$this->import_data = @iconv( $current_encoding, 'UTF-8', $this->import_data );
+			}
 		}
 	}
 

@@ -233,13 +233,18 @@ class SLPlus_Location {
         } else {
             $touched_pageID = wp_insert_post($this->pageData, true);
             $crupdateOK = !is_wp_error($touched_pageID);
-            $this->debugMP('msg','','added page '.$touched_pageID);
+            if ($crupdateOK) {
+                $this->debugMP('msg','','added page '.$touched_pageID);
+            } else {
+                $this->debugMP('msg','','Error Creating Page: '.$touched_pageID->get_error_message() . '<br/>' .'Page data: ');
+                $this->debugMP('pr','',$this->pageData);
+            }
         }
 
         // Ok - we are good...
         //
         if ($crupdateOK) {
-           $this->debugMP('msg','','failed');
+           $this->debugMP('msg','','create or update is OK, no error');
 
             // If we created a page or changed the page ID,
             // set it in our location property and make it
@@ -282,7 +287,11 @@ class SLPlus_Location {
         if (property_exists($this, $property)) {
             return $this->$property;
         }
-        if ($this->plugin->is_Extended() && isset($this->exdata[$property])) {
+        if (
+            $this->plugin->database->is_Extended()                  &&
+            $this->plugin->database->extension->has_ExtendedData()  &&
+            isset($this->exdata[$property])
+            ) {
             return $this->exdata[$property];
         }
         return null;
@@ -370,6 +379,7 @@ class SLPlus_Location {
      * @param float $lng
      */
     public function set_LatLong($lat,$lng) {
+        $this->debugMP('msg',__FUNCTION__,"$lat , $lng");
         if($this->latitude  != $lat) {
             $this->latitude  = $lat;
             $this->dataChanged = true;
@@ -408,7 +418,7 @@ class SLPlus_Location {
                 'ID'            => '',
                 'post_type'     => $this->pageType,
                 'post_status'   => $this->pageDefaultStatus,
-                'post_title'    => $this->store,
+                'post_title'    => (empty($this->store)? 'SLP Location' : $this->store),
                 'post_content'  => '',
                 'slp_notes'     => 'new page'
             );
@@ -456,17 +466,16 @@ class SLPlus_Location {
         // Location is set, update it.
         //
         if ($this->id > 0) {
+            $this->debugMP('msg','',"Update location {$this->id}");
             if(!$this->plugin->db->update($this->plugin->database->info['table'],$dataToWrite,array('sl_id' => $this->id))) {
-                $this->plugin->notifications->add_notice(
-                        'warning',
-                        sprintf(__('Could not update %s, location id %d.','csa-slplus'),$this->store,$this->id)
-                        );
                 $dataWritten = false;
+                $this->debugMP('msg','',"Update location {$this->id} DID NOT update core data.");
             }
 
         // No location, add it.
         //
         } else {
+            $this->debugMP('msg','','Adding new location since no ID was provided.');
             if (!$this->plugin->db->insert($this->plugin->database->info['table'],$dataToWrite)) {
                 $this->plugin->notifications->add_notice(
                         'warning',
@@ -491,6 +500,24 @@ class SLPlus_Location {
         return $dataWritten;
     }
 
+    /**
+     * Return true of the given string is an int greater than 0.
+     *
+     * If not id is presented, check the current location ID.
+     *
+     * request_param is used if ID is set to null to try to set the value from a request variable of that name.
+     *
+     * @param string $id
+     * @param string $request_param
+     * @return boolean
+     */
+    function isvalid_ID($id=null, $request_param=null ) {
+
+        if ( isset( $_REQUEST[$request_param] ) ) { $id = $_REQUEST[$request_param];    }
+        if ( $id === null                       ) { $id = $this->id;                    }
+
+        return ( ctype_digit( $id ) && ( $id > 0 ) );
+    }
 
     /**
      * Return a named array that sets key = db field name, value = location property
@@ -529,24 +556,36 @@ class SLPlus_Location {
         // Extended Data, allow property as long as it does not conflict
         // with a built-in property.
         //
-        if ($this->plugin->is_Extended() && !property_exists($this,$property)) {
+        if (
+            $this->plugin->database->is_Extended()                  &&
+            $this->plugin->database->extension->has_ExtendedData()  &&
+            ! property_exists($this,$property)
+            ) {
             $this->exdata[$property] = $value;
         }
         return $this;
     }
 
     /**
-     * Set our location properties via a named array containing the data.
+     * Set location properties via a named array containing the field data.
      *
-     * Used to set our properties based on the MySQL SQL fetch to ARRAY_A method.
+     * Used to set properties based on the MySQL SQL fetch to ARRAY_A method
+     * or on a prepped named array where the field names are keys and
+     * field values are the values.
      *
-     * Assumes the properties all start with 'sl_';
+     * Mode parameter:
+     * o dbreset  = reset location data to blank before loading it up
+     * o reset = reset location data to blank before loading it up
+     * o update = do NOT reset location data to blank before updating
      *
-     * @param type $locationData
+     * Assumes the field names start with 'sl_'.
+     *
+     * @param mixed[] $locationData
+     * @param string $mode which mode?  'reset' or 'update' defaults to reset;
      * @return boolean
      */
-    public function set_PropertiesViaArray($locationData) {
-        $this->debugMP('msg',__FUNCTION__);
+    public function set_PropertiesViaArray($locationData,$mode='reset') {
+        $this->debugMP('msg',__FUNCTION__,"Mode: {$mode}");
 
         // If we have an array, assume we are on the right track...
         if (is_array($locationData)) {
@@ -557,10 +596,24 @@ class SLPlus_Location {
                 return true;
             }
 
+            // Process mode.
+            // Ensures any value other than 'dbreset' or 'update' resets the location data.
+            //
+            switch ($mode) {
+                case 'dbreset':
+                case 'update':
+                    break;
+                default:
+                    $this->debugMP('msg','','data reset');
+                    $this->reset();
+                    break;
+            }
+
             // Go through the named array and extract properties.
             //
-            $this->reset();
             foreach ($locationData as $field => $value) {
+
+                // TODO: This is probably wrong and can be deleted.  Should be sl_id, but that causes duplicate entries.
                 if ($field==='id') { continue; }
 
                 // Get rid of the leading field prefix (usually sl_)
@@ -569,10 +622,10 @@ class SLPlus_Location {
 
                 // Set our property value
                 //
-                if ($this->$property !== stripslashes_deep($value)) {
-                    $this->$property = stripslashes_deep($value);
+                $ssd_value = stripslashes_deep($value);
+                if ($this->$property != $ssd_value ) {
+                    $this->$property = $ssd_value;
                     $this->plugin->currentLocation->dataChanged = true;
-                    $this->debugMP('msg','',"{$property} : {$value}");
                 }
             }
 
@@ -605,23 +658,25 @@ class SLPlus_Location {
         //
         $this->locationData = null;
 
-        // Reset the data changed flag, used to manage MakePersistent calls.
-        // Stops MakePersistent from writing data to disk if it has not changed.
-        //
-        $this->plugin->currentLocation->dataChanged = false;
-
         // Our current ID does not match, load new location data from DB
         //
         if ($this->id != $locationID) {
             $this->debugMP('msg','',"Location {$locationID} loaded from disk");
             $this->reset();
-            $this->set_PropertiesViaArray(
+
+            $locData =
                 $this->plugin->database->get_Record(
                     array('selectall','whereslid'),
                     $locationID
-                )
-            );
+                );
+            if (is_array($locData)) { $this->set_PropertiesViaArray($locData,'dbreset'); }
         }
+
+        // Reset the data changed flag, used to manage MakePersistent calls.
+        // Stops MakePersistent from writing data to disk if it has not changed.
+        //
+        $this->plugin->currentLocation->dataChanged = false;
+
         return $this;
     }
 

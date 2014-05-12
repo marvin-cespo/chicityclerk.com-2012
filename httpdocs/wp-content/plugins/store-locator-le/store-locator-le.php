@@ -1,18 +1,18 @@
 <?php
 /*
 Plugin Name: Store Locator Plus
-Plugin URI: http://www.charlestonsw.com/product-category/slplus/
+Plugin URI: http://www.storelocatorplus.com/
 Description: Manage multiple locations with ease. Map stores or other points of interest with ease via Google Maps.  This is a highly customizable, easily expandable, enterprise-class location management system.
-Version: 4.0.028
-Tested up to: 3.7
+Version: 4.1.12
+Tested up to: 3.9
 Author: Charleston Software Associates
-Author URI: http://www.charlestonsw.com
+Author URI: http://www.storelocatorplus.com
 License: GPL3
 
 Text Domain: csa-slplus
 Domain Path: /languages/
 
-Copyright 2013  Charleston Software Associates (info@charlestonsw.com)
+Copyright 2014  Charleston Software Associates (info@charlestonsw.com)
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -33,7 +33,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 if (!defined( 'ABSPATH'     )) { exit;   } // Exit if accessed directly, dang hackers
 
 if (defined('SLPLUS_VERSION') === false) {
-    define('SLPLUS_VERSION', '4.0');
+    define('SLPLUS_VERSION', '4.1.10');
 }
 
 // Drive Path Defines
@@ -112,7 +112,7 @@ if (defined('SLP_ADMIN_PAGEPRE') === false) {
 global $slplus_plugin;
 
 /**
- * We need the generic WPCSL plugin class, since that is the
+ * We need the generic WPCSL plugin class, since that is thed
  * foundation of much of our plugin.  So here we make sure that it has
  * not already been loaded by another plugin that may also be
  * installed, and if not then we load it.
@@ -122,7 +122,7 @@ if (defined('SLPLUS_PLUGINDIR')) {
     // Hook up WPCSL
     //
     if (class_exists('wpCSL_plugin__slplus') === false) {
-        require_once(SLPLUS_PLUGINDIR.'WPCSL-generic/classes/CSL-plugin.php');
+        require_once(SLPLUS_PLUGINDIR.'lib/class.plugin.php');
     }
 
     // SLPlus Base Class
@@ -156,7 +156,6 @@ if (defined('SLPLUS_PLUGINDIR')) {
             // We don't want default wpCSL objects, let's set our own
             //
             'use_obj_defaults'      => false,
-            'cache_obj_name'        => 'none',
             'helper_obj_name'       => 'default',
             'notifications_obj_name'=> 'default',
             'settings_obj_name'     => 'default',
@@ -182,20 +181,19 @@ if (defined('SLPLUS_PLUGINDIR')) {
                 ),
             'admin_main_slug'       => 'slp_info'               ,
 
-            'url'                   => 'http://www.charlestonsw.com/',
+            'url'                   => 'http://www.storelocatorplus.com/',
             'wp_downloads_url'      => 'http://wordpress.org/plugins/store-locator-le/developers/',
-            'support_url'           => 'http://www.charlestonsw.com/support/documentation/store-locator-plus/',
-            'purchase_url'          => 'http://www.charlestonsw.com/product-category/slp4-products/',
+            'support_url'           => 'http://www.storelocatorplus.com/support/documentation/store-locator-plus/',
+            'purchase_url'          => 'http://www.storelocatorplus.com/product-category/slp4-products/',
             'rate_url'              => 'http://wordpress.org/extend/plugins/store-locator-le/',
-            'forum_url'             => 'http://www.charlestonsw.com/forums/',
-            'updater_url'           => 'http://www.charlestonsw.com/paypal/updater.php',
-            'broadcast_url'         => 'http://www.charlestonsw.com/signage/index.php?sku=SLP4&version='.SLPLUS_VERSION,
+            'forum_url'             => 'http://www.storelocatorplus.com/forums/',
+            'updater_url'           => 'http://www.storelocatorplus.com/paypal/updater.php',
+            'broadcast_url'         => 'http://www.storelocatorplus.com/signage/index.php?sku=SLP4&version='.SLPLUS_VERSION,
 
             'fqfile'                => __FILE__,
             'basefile'              => SLPLUS_BASENAME,
             'plugin_path'           => SLPLUS_PLUGINDIR,
             'plugin_url'            => SLPLUS_PLUGINURL,
-            'cache_path'            => SLPLUS_PLUGINDIR . 'cache',
         )
     );
 }
@@ -224,6 +222,9 @@ require_once(SLPLUS_PLUGINDIR . 'include/class.activation.php');
 
 require_once(SLPLUS_PLUGINDIR . 'include/class.ui.php');
 $slplus_plugin->UI = new SLPlus_UI(array('parent'=>$slplus_plugin));
+
+require_once(SLPLUS_PLUGINDIR . 'include/class.wpml.php');
+$slplus_plugin->WPML = new SLPlus_WPML(array('parent'=>$slplus_plugin));
 
 require_once(SLPLUS_PLUGINDIR . 'include/class.ajax.mobilelistener.php');
 

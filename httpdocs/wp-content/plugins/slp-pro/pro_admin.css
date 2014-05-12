@@ -1,0 +1,34 @@
+/**
+ * Pro Pack Custom Admin CSS
+ */
+
+div.section_description {
+    padding: 6px;
+}
+div.slp_bulk_upload_div {
+  background-color: #F8F7DE;
+  border: 1px solid #F6E39A;
+  margin: 6px;
+}
+input#bulk_file {
+    width: 70%;
+}
+div#rb_details table {
+    margin-left: 3px;
+    margin-bottom: 3px;
+}
+div#rb_details th.header {
+    font-weight: bold;
+}
+div#rb_details td {
+    padding: 3px;
+}
+div#rb_details .alignright {
+    float: none;
+}
+div#rb_details .form_entry {
+    padding-left: 3px;
+}
+div#rb_details .form_entry .button-secondary {
+    margin-top: 3px;
+}

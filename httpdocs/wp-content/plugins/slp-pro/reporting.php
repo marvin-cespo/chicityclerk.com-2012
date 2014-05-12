@@ -24,7 +24,8 @@ function DetailDataSection($tag, $theQuery, $SectionHeader, $columnHeaders, $col
     $thisQryname = strtolower(preg_replace('/\s/','_',$Qryname));
     $thisQryvalue= htmlspecialchars($tag,ENT_QUOTES,'UTF-8');
     
-    $thisSectionDesc = 
+    $thisSectionDesc =
+        '<div id="wpcsl_settings_group-settings" class="section_column wpcsl-group">' .
         '<div id="rb_details" class="reportblock">' .
             '<div class="rb_column">'.
                 '<h2>' . $SectionHeader . '</h2>' .
@@ -62,6 +63,7 @@ function DetailDataSection($tag, $theQuery, $SectionHeader, $columnHeaders, $col
                     '</tbody>' .
                 '</table>'.
             '</div>' .
+        '</div>' .
         '</div>'
         ;   
         
@@ -83,14 +85,13 @@ $slpLocationsTable = $wpdb->prefix . 'store_locator';
 //
 $slpReportSettings = new wpCSL_settings__slplus(
     array(
-            'no_license'        => true,
             'prefix'            => $slplus_plugin->prefix,
             'url'               => $slplus_plugin->url,
-            'name'              => $slplus_plugin->name . ' - Reporting',
+            'name'              => $slplus_plugin->name . __(' - Reporting','csa-slp-pro'),
             'plugin_url'        => $slplus_plugin->plugin_url,
             'render_csl_blocks' => false,
             'form_action'       => admin_url().'admin.php?page=slp-pro/reporting.php',
-            'save_text'         => 'Run Report'
+            'save_text'         => __('Run Report','csa-slp-pro')
         )
  ); 
 
@@ -101,7 +102,7 @@ global $slplus_plugin;
 $slpReportSettings->add_section(
     array(
         'name' => 'Navigation',
-        'div_id' => 'slplus_navbar',
+        'div_id' => 'navbar_wrapper',
         'description' => $slplus_plugin->AdminUI->create_Navbar(),
         'is_topmenu' => true,
         'auto' => false,
@@ -127,7 +128,7 @@ $slpReportStartDate = isset($_POST[SLPLUS_PREFIX.'-start_date']) ?
     $_POST[SLPLUS_PREFIX.'-start_date'] :
     date('Y-m-d',time() - (30 * 24 * 60 * 60));
 $slpReportSettings->add_item(
-    'Report Parameters', 
+    __('Report Parameters','csa-slp-pro'),
     __('Start Date: ','csa-slp-pro'),
     'start_date',    
     'text',
@@ -148,7 +149,7 @@ $slpReportEndDate = (isset($_POST[SLPLUS_PREFIX.'-end_date'])) ?
     }
     
 $slpReportSettings->add_item(
-    'Report Parameters', 
+    __('Report Parameters','csa-slp-pro'),
     __('End Date: ','csa-slp-pro'),
     'end_date',    
     'text',
@@ -165,7 +166,7 @@ $slpReportLimit = isset($_POST[SLPLUS_PREFIX.'-report_limit']) ?
     $_POST[SLPLUS_PREFIX.'-report_limit'] :
     '10';
 $slpReportSettings->add_item(
-    'Report Parameters', 
+    __('Report Parameters','csa-slp-pro'),
     __('How many detail records? ','csa-slp-pro'),
     'report_limit',    
     'text',
@@ -180,7 +181,7 @@ $slpReportSettings->add_item(
 );
 
 $slpReportSettings->add_item(
-    'Report Parameters', 
+    __('Report Parameters','csa-slp-pro'),
     '',   
     'runreport',    
     'submit_button',
@@ -189,18 +190,6 @@ $slpReportSettings->add_item(
     null,
     __('Run Report','csa-slp-pro')
 );     
-
-
-//------------------------------------
-// The Summary Graph Panel
-//  
-$slpReportSettings->add_section(
-    array(
-            'name'          => __('Store Locator Plus Usage','csa-slp-pro'),
-            'description'   => '<div id="chart_div"></div>',
-            'auto'          => true
-        )
- );
 
 // Total results each day
 // select 
@@ -280,19 +269,11 @@ $slpSectionDesc = sprintf(
      $slpRepTotalResults
     );    
 
-$slpReportSettings->add_section(
-    array(
-            'name'          => __('Summary','csa-slp-pro'),
-            'description'   => $slpSectionDesc,
-            'auto'          => true
-        )
- );
 
 
 //------------------------------------
 // The Details Data Panel
 //
-$slpSectionDescription = '';
 
 //....
 //
@@ -327,7 +308,7 @@ $slpDataLines = array(
         array('columnName' => 'slp_repq_address', 'columnClass'=> ''            ),
         array('columnName' => 'QueryCount',       'columnClass'=> 'alignright'  ),
     );
-$slpSectionDescription .= DetailDataSection("addr,$slpReportStartDate,$slpReportEndDate,$slpReportLimit",
+$slpSectionDesc .= DetailDataSection("addr,$slpReportStartDate,$slpReportEndDate,$slpReportLimit",
                 $slpReportQuery, $slpSectionHeader, 
                 $slpColumnHeaders, $slpDataLines, 
                 __('topsearches','csa-slp-pro')
@@ -382,13 +363,14 @@ $slpDataLines = array(
         array('columnName' => 'sl_tags',    'columnClass'=> ''            ),
         array('columnName' => 'ResultCount','columnClass'=> 'alignright'  ),
     );
-$slpSectionDescription .= DetailDataSection("top,$slpReportStartDate,$slpReportEndDate,$slpReportLimit",
+$slpSectionDesc .= DetailDataSection("top,$slpReportStartDate,$slpReportEndDate,$slpReportLimit",
                 $slpReportQuery, $slpSectionHeader, 
                 $slpColumnHeaders, $slpDataLines,
                 __('topresults','csa-slp-pro')
                 );
 
-$slpSectionDescription .= '
+$slpSectionDesc .= '
+    <div id="wpcsl_settings_group-settings" class="section_column wpcsl-group">
     <div id="rb_details" class="reportblock">
         <div class="rb_column">
           <h2>' . __('Export To CSV','csa-slp-pro') . '</h2>
@@ -403,15 +385,23 @@ $slpSectionDescription .= '
         </div>
         <iframe id="secretIFrame" src="" style="display:none; visibility:hidden;"></iframe>
     </div>
+    </div>
     ';
 
+//------------------------------------
+// The Report Panel
+//
 $slpReportSettings->add_section(
     array(
-            'name'          => __('Details','csa-slp-pro'),
-            'description'   => $slpSectionDescription,
-            'auto'          => true
+            'name'          => __('Search Report','csa-slp-pro'),
+            'description'   =>
+                '<div id="chart_div"></div>' .
+                $slpSectionDesc,
+            'auto'          => true,
+            'innerdiv'      => true
         )
  );
+
 
 
 
@@ -444,7 +434,9 @@ if ($slpRepTotalQueries > 0) {
 <script type="text/javascript">
     jQuery(document).ready(       
             function($) {
-                  $("#chart_div").html("<p>No data recorded yet.  Chart will be available after a Store Locator Plus search has been performed.</p>");
+                  $("#chart_div").html("<p><?php echo __('No data recorded yet. ','csa-slp-pro');
+                    echo __('Chart will be available after a Store Locator Plus search has been performed.','csa-slp-pro');
+                    ?></p>");
             }
         );
 </script>    

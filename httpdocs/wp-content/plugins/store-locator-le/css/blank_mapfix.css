@@ -1,7 +1,7 @@
 /**
  ** file: blank_mapfix.css
  ** label: Blank Theme with Map Fix
- ** description: Only CSS rule is the map image fix, default layout mostly dictacted by active WordPress theme.
+ ** description: Only CSS rule is the map image fix, default layout mostly dictated by active WordPress theme.
  **
  **/
 
@@ -22,6 +22,10 @@ div#map img {
     max-width: none;
     opacity: 1.0;
     visibility: visible;
+}
+/* Fix IE10 Rules */
+div#map .gm-style-cc > div {
+  word-wrap: normal;
 }
 /* Hide the default Google bubble shadow */
 div#map img[src='http://maps.gstatic.com/mapfiles/iws3.png'] {
