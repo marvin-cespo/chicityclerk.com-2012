@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>City of Chicago, Office of the City Clerk</title>
 <meta name="keywords" content="Office of the City Clerk, Susana A. Mendoza, Chicago Clerks Office, Chicago Illinois, City Sticker, Vehicle Sticker" />
-<meta name="description" content="City of Chicago Illinois, Office of the City Clerk. -  Acquire your Chicago Vehicle Stickers. Learn about Chicago legislation." />
+
 <meta name="DC.title" content="City of Chicago, Office of the City Clerk" />
 <meta name="geo.region" content="US-IL" />
 <meta name="geo.placename" content="Chicago" />

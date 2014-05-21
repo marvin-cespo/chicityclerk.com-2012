@@ -220,7 +220,6 @@
 						</div>
 					<?php endif; ?>
 					
-					
 					<?php if( is_page(1363) ) : ?>
 						<div id="city-clerk-feed">
 							<?php
