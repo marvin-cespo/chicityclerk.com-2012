@@ -10,7 +10,7 @@ if (!class_exists('CSVExport')) {
      *
      * @package StoreLocatorPlus\ProPack\CSVExport
      * @author Lance Cleveland <lance@charlestonsw.com>
-     * @copyright 2013 Charleston Software Associates, LLC
+     * @copyright 2013-2014 Charleston Software Associates, LLC
      */
     class CSVExport {
 
@@ -51,6 +51,7 @@ if (!class_exists('CSVExport')) {
                         "{".
                            "action: '{$action}',"           .
                            "filename: '{$filename}',"       .
+                           "formdata: jQuery('#locationForm').serialize()," .
                         "}".
                     ")".
                 ");"

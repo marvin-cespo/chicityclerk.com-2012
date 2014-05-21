@@ -357,7 +357,11 @@ if (! class_exists('SLPro_Admin')) {
                 require_once('class.csvexport.locations.php');
             }
             if (!isset($this->csvLocationExporter)) {
-                $this->csvLocationExporter = new CSVExportLocations(array('parent'=>$this->addon));
+                $this->csvLocationExporter = 
+                    new CSVExportLocations( array(
+                        'addon'     =>  $this->addon,
+                        'slplus'    =>  $this->slplus
+                    ));
             }
         }
 

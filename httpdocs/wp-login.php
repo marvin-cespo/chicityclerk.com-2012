@@ -839,7 +839,7 @@ default:
 	</p>
 	<p>
 		<label for="user_pass"><?php _e('Password') ?><br />
-		<input type="password" name="pwd" id="user_pass" class="input" value="" size="20" /></label>
+		<input type="password" name="pwd" id="user_pass" autocomplete="off" class="input" value="" size="20" /></label>
 	</p>
 	<?php
 	/**

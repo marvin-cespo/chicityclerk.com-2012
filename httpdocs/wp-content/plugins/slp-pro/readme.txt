@@ -5,7 +5,7 @@ Donate link: http://www.storelocatorplus.com/
 Tags: store locator plus, pro pack
 Requires at least: 3.4
 Tested up to: 3.8.1
-Stable tag: 4.1.00
+Stable tag: 4.1.02
 
 A premium add-on for the Store Locator Plus location management system for WordPress.
 
@@ -41,7 +41,15 @@ Learn more on the [CSL License Terms](http://www.storelocatorplus.com/products/g
 
 Visit the [Online Change Log for details](http://www.storelocatorplus.com/tag/slp4-changelog/).
 
-= 4.1.00
+= 4.1.02 =
+
+* Enhancement: Add ability to filter locations by Name, State, Zip, or Country on CSV export.
+* Enhancement: Updated German (de_DE) language files.
+* Enhancement: Updated Dutch (nl_NL) language files.
+* Fix: Set the tag input option to 'none' if it was not being shown in prior releases.
+* Fix: CSV export is set as a UTF-8 encoded file, fixes issues with dropped columns with UTF8 characters in the data
+
+= 4.1.00 =
 
 * Fix: Tag labels do not appear for Drop Down or Radio buttons has been fixed.
 * Fix: Incorrect textdomain strings to help with translation files.

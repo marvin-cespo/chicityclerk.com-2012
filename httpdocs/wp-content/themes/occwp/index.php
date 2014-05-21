@@ -74,10 +74,6 @@
 			</div>
 		</div>
 		<div class="span9home homeborder" id="right-column">
-			<div id="sticker-banner">
-				<p>Please note, the EZ&gt;BUY online sales application is offline for maintenance for at least two weeks. We will resume all online sales services with the start of the 2014 Chicago City Vehicle Sticker Sales Season in mid-May.</p>
-				<p><a href="http://chicityclerk.com/city-stickers-parking/ezbuy-maintenance/" target="_self" title="EZBUY Down for Maintenance">Click here</a> to fill out a short form to receive an email notification when EZ&gt;BUY is back online.</p>
-			</div>
 			<!-- BEGIN DAY-OF,PRESTART COUNCIL NEWS CENTRAL BANNER 
 			<div id="cnc-ad">
 				<a class="cnc-ad-link" href="/council/council-news-central.php">
@@ -108,28 +104,32 @@
 				</a>
 			</div>
 			<!-- END DAY-OF,CONCLUDED VIDEO UP COUNCIL NEWS CENTRAL BANNER -->
-			
-			<a class="btn btn-primary btn-block btn-large btn-lic" style="text-decoration:none;" href="https://webapps3.cityofchicago.org/StickerOnlineWeb/" target="_self">Buy City Stickers &amp; Guest Passes online now</a>
-
-
-			 <div id="slideshow">
+			<a class="btn btn-primary btn-block btn-large btn-lic" style="text-decoration:none;" href="https://webapps3.cityofchicago.org/StickerOnlineWeb/" target="_self">BUY CHICAGO CITY VEHICLE STICKERS &amp; RESIDENTIAL PARKING PERMITS</a>
+			<div id="slideshow">
 				<div id="slides" style="overflow: hidden;">
-					<div id="slide-pothole" style="width: 770px; height: 250px;">
-						<a href="/programs-services/claims/" target="_self">
-							<span class="panel-pothole-head">POTHOLE DAMAGE</span><br />
-							<span class="panel-pothole-body">Find more information about filing a damage claim.<br />
+					<div id="slide-1" style="width: 770px; height: 250px;">
+						<a href="https://webapps1.cityofchicago.org/ezbuy/">
+							<span class="panel-1-head">2014 CHICAGO CITY VEHICLE STICKERS ARE AVAILABLE ONLINE</span>
+							<span class="panel-1-body" style="color:#000;">Buy now via EZ>BUY<br />
+							<button id="csp-btn" style="margin-top:10px;" class="btn btn-info btn-large">Purchase a Chicago City Vehicle Sticker</button></span>
+						</a>
+					</div>
+					<div id="slide-seniors" style="width: 770px; height: 250px;">
+						<a href="/city-stickers-parking/about-city-vehicle-stickers/seniors-and-special-programs/" target="_self">
+							<span class="panel-1-head">Seniors &amp; other special programs</span>
+							<span class="panel-1-body" style="color:#000;">How to ensure you get your Senior Discount on your Chicago City Vehicle Sticker<br />
 								<button id="csp-btn" style="margin-top:10px;" class="btn btn-info btn-large">Learn More</button></span>
 						</a>
 					</div>
 					<div id="slide-2" style="width: 770px; height: 250px;">
-						<a href="/city-stickers-parking/year-round-sales-2014/" target="_self">
-							<span class="panel-2-head">COMING IN 2014, YEAR-ROUND CHICAGO CITY VEHICLE STICKER SALES</span>
-							<span class="panel-2-body">Historic changes and Better service are on the way!<br />
+						<a href="/city-stickers-parking/city-stickers-parking/year-round-sales-2014/" target="_self">
+							<span class="panel-2-head">YEAR-ROUND VEHICLE STICKER SALES ARE UNDERWAY</span>
+							<span class="panel-2-body">Historic changes and better customer service are on the way!<br />
 								<button id="csp-btn" style="margin-top:10px;" class="btn btn-info btn-large">Learn More</button></span>
 						</a>
 					</div>
 					<div id="slide-3" style="width: 770px; height: 250px;">
-						<a href="/city-stickers-parking/storelocator/">
+						<a href="/locator/">
 							<span class="panel-3-head">FIND A LOCAL CITY VEHICLE STICKER VENDOR</span>
 							<span class="panel-3-body">Locate City Clerk Offices &amp; our partner community vendors<br />
 							<button id="csp-btn" style="margin-top:10px;" class="btn btn-info btn-large">Purchase a City Sticker</button></span>
@@ -142,7 +142,7 @@
 							<button id="csp-btn" style="margin-top:10px;" class="btn btn-info btn-large">Learn More</button></span>			
 						</a>
 					</div>
-				</div>			
+				</div>
 			</div>
 			
 			<div id="newsfeed">

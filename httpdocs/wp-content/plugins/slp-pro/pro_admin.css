@@ -5,6 +5,8 @@
 div.section_description {
     padding: 6px;
 }
+
+/* Location Import */
 div.slp_bulk_upload_div {
   background-color: #F8F7DE;
   border: 1px solid #F6E39A;
@@ -13,6 +15,27 @@ div.slp_bulk_upload_div {
 input#bulk_file {
     width: 70%;
 }
+
+/* Location Export */
+div.filter_box {
+    padding-left: 12px;
+    margin-top: -10px;
+}
+div#csa-slp-pro-location-filters select {
+    clear: both;
+    float: none;
+    height: auto;
+}
+div#csa-slp-pro-location-filters label {
+    width: 100px;
+}
+div#export_button_wrapper {
+    margin-top: 12px;
+    text-align: center;
+}
+
+/* Reporting */
+
 div#rb_details table {
     margin-left: 3px;
     margin-bottom: 3px;

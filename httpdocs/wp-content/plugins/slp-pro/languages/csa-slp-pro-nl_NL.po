@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Store Locator Plus : Pro Pack v4.0.019\n"
+"Project-Id-Version: Store Locator Plus : Pro Pack v4.1.00\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/store-locator-le\n"
 "POT-Creation-Date: 2013-06-17 15:52+0100\n"
-"PO-Revision-Date: 2014-01-10 13:05:27+0000\n"
+"PO-Revision-Date: 2014-01-29 22:14:42+0000\n"
 "Last-Translator: De B.A.A.T. <De_BAAT@de-baat.nl>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -127,8 +127,8 @@ msgid "Store"
 msgstr "Store"
 
 #: reporting.php:353
-#: slp-pro.php:921
-#: slp-pro.php:1004
+#: slp-pro.php:934
+#: slp-pro.php:1017
 #@ csa-slp-pro
 msgid "Tags"
 msgstr "Tags"
@@ -182,32 +182,32 @@ msgstr "Een premium add-on pakket voor Store Locator Plus die meer admin tools b
 msgid "http://charlestonsw.com/"
 msgstr "http://charlestonsw.com/"
 
-#: slp-pro.php:233
+#: slp-pro.php:245
 #@ csa-slp-pro
 msgid "Pro Pack"
 msgstr "Pro Pack"
 
-#: slp-pro.php:379
+#: slp-pro.php:391
 #@ csa-slp-pro
 msgid "Show Tags In Output"
 msgstr "Toon Tags In Output"
 
-#: slp-pro.php:390
+#: slp-pro.php:402
 #@ csa-slp-pro
 msgid "Use Email Form"
 msgstr "Gebruik Email Formulier"
 
-#: slp-pro.php:391
+#: slp-pro.php:403
 #@ csa-slp-pro
 msgid "Use email form instead of mailto: link when showing email addresses."
 msgstr "Gebruik email formulier in plaats van een mailto: link als een email adres getoond moet worden."
 
-#: slp-pro.php:1107
+#: slp-pro.php:1120
 #@ csa-slp-pro
 msgid "Use location sensor"
 msgstr "Gebruik locatie sensor"
 
-#: slp-pro.php:613
+#: slp-pro.php:625
 #@ csa-slp-pro
 msgid "Reports"
 msgstr "Rapporten"
@@ -249,47 +249,43 @@ msgstr "Upload Locaties"
 msgid "Got %d expected less than %d."
 msgstr "Kreeg %d verwachtte minder dan %d."
 
-#: slp-pro.php:750
+#: slp-pro.php:762
 #@ csa-slp-pro
 msgid "Tags (separate with commas)"
 msgstr "Tags (gescheiden door komma's)"
 
-#: slp-pro.php:855
+#: slp-pro.php:868
 #@ csa-slp-pro
 msgid "Search form label to prefix the tag selector."
 msgstr "Zoekformulier label prefix voor de tag selectie."
 
-#: slp-pro.php:873
+#: slp-pro.php:886
 #@ csa-slp-pro
 msgid "The first entry on the search by tag pulldown."
 msgstr "De eerste keuze van de zoek op tag pulldown."
 
-#: slp-pro.php:1432
-#@ csa-slp-pro
-msgid "Cheatin' huh+"
-msgstr "Valsspelen hè+"
-
-#: slp-pro.php:1438
+#: slp-pro.php:1445
+#: slp-pro.php:1451
 #@ csa-slp-pro
 msgid "Cheatin' huh!"
 msgstr "Valsspelen hè!"
 
-#: slp-pro.php:968
+#: slp-pro.php:981
 #@ csa-slp-pro
 msgid "Show Uncoded"
 msgstr "Toon Nietgecodeerden"
 
-#: slp-pro.php:1739
+#: slp-pro.php:1764
 #@ csa-slp-pro
 msgid "Enables tracking of searches and returned results.  The added overhead can increase how long it takes to return location search results."
 msgstr "Schakelt het bijhouden van zoekopdrachten en gevonden resultaten in. De extra overhead kan invloed hebben op hoe lang het duurt voordat de zoekresultaten getoond worden."
 
-#: slp-pro.php:1718
+#: slp-pro.php:1744
 #@ csa-slp-pro
 msgid "Custom CSS"
 msgstr "Aangepast CSS"
 
-#: slp-pro.php:1722
+#: slp-pro.php:1748
 #@ csa-slp-pro
 msgid "Enter your custom CSS, preferably for SLPLUS styling only but it can be used for any page element as this will go in your page header."
 msgstr "Geef je persoonlijke CSS, bij voorkeur voor SLPLUS styles maar het kan gebruikt worden voor ieder element op de pagina omdat deze code in je pagina header komt."
@@ -320,88 +316,88 @@ msgstr "CSV Records hebben te veel velden."
 msgid "Search Report"
 msgstr "Zoek Rapport"
 
-#: slp-pro.php:937
+#: slp-pro.php:950
 #@ csa-slp-pro
 msgid "Geocode"
 msgstr "Geocode"
 
-#: slp-pro.php:941
+#: slp-pro.php:954
 #@ csa-slp-pro
 msgid "Tag"
 msgstr "Tag"
 
-#: slp-pro.php:945
+#: slp-pro.php:958
 #@ csa-slp-pro
 msgid "Enter your comma-separated tags:"
 msgstr "Geef je komma-gescheiden tags:"
 
-#: slp-pro.php:950
+#: slp-pro.php:963
 #@ csa-slp-pro
 msgid "Remove Tags"
 msgstr "Verwijder Tags"
 
 #: include/class.csvimport.locations.php:118
-#: slp-pro.php:985
+#: slp-pro.php:998
 #@ csa-slp-pro
 msgid "Import"
 msgstr "Importeer"
 
-#: slp-pro.php:1111
+#: slp-pro.php:1124
 #@ csa-slp-pro
 msgid "This turns on the location sensor (GPS) to set the default search address. "
 msgstr "Dit schakelt de locatie sensor (GPS) in om het start zoekadres te bepalen. "
 
-#: slp-pro.php:1112
+#: slp-pro.php:1125
 #@ csa-slp-pro
 msgid "This can be slow to load and customers are prompted whether or not to allow location sensing."
 msgstr "Dit kan het laden vertragen en bezoekers wordt gevraagd al dan niet het gebruik van de locatie sensor toe te staan."
 
-#: slp-pro.php:1138
+#: slp-pro.php:1151
 #@ csa-slp-pro
 msgid "Locator Layout"
 msgstr "Locator Layout"
 
-#: slp-pro.php:1139
+#: slp-pro.php:1152
 #@ csa-slp-pro
 msgid "Enter your custom page layout for the Store Locator Plus page. Set it to blank to reset to the default layout."
 msgstr "Geef je persoonlijke pagina layout voor de Store Locator Plus pagina. Maak leeg om te resetten naar de standaard layout."
 
-#: slp-pro.php:1712
+#: slp-pro.php:1738
 #@ csa-slp-pro
 msgid "Look and Feel"
 msgstr "Kijk en Voel"
 
-#: slp-pro.php:1729
+#: slp-pro.php:1755
 #@ csa-slp-pro
 msgid "Reporting"
 msgstr "Rapportage"
 
-#: slp-pro.php:1734
+#: slp-pro.php:1759
 #@ csa-slp-pro
 msgid "Report Settings"
 msgstr "Rapportage Instellingen"
 
-#: slp-pro.php:1735
+#: slp-pro.php:1760
 #@ csa-slp-pro
 msgid "Enable Reporting"
 msgstr "Inschakelen Rapportage"
 
-#: slp-pro.php:1746
+#: slp-pro.php:1775
 #@ csa-slp-pro
 msgid "Tools"
 msgstr "Gereedschappen"
 
-#: slp-pro.php:1753
+#: slp-pro.php:1782
 #@ csa-slp-pro
 msgid "Where is..."
 msgstr "Waar is..."
 
-#: slp-pro.php:1758
+#: slp-pro.php:1787
 #@ csa-slp-pro
 msgid "locate"
 msgstr "lokaliseer"
 
-#: slp-pro.php:1763
+#: slp-pro.php:1792
 #@ csa-slp-pro
 msgid "Enter an address and click locate to find the lat/long."
 msgstr "Geef een adres en klik lokaliseer om de lat/long te vinden."
@@ -421,13 +417,13 @@ msgstr "Exporteer de locatie data naar een CSV bestand."
 msgid " - Reporting"
 msgstr " - Rapporteren"
 
-#: slp-pro.php:986
-#: slp-pro.php:1078
+#: slp-pro.php:999
+#: slp-pro.php:1091
 #@ csa-slp-pro
 msgid "Export"
 msgstr "Exporteer"
 
-#: slp-pro.php:1717
+#: slp-pro.php:1743
 #@ csa-slp-pro
 msgid "CSS Manipulation"
 msgstr "CSS Manipulatie"
@@ -452,29 +448,29 @@ msgstr "Nog geen data opgeslagen. "
 msgid "Chart will be available after a Store Locator Plus search has been performed."
 msgstr "Grafiek is pas beschikbaar nadat een Store Locator Plus zoekopdracht is uitgevoerd."
 
-#: slp-pro.php:1047
-#: slp-pro.php:1056
+#: slp-pro.php:1060
+#: slp-pro.php:1069
 #@ csa-slp-pro
 msgid "Locations"
 msgstr "Locaties"
 
-#: slp-pro.php:1058
+#: slp-pro.php:1071
 #@ csa-slp-pro
 msgid "Highlight Uncoded Locations"
 msgstr "Highlight Niet-gecodeerde Locaties"
 
-#: slp-pro.php:1063
+#: slp-pro.php:1076
 #@ csa-slp-pro
 msgid "Highlight the uncoded locations in the Manage Locations panel."
 msgstr "Highlight de niet-gecodeerde locaties in het Beheer Locaties panel."
 
-#: slp-pro.php:1097
-#: slp-pro.php:1105
+#: slp-pro.php:1110
+#: slp-pro.php:1118
 #@ csa-slp-pro
 msgid "JavaScript"
 msgstr "JavaScript"
 
-#: slp-pro.php:1768
+#: slp-pro.php:1797
 #@ csa-slp-pro
 msgid "Helpful Tools"
 msgstr "Handige Gereedschappen"
@@ -554,109 +550,109 @@ msgstr " locaties zijn overgeslagen vanwege dubbele naam en adres informatie."
 msgid " locations were updated."
 msgstr " locaties zijn bijgewerkt."
 
-#. translators: plugin header field 'Version'
-#: slp-pro.php:0
-#@ csa-slp-pro
-msgid "4.0.019"
-msgstr "4.0.019"
-
-#: slp-pro.php:380
+#: slp-pro.php:392
 #@ csa-slp-pro
 msgid "How should tags be output in the results below the map and the info bubble?"
 msgstr "Hoe moeten tags worden getoond in de resultaten onder de kaart en de info ballon?"
 
-#: slp-pro.php:823
+#: slp-pro.php:836
 #@ csa-slp-pro
 msgid "Search Form Tag Input"
 msgstr "Zoek Formulier Tag Invoer"
 
-#: slp-pro.php:824
+#: slp-pro.php:837
 #@ csa-slp-pro
 msgid "Select the type of tag input that you would like to see on the search form."
 msgstr "Selecteer het type tag invoer dat je op het zoekformulier zou willen zien."
 
-#: slp-pro.php:830
+#: slp-pro.php:843
 #@ csa-slp-pro
 msgid "None"
 msgstr "Geen"
 
-#: slp-pro.php:834
+#: slp-pro.php:847
 #@ csa-slp-pro
 msgid "Hidden"
 msgstr "Verborgen"
 
-#: slp-pro.php:838
+#: slp-pro.php:851
 #@ csa-slp-pro
 msgid "Drop Down"
 msgstr "Drop Down"
 
-#: slp-pro.php:842
+#: slp-pro.php:855
 #@ csa-slp-pro
 msgid "Radio Button"
 msgstr "Radio Button"
 
-#: slp-pro.php:846
+#: slp-pro.php:859
 #@ csa-slp-pro
 msgid "Text Input"
 msgstr "Tekst Invoer"
 
-#: slp-pro.php:854
+#: slp-pro.php:867
 #@ csa-slp-pro
 msgid "Tags Label"
 msgstr "Tags Label"
 
-#: slp-pro.php:859
+#: slp-pro.php:872
 #@ csa-slp-pro
 msgid "Default Tag Selections"
 msgstr "Default Tag Selecties"
 
-#: slp-pro.php:860
+#: slp-pro.php:873
 #@ csa-slp-pro
 msgid "For Hidden or Text tag input enter a default value to be used in the field, if any. "
 msgstr "Geef een default waarde die gebruikt moet worden voor Verborgen of Tekst tag invoer, indien nodig. "
 
-#: slp-pro.php:861
+#: slp-pro.php:874
 #@ csa-slp-pro
 msgid "For Drop Down tag input enter a comma (,) separated list of tags to show in the search pulldown, mark the default selection with parenthesis (). "
 msgstr "Geef een komma (,) gescheiden lijst met tags om in de zoek lijst te tonen voor de Drop Down tag invoer, markeer de default selectie met haakjes (). "
 
-#: slp-pro.php:862
+#: slp-pro.php:875
 #@ csa-slp-pro
 msgid "This is a default setting that can be overriden on each page within the shortcode."
 msgstr "Dit is een default instelling die op iedere pagina kan worden vervangen binnen de shortcode."
 
-#: slp-pro.php:866
+#: slp-pro.php:879
 #@ csa-slp-pro
 msgid "Add \"any\" To Drop Down"
 msgstr "Voeg \"elke\" Toe aan de Drop Down"
 
-#: slp-pro.php:867
+#: slp-pro.php:880
 #@ csa-slp-pro
 msgid "Add an \"any\" selection on the tag drop down list thus allowing the user to show all locations in the area, not just those matching a selected tag."
 msgstr "Voeg een \"elke\" selectie toe aan de tag drop down lijst om de gebruiker de mogelijkheid te bieden alle locaties in het gebied te tonen, niet alleen die die matchen met een geselecteerde tag."
 
-#: slp-pro.php:871
+#: slp-pro.php:884
 #@ csa-slp-pro
 msgid "\"Any\" Tag Text"
 msgstr "\"Elke\" Tag Tekst"
 
-#: slp-pro.php:872
+#: slp-pro.php:885
 #@ csa-slp-pro
 msgid "What should the \"any\" tag say? "
 msgstr "Wat moet de \"elke\" tag zijn? "
 
-#: slp-pro.php:877
-#@ csa-slp-es
+#: slp-pro.php:890
+#@ csa-slp-pro
 msgid "Tag Autosubmit"
 msgstr "Tag Automatische Invoer"
 
-#: slp-pro.php:878
-#@ csa-slp-es
+#: slp-pro.php:891
+#@ csa-slp-pro
 msgid "Force the form to auto-submit when the tag is selected with a radio button."
 msgstr "Forceer het formulier automatisch te versturen als de tag is geselecteerd met een radio button."
 
-#: slp-pro.php:1158
-#@ csa-slplus
+#: slp-pro.php:1171
+#@ csa-slp-pro
 msgid "Any"
 msgstr "Elke"
+
+#. translators: plugin header field 'Version'
+#: slp-pro.php:0
+#@ csa-slp-pro
+msgid "4.1.00"
+msgstr "4.1.00"
 

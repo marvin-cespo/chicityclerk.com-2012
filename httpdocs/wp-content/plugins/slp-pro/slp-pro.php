@@ -3,7 +3,7 @@
  * Plugin Name: Store Locator Plus : Pro Pack
  * Plugin URI: http://www.charlestonsw.com/product/store-locator-plus/
  * Description: A premium add-on pack for Store Locator Plus that provides more admin power tools for wrangling locations.
- * Version: 4.1.00
+ * Version: 4.1.02
  * Author: Charleston Software Associates
  * Author URI: http://charlestonsw.com/
  * Requires at least: 3.3
@@ -31,7 +31,7 @@ if (!class_exists('SLPPro'   )) {
      *
      * @package StoreLocatorPlus\ProPack
      * @author Lance Cleveland <lance@charlestonsw.com>
-     * @copyright 2012-2013 Charleston Software Associates, LLC
+     * @copyright 2014 Charleston Software Associates, LLC
      */
     class SLPPro {
         //-------------------------------------
@@ -41,7 +41,7 @@ if (!class_exists('SLPPro'   )) {
         /**
          * @const string VERSION the current plugin version.
          */
-        const VERSION           = '4.1.00';
+        const VERSION           = '4.1.02';
 
         /**
          * @const string MIN_SLP_VERSION the minimum SLP version required for this version of the plugin.
@@ -741,7 +741,11 @@ if (!class_exists('SLPPro'   )) {
             if (!class_exists('CSVExportLocations')) {
                 require_once(plugin_dir_path(__FILE__).'include/class.csvexport.locations.php');
             }
-            $csvLocationExporter = new CSVExportLocations(array('type'=>'Locations'));
+            global $slplus;
+            $csvLocationExporter = new CSVExportLocations(array(
+                'slplus'    => $slplus,
+                'type'      =>  'Locations'
+                ));
             $csvLocationExporter->do_SendFile();
         }
         

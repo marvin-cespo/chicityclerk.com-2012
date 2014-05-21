@@ -400,3 +400,9 @@ foreach($page_office_children as $office_child) {
 	$current_page_office_template = get_post_meta($prog_child->ID, '_wp_page_template', true);
 	if($current_page_office_template != 'page-office-info.php') update_post_meta($office_child->ID, '_wp_page_template', 'page-office-info.php');
 }
+
+add_filter( 'xmlrpc_methods', 'remove_xmlrpc_pingback_ping' );
+function remove_xmlrpc_pingback_ping( $methods ) {
+   unset( $methods['pingback.ping'] );
+   return $methods;
+} ;

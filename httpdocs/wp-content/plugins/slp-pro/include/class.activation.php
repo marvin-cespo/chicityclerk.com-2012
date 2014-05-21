@@ -99,25 +99,6 @@ class Pro_Activation {
             $optionName = SLPLUS_PREFIX.'_tag_search_selections';
             $this->addon->options['tag_selections'] = get_option($optionName,'');
             delete_option($optionName);
-
-            // csl-slplus_show_tag_search migrated to PRO-options['tag_selector']
-            // impacts search form rendering
-            //
-            // If tag selector is off the display type is none.
-            //
-            // If tag selector is on and tag selections are missing type is textinput.
-            // If tag selector is on and tag selections are in place type is dropdown.
-            //
-            $optionName = SLPLUS_PREFIX.'_show_tag_search';
-            $this->addon->options['tag_selector'] =
-                $this->slplus->is_CheckTrue( get_option( $optionName, '0' ) )    ?
-                    'none'                          :
-                    (empty($this->addon->options['tag_selections'])?
-                        'textinput'                 :
-                        'dropdown'
-                    )
-                    ;
-            delete_option($optionName);
         }
 
         // Version 4.0.016 update
@@ -139,6 +120,32 @@ class Pro_Activation {
             }
             delete_option($optionName);
 		}
+
+		// Version 4.1.01 update
+        //
+        if (version_compare($this->addon->options['installed_version'], '4.1.02', '<')) {
+            // csl-slplus_show_tag_search migrated to PRO-options['tag_selector']
+            // impacts search form rendering
+            //
+            // If tag selector is off the display type is none.
+            //
+            // If tag selector is on and tag selections are missing type is textinput.
+            // If tag selector is on and tag selections are in place type is dropdown.
+            //
+            $optionName = SLPLUS_PREFIX.'_show_tag_search';
+            $option_value = get_option( $optionName );
+            if ( $option_value !== false ) {
+                if ( $this->slplus->is_CheckTrue( $option_value ) ) {
+                    $this->addon->options['tag_selector'] =
+                        empty($this->addon->options['tag_selections'])  ?
+                            'textinput'                                 :
+                            'dropdown'                                  ;
+                } else {
+                    $this->addon->options['tag_selector'] = 'none';
+                }
+            }
+            delete_option($optionName);
+        }
 
 		// Install reporting tables
 		//

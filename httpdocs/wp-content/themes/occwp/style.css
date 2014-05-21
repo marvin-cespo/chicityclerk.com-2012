@@ -632,7 +632,6 @@ ul.nav li.menu-item-facebook a {
 	width: 768px;
 	height: 248px;
 	text-decoration: none;
-	border: 1px solid #355495;
 }
 
 #slide-1 a:hover, #slide-2 a:hover, #slide-3 a:hover, #slide-4 a:hover, #slide-5 a:hover {
@@ -640,10 +639,11 @@ ul.nav li.menu-item-facebook a {
 } 
 
 #slide-1 {
-	background: url('/wp-content/themes/occwp/images/slideshow/2013-city-sticker-home-banner.jpg') no-repeat center left;
+	background: url('/wp-content/themes/occwp/images/slideshow/2014-city-sticker-sales-banner.png') no-repeat center left;
 }
 
 #slide-1 span.panel-1-head {
+	color: #000;
 	display: inline-block;
 	width: 440px;
 	font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
@@ -655,9 +655,43 @@ ul.nav li.menu-item-facebook a {
 }
 
 #slide-1 a{
-	color: #fff;
+	color: #000;
 }
 #slide-1 span.panel-1-body {
+	color: #000;
+	display: block;
+	margin: 16px 0 0 307px;
+	width: 410px;
+	float: left;
+	color: #FFF;
+	font-family: 'Georgia', Times, serif;
+	font-size: 18px;
+	line-height: 1.3;
+	padding-bottom: 10px
+	font-weight: normal;
+}
+
+#slide-seniors {
+	background: url('/wp-content/themes/occwp/images/slideshow/2014-seniors-special-program.png') no-repeat center left;
+}
+
+#slide-seniors span.panel-1-head {
+	color: #000;
+	display: inline-block;
+	width: 440px;
+	font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+	font-weight: 800;
+	font-size: 37px;
+	text-transform: uppercase;
+	line-height: 1;
+	margin: 13px 0 0 305px;
+}
+
+#slide-seniors a{
+	color: #000;
+}
+#slide-seniors span.panel-1-body {
+	color: #000;
 	display: block;
 	margin: 16px 0 0 307px;
 	width: 410px;
@@ -750,66 +784,6 @@ ul.nav li.menu-item-facebook a {
 	display: block;
 	margin: 16px 0 0 20px;
 	width: 410px;
-	float: left;
-	color: #FFF;
-	font-family: 'Georgia', Times, serif;
-	font-size: 18px;
-	line-height: 1.3;
-	padding-bottom: 10px
-}
-
-#slide-pothole {
-	background: url('/wp-content/themes/occwp/images/slideshow/home-slide-pothole.jpg') no-repeat right center;
-}
-
-#slide-pothole span.panel-pothole-head {
-	display: inline-block;
-	font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
-	font-weight: 800;
-	font-size: 37px;
-	text-transform: uppercase;
-	line-height: 1;
-	margin: 13px 0 0 20px;
-}
-
-#slide-pothole a{
-	color: #fff;
-}
-#slide-pothole span.panel-pothole-body {
-	display: block;
-	margin: 40px 0 0 20px;
-	width: 410px;
-	float: left;
-	color: #FFF;
-	font-family: 'Georgia', Times, serif;
-	font-size: 18px;
-	line-height: 1.3;
-	padding-bottom: 10px
-}
-
-
-#slide-animal {
-	background: url('/wp-content/themes/occwp/images/slideshow/home-banner-companion-animal.jpg') no-repeat right center;
-}
-
-#slide-animal span.panel-animal-head {
-	display: inline-block;
-	width: 330px;
-	font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
-	font-weight: 800;
-	font-size: 30px;
-	text-transform: uppercase;
-	line-height: 1;
-	margin: 13px 0 0 410px;
-}
-
-#slide-animal a{
-	color: #fff;
-}
-#slide-animal span.panel-animal-body {
-	display: block;
-	margin: 16px 0 0 410px;
-	width: 330px;
 	float: left;
 	color: #FFF;
 	font-family: 'Georgia', Times, serif;
