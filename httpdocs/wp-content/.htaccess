@@ -1,0 +1,14 @@
+<Files *.php>
+Order allow,deny
+Deny From All
+</Files>
+
+<Files *.php4>
+Order allow,deny
+Deny From All
+</Files>
+
+<Files *.php5>
+Order allow,deny
+Deny From All
+</Files>
