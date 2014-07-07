@@ -327,3 +327,7 @@ $(document).ready(function() {
 				</div>
 			</header>
 			<div id="container">
+			<div class="alert-box" style="text-align:center;">
+					<p><strong>Please Note:</strong> All Chicago motorists must purchase and display new vehicle stickers by July 15.<br>
+					<strong>Monday, July 7 is the FINAL day</strong> to purchase your new vehicle sticker online for delivery by the July 15 deadline.</p>
+			</div>
