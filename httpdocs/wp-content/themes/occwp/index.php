@@ -95,7 +95,7 @@
 			<!-- END DAY-OF,CONCLUDED NO VIDEO COUNCIL NEWS CENTRAL BANNER -->
 			
 			
-			<!-- BEGIN DAY-OF,CONCLUDED VIDEO UP COUNCIL NEWS CENTRAL BANNER -->
+			<!-- BEGIN DAY-OF,CONCLUDED VIDEO UP COUNCIL NEWS CENTRAL BANNER 
 			<div id="cnc-ad">
 				<a class="cnc-ad-link" href="https://chicago.legistar.com/MeetingDetail.aspx?ID=319669&GUID=F75BB9DD-BA4A-40BC-9B57-6FE865261546&Options=&Search=">
 					<span class="cnc-top">City Council met this week. Check out the...</span>
